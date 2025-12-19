@@ -1,0 +1,2832 @@
+{
+  "list": [
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/accessWay/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "程序集检测异常分页列表",
+          "api": "/accessWay/pageListAssemblyVerify",
+          "effect": "pageListAssemblyVerify",
+          "service": "pageListAssemblyVerifyData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/accessWay/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端全部权限配置文件内容",
+          "api": "/accessWay/getAllPermissionFileContent",
+          "effect": "getAllPermissionFileContent",
+          "service": "getAllPermissionFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端基础权限配置文件内容",
+          "api": "/accessWay/getInfrastructurePermissionFileContent",
+          "effect": "getInfrastructurePermissionFileContent",
+          "service": "getInfrastructurePermissionFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端业务权限配置文件内容",
+          "api": "/accessWay/getBusinessPermissionFileContent",
+          "effect": "getBusinessPermissionFileContent",
+          "service": "getBusinessPermissionFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端全部Model配置文件内容",
+          "api": "/accessWay/getAllModelConfigFileContent",
+          "effect": "getAllModelConfigFileContent",
+          "service": "getAllModelConfigFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端基础Model配置文件内容",
+          "api": "/accessWay/getInfrastructureModelConfigFileContent",
+          "effect": "getInfrastructureModelConfigFileContent",
+          "service": "getInfrastructureModelConfigFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取前端业务Model配置文件内容",
+          "api": "/accessWay/getBusinessModelConfigFileContent",
+          "effect": "getBusinessModelConfigFileContent",
+          "service": "getBusinessModelConfigFileContentData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取ActionMap",
+          "api": "/accessWay/getActionMap",
+          "effect": "getActionMap",
+          "service": "getActionMapData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取鉴权ActionMap",
+          "api": "/accessWay/getPermissionActionMap",
+          "effect": "getPermissionActionMap",
+          "service": "getPermissionActionMapData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取无需鉴权ActionMap",
+          "api": "/accessWay/getNonePermissionActionMap",
+          "effect": "getNonePermissionActionMap",
+          "service": "getNonePermissionActionMapData",
+          "type": "singleData"
+        },
+        {
+          "title": "测试权限唯一性",
+          "api": "/accessWay/testPermissionActionUnique",
+          "effect": "testPermissionActionUnique",
+          "service": "testPermissionActionUniqueData",
+          "type": "singleData"
+        },
+        {
+          "title": "测试鉴权Action",
+          "api": "/accessWay/testPermissionAction",
+          "effect": "testPermissionAction",
+          "service": "testPermissionActionData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除",
+          "api": "/accessWay/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/accessWay/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "模块管理",
+      "name": "accessWay"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/applicationUserFeedback/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/applicationUserFeedback/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增",
+          "api": "/applicationUserFeedback/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/applicationUserFeedback/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/applicationUserFeedback/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        },
+        {
+          "title": "上传图片",
+          "api": "/applicationUserFeedback/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "用户应用反馈",
+      "name": "applicationUserFeedback"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/cloudStorage/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/cloudStorage/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增信息",
+          "api": "/cloudStorage/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除",
+          "api": "/cloudStorage/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/cloudStorage/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/cloudStorage/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "企业云盘",
+      "name": "cloudStorage"
+    },
+    {
+      "apis": [
+        {
+          "title": "获取详情",
+          "api": "/currentAccount/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "通告列表",
+          "api": "/currentAccount/listNotice",
+          "effect": "listNotice",
+          "service": "listNoticeData",
+          "type": "singleList"
+        },
+        {
+          "title": "更新基本信息",
+          "api": "/currentAccount/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "变更密码",
+          "api": "/currentAccount/changePassword",
+          "effect": "changePassword",
+          "service": "changePasswordData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新前端配置文件",
+          "api": "/currentAccount/refreshFrontEndApplicationConfig",
+          "effect": "refreshFrontEndApplicationConfig",
+          "service": "refreshFrontEndApplicationConfigData",
+          "type": "singleData"
+        },
+        {
+          "title": "上传图片",
+          "api": "/currentAccount/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "当前账户",
+      "name": "currentAccount"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/department/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/department/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "单页树型列表",
+          "api": "/department/singleTreeList",
+          "effect": "singleTreeList",
+          "service": "singleTreeListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/department/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新信息",
+          "api": "/department/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新信息",
+          "api": "/department/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新上级部门",
+          "api": "/department/updateParentId",
+          "effect": "updateParentId",
+          "service": "updateParentIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新所属子公司",
+          "api": "/department/updateSubsidiaryId",
+          "effect": "updateSubsidiaryId",
+          "service": "updateSubsidiaryIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新排序值",
+          "api": "/department/updateSort",
+          "effect": "updateSort",
+          "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为正常",
+          "api": "/department/setNormal",
+          "effect": "setNormal",
+          "service": "setNormalData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为无效",
+          "api": "/department/setInvalid",
+          "effect": "setInvalid",
+          "service": "setInvalidData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/department/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/department/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "部门管理",
+      "name": "department"
+    },
+    {
+      "apis": [
+        {
+          "title": "上传图片",
+          "api": "/editor/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "编辑器",
+      "name": "editor"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/generalDiscourse/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/generalDiscourse/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/generalDiscourse/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/generalDiscourse/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通用常用语",
+      "name": "generalDiscourse"
+    },
+    {
+      "apis": [
+        {
+          "title": "获取",
+          "api": "/metaData/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "元数据集合",
+      "name": "metaData"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/notice/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/notice/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增信息",
+          "api": "/notice/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新信息",
+          "api": "/notice/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新标题颜色",
+          "api": "/notice/updateTitleColor",
+          "effect": "updateTitleColor",
+          "service": "updateTitleColorData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新图文详情",
+          "api": "/notice/updateContentInfo",
+          "effect": "updateContentInfo",
+          "service": "updateContentInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新排序值",
+          "api": "/notice/updateSort",
+          "effect": "updateSort",
+          "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置对象模式",
+          "api": "/notice/setTargetMode",
+          "effect": "setTargetMode",
+          "service": "setTargetModeData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为上线",
+          "api": "/notice/setOnline",
+          "effect": "setOnline",
+          "service": "setOnlineData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为下线",
+          "api": "/notice/setOffline",
+          "effect": "setOffline",
+          "service": "setOfflineData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/notice/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/notice/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "通告管理",
+      "name": "notice"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeAttachment/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeAttachment/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeAttachment/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增附件",
+          "api": "/noticeAttachment/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除附件",
+          "api": "/noticeAttachment/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeAttachment/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告附件管理",
+      "name": "noticeAttachment"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeTagRelation/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeTagRelation/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeTagRelation/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增标签关系",
+          "api": "/noticeTagRelation/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "批量新增标签关系",
+          "api": "/noticeTagRelation/addBatch",
+          "effect": "addBatch",
+          "service": "addBatchData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除标签关系",
+          "api": "/noticeTagRelation/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeTagRelation/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告标签关系管理",
+      "name": "noticeTagRelation"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeUserRelation/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeUserRelation/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeUserRelation/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增人员关系",
+          "api": "/noticeUserRelation/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "批量新增人员关系",
+          "api": "/noticeUserRelation/addBatch",
+          "effect": "addBatch",
+          "service": "addBatchData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除人员关系",
+          "api": "/noticeUserRelation/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeUserRelation/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告人员关系管理",
+      "name": "noticeUserRelation"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/operationLog/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/operationLog/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/operationLog/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "操作记录",
+      "name": "operationLog"
+    },
+    {
+      "apis": [
+        {
+          "title": "获取概览树图",
+          "api": "/organization/getGraphicalTree",
+          "effect": "getGraphicalTree",
+          "service": "getGraphicalTreeData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "组织信息",
+      "name": "organization"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/presetRole/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "可选角色列表",
+          "api": "/presetRole/listSelect",
+          "effect": "listSelect",
+          "service": "listSelectData",
+          "type": "singleList"
+        },
+        {
+          "title": "含有模块列表",
+          "api": "/presetRole/listModule",
+          "effect": "listModule",
+          "service": "listModuleData",
+          "type": "singleData"
+        },
+        {
+          "title": "含有模块树型列表",
+          "api": "/presetRole/listTreeModule",
+          "effect": "listTreeModule",
+          "service": "listTreeModuleData",
+          "type": "singleData"
+        },
+        {
+          "title": "角色详情",
+          "api": "/presetRole/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/presetRole/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "预设角色",
+      "name": "presetRole"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/subsidiaryComplaintMessage/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/subsidiaryComplaintMessage/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否核实信息",
+          "api": "/subsidiaryComplaintMessage/toggleConfirm",
+          "effect": "toggleConfirm",
+          "service": "toggleConfirmData",
+          "type": "singleData"
+        },
+        {
+          "title": "回复信息",
+          "api": "/subsidiaryComplaintMessage/repay",
+          "effect": "repay",
+          "service": "repayData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除信息",
+          "api": "/subsidiaryComplaintMessage/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/subsidiaryComplaintMessage/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/subsidiaryComplaintMessage/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "企业投诉信息管理",
+      "name": "subsidiaryComplaintMessage"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/subsidiaryFeedbackMessage/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/subsidiaryFeedbackMessage/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否核实信息",
+          "api": "/subsidiaryFeedbackMessage/toggleConfirm",
+          "effect": "toggleConfirm",
+          "service": "toggleConfirmData",
+          "type": "singleData"
+        },
+        {
+          "title": "回复信息",
+          "api": "/subsidiaryFeedbackMessage/repay",
+          "effect": "repay",
+          "service": "repayData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除信息",
+          "api": "/subsidiaryFeedbackMessage/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/subsidiaryFeedbackMessage/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/subsidiaryFeedbackMessage/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "企业留言信息管理",
+      "name": "subsidiaryFeedbackMessage"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/subsidiaryReportMessage/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/subsidiaryReportMessage/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否核实信息",
+          "api": "/subsidiaryReportMessage/toggleConfirm",
+          "effect": "toggleConfirm",
+          "service": "toggleConfirmData",
+          "type": "singleData"
+        },
+        {
+          "title": "回复信息",
+          "api": "/subsidiaryReportMessage/repay",
+          "effect": "repay",
+          "service": "repayData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除信息",
+          "api": "/subsidiaryReportMessage/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/subsidiaryReportMessage/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/subsidiaryReportMessage/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "企业举报信息管理",
+      "name": "subsidiaryReportMessage"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/tag/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/tag/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "标签信息",
+      "name": "tag"
+    },
+    {
+      "apis": [
+        {
+          "title": "上传图片",
+          "api": "/uploadHistory/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        },
+        {
+          "title": "上传视频",
+          "api": "/uploadHistory/uploadVideo",
+          "effect": "uploadVideo",
+          "service": "uploadVideoData",
+          "type": "singleData"
+        },
+        {
+          "title": "上传音频",
+          "api": "/uploadHistory/uploadAudio",
+          "effect": "uploadAudio",
+          "service": "uploadAudioData",
+          "type": "singleData"
+        },
+        {
+          "title": "上传文件",
+          "api": "/uploadHistory/uploadFile",
+          "effect": "uploadFile",
+          "service": "uploadFileData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "上传历史",
+      "name": "uploadHistory"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/user/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/user/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增用户并创建登陆账户",
+          "api": "/user/addBasicInfoWithLoginInfo",
+          "effect": "addBasicInfoWithLoginInfo",
+          "service": "addBasicInfoWithLoginInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新信息",
+          "api": "/user/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置上级用户",
+          "api": "/user/updateParent",
+          "effect": "updateParent",
+          "service": "updateParentData",
+          "type": "singleData"
+        },
+        {
+          "title": "清楚上级用户设置",
+          "api": "/user/clearParent",
+          "effect": "clearParent",
+          "service": "clearParentData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置印章",
+          "api": "/user/setSignet",
+          "effect": "setSignet",
+          "service": "setSignetData",
+          "type": "singleData"
+        },
+        {
+          "title": "开启印章密码开关",
+          "api": "/user/openSignetPasswordSwitch",
+          "effect": "openSignetPasswordSwitch",
+          "service": "openSignetPasswordSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "关闭印章密码开关",
+          "api": "/user/closeSignetPasswordSwitch",
+          "effect": "closeSignetPasswordSwitch",
+          "service": "closeSignetPasswordSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换印章密码开关",
+          "api": "/user/toggleSignetPasswordSwitch",
+          "effect": "toggleSignetPasswordSwitch",
+          "service": "toggleSignetPasswordSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为启用",
+          "api": "/user/setEnable",
+          "effect": "setEnable",
+          "service": "setEnableData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为禁用",
+          "api": "/user/setDisable",
+          "effect": "setDisable",
+          "service": "setDisableData",
+          "type": "singleData"
+        },
+        {
+          "title": "重置印章密码",
+          "api": "/user/resetSignetPassword",
+          "effect": "resetSignetPassword",
+          "service": "resetSignetPasswordData",
+          "type": "singleData"
+        },
+        {
+          "title": "重置登录密码",
+          "api": "/user/resetPassword",
+          "effect": "resetPassword",
+          "service": "resetPasswordData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新权限",
+          "api": "/user/changePermission",
+          "effect": "changePermission",
+          "service": "changePermissionData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除用户",
+          "api": "/user/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/user/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "",
+          "api": "/user/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/user/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "用户管理",
+      "name": "user"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/userDepartmentInfo/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/userDepartmentInfo/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增绑定",
+          "api": "/userDepartmentInfo/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置主要关系",
+          "api": "/userDepartmentInfo/setPrimary",
+          "effect": "setPrimary",
+          "service": "setPrimaryData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除绑定",
+          "api": "/userDepartmentInfo/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/userDepartmentInfo/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "用户部门关系绑定",
+      "name": "userDepartmentInfo"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/userGeneralDiscourse/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/userGeneralDiscourse/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/userGeneralDiscourse/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增",
+          "api": "/userGeneralDiscourse/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新基本信息",
+          "api": "/userGeneralDiscourse/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "启用",
+          "api": "/userGeneralDiscourse/setEnable",
+          "effect": "setEnable",
+          "service": "setEnableData",
+          "type": "singleData"
+        },
+        {
+          "title": "禁用",
+          "api": "/userGeneralDiscourse/setDisable",
+          "effect": "setDisable",
+          "service": "setDisableData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除",
+          "api": "/userGeneralDiscourse/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/userGeneralDiscourse/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/userGeneralDiscourse/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "用户常用语",
+      "name": "userGeneralDiscourse"
+    },
+    {
+      "apis": [
+        {
+          "title": "自制流程分页列表",
+          "api": "/workflow/pageListSelfBuild",
+          "effect": "pageListSelfBuild",
+          "service": "pageListSelfBuildData",
+          "type": "pageList"
+        },
+        {
+          "title": "系统流程分页列表",
+          "api": "/workflow/pageListSystem",
+          "effect": "pageListSystem",
+          "service": "pageListSystemData",
+          "type": "pageList"
+        },
+        {
+          "title": "可用流程分页列表",
+          "api": "/workflow/pageListUsable",
+          "effect": "pageListUsable",
+          "service": "pageListUsableData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflow/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建OA审批流程",
+          "api": "/workflow/addOfficeAutomationProcessApproval",
+          "effect": "addOfficeAutomationProcessApproval",
+          "service": "addOfficeAutomationProcessApprovalData",
+          "type": "singleData"
+        },
+        {
+          "title": "编辑信息",
+          "api": "/workflow/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新排序值",
+          "api": "/workflow/updateSort",
+          "effect": "updateSort",
+          "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置实例名模板",
+          "api": "/workflow/setCaseNameTemplate",
+          "effect": "setCaseNameTemplate",
+          "service": "setCaseNameTemplateData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置短信模板",
+          "api": "/workflow/setSmsTemplate",
+          "effect": "setSmsTemplate",
+          "service": "setSmsTemplateData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换申请签名显示开关",
+          "api": "/workflow/toggleApplicantSignSwitch",
+          "effect": "toggleApplicantSignSwitch",
+          "service": "toggleApplicantSignSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置默认申请陈述",
+          "api": "/workflow/setDefaultApplicantStatement",
+          "effect": "setDefaultApplicantStatement",
+          "service": "setDefaultApplicantStatementData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换经办签名显示开关",
+          "api": "/workflow/toggleAttentionSignSwitch",
+          "effect": "toggleAttentionSignSwitch",
+          "service": "toggleAttentionSignSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换移动端是否可以发起审批",
+          "api": "/workflow/toggleAvailableOnMobileSwitch",
+          "effect": "toggleAvailableOnMobileSwitch",
+          "service": "toggleAvailableOnMobileSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置默认经办人",
+          "api": "/workflow/setDefaultAttentionUser",
+          "effect": "setDefaultAttentionUser",
+          "service": "setDefaultAttentionUserData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置默认经办陈述",
+          "api": "/workflow/setDefaultAttentionStatement",
+          "effect": "setDefaultAttentionStatement",
+          "service": "setDefaultAttentionStatementData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置测试审批人模式",
+          "api": "/workflow/setDebugApproverMode",
+          "effect": "setDebugApproverMode",
+          "service": "setDebugApproverModeData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置测试申请人模式",
+          "api": "/workflow/setDebugUserMode",
+          "effect": "setDebugUserMode",
+          "service": "setDebugUserModeData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置测试申请人用户",
+          "api": "/workflow/setDebugUserId",
+          "effect": "setDebugUserId",
+          "service": "setDebugUserIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "开启多分支模式",
+          "api": "/workflow/openMultibranch",
+          "effect": "openMultibranch",
+          "service": "openMultibranchData",
+          "type": "singleData"
+        },
+        {
+          "title": "开启多终点模式",
+          "api": "/workflow/openMultiEnd",
+          "effect": "openMultiEnd",
+          "service": "openMultiEndData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为启用",
+          "api": "/workflow/setEnable",
+          "effect": "setEnable",
+          "service": "setEnableData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为禁用",
+          "api": "/workflow/setDisable",
+          "effect": "setDisable",
+          "service": "setDisableData",
+          "type": "singleData"
+        },
+        {
+          "title": "创建副本",
+          "api": "/workflow/createDuplicate",
+          "effect": "createDuplicate",
+          "service": "createDuplicateData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflow/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflow/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflow/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程管理",
+      "name": "workflow"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowBranchCondition/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowBranchCondition/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowBranchCondition/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建流程节点分支条件项",
+          "api": "/workflowBranchCondition/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "编辑信息",
+          "api": "/workflowBranchCondition/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowBranchCondition/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowBranchCondition/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowBranchCondition/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程节点分支条件管理",
+      "name": "workflowBranchCondition"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowBranchConditionItem/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowBranchConditionItem/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建流程节点分支表单字段条件项",
+          "api": "/workflowBranchConditionItem/addFormFieldBasicInfo",
+          "effect": "addFormFieldBasicInfo",
+          "service": "addFormFieldBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建流程节点分支远程调用条件项",
+          "api": "/workflowBranchConditionItem/addRemoteCallBasicInfo",
+          "effect": "addRemoteCallBasicInfo",
+          "service": "addRemoteCallBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "编辑信息",
+          "api": "/workflowBranchConditionItem/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置对象比较模式",
+          "api": "/workflowBranchConditionItem/setRemoteCallUrl",
+          "effect": "setRemoteCallUrl",
+          "service": "setRemoteCallUrlData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置对象比较模式",
+          "api": "/workflowBranchConditionItem/setRemoteCallParameters",
+          "effect": "setRemoteCallParameters",
+          "service": "setRemoteCallParametersData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowBranchConditionItem/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowBranchConditionItem/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowBranchConditionItem/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程节点分支条件项管理",
+      "name": "workflowBranchConditionItem"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCase/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "进行中的流程分页列表",
+          "api": "/workflowCase/pageListUnderway",
+          "effect": "pageListUnderway",
+          "service": "pageListUnderwayData",
+          "type": "pageList"
+        },
+        {
+          "title": "已审批流程实例分页列表",
+          "api": "/workflowCase/pageListLatestApprove",
+          "effect": "pageListLatestApprove",
+          "service": "pageListLatestApproveData",
+          "type": "pageList"
+        },
+        {
+          "title": "待审批流程实例分页列表",
+          "api": "/workflowCase/pageListWaitApprove",
+          "effect": "pageListWaitApprove",
+          "service": "pageListWaitApproveData",
+          "type": "pageList"
+        },
+        {
+          "title": "用户监控实例分页列表",
+          "api": "/workflowCase/pageListUserMonitor",
+          "effect": "pageListUserMonitor",
+          "service": "pageListUserMonitorData",
+          "type": "pageList"
+        },
+        {
+          "title": "当前即将审批节点的下一节点审批人列表",
+          "api": "/workflowCase/singleListNextNodeApprover",
+          "effect": "singleListNextNodeApprover",
+          "service": "singleListNextNodeApproverData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowCase/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "扫码校验",
+          "api": "/workflowCase/verifyCode",
+          "effect": "verifyCode",
+          "service": "verifyCodeData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过当前表单内容对应的审批节点链",
+          "api": "/workflowCase/getChain",
+          "effect": "getChain",
+          "service": "getChainData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加流程实例",
+          "api": "/workflowCase/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新流程实例",
+          "api": "/workflowCase/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否紧急",
+          "api": "/workflowCase/toggleEmergency",
+          "effect": "toggleEmergency",
+          "service": "toggleEmergencyData",
+          "type": "singleData"
+        },
+        {
+          "title": "提交表单信息",
+          "api": "/workflowCase/submitForm",
+          "effect": "submitForm",
+          "service": "submitFormData",
+          "type": "singleData"
+        },
+        {
+          "title": "提交审核",
+          "api": "/workflowCase/submitApproval",
+          "effect": "submitApproval",
+          "service": "submitApprovalData",
+          "type": "singleData"
+        },
+        {
+          "title": "强制结束（即该次审批强制终止）",
+          "api": "/workflowCase/forceEnd",
+          "effect": "forceEnd",
+          "service": "forceEndData",
+          "type": "singleData"
+        },
+        {
+          "title": "作废（即该次审批废弃不再使用）",
+          "api": "/workflowCase/disuse",
+          "effect": "disuse",
+          "service": "disuseData",
+          "type": "singleData"
+        },
+        {
+          "title": "隐藏",
+          "api": "/workflowCase/hide",
+          "effect": "hide",
+          "service": "hideData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCase/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowCase/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程实例管理",
+      "name": "workflowCase"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseCarbonCopyNotification/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程审批抄送",
+      "name": "workflowCaseCarbonCopyNotification"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseFormAttachment/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowCaseFormAttachment/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowCaseFormAttachment/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加附件",
+          "api": "/workflowCaseFormAttachment/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "追加附件（仅限审批完成的审批实例）",
+          "api": "/workflowCaseFormAttachment/supplement",
+          "effect": "supplement",
+          "service": "supplementData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除附件",
+          "api": "/workflowCaseFormAttachment/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCaseFormAttachment/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowCaseFormAttachment/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        },
+        {
+          "title": "",
+          "api": "/workflowCaseFormAttachment/uploadFile",
+          "effect": "uploadFile",
+          "service": "uploadFileData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程附件附件管理",
+      "name": "workflowCaseFormAttachment"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseNextProcessApprove/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowCaseNextProcessApprove/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "详情",
+          "api": "/workflowCaseNextProcessApprove/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCaseNextProcessApprove/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程实例下一审批信息管理",
+      "name": "workflowCaseNextProcessApprove"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseNextProcessNotification/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowCaseNextProcessNotification/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "详情",
+          "api": "/workflowCaseNextProcessNotification/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCaseNextProcessNotification/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程实例下一审批通知管理",
+      "name": "workflowCaseNextProcessNotification"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseNextProcessProgress/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowCaseNextProcessProgress/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "流程实例下一流转过程管理",
+          "api": "/workflowCaseNextProcessProgress/getByFlowCaseId",
+          "effect": "getByFlowCaseId",
+          "service": "getByFlowCaseIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCaseNextProcessProgress/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程实例下一流转过程管理",
+      "name": "workflowCaseNextProcessProgress"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCaseProcessHistory/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowCaseProcessHistory/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "审批通过",
+          "api": "/workflowCaseProcessHistory/pass",
+          "effect": "pass",
+          "service": "passData",
+          "type": "singleData"
+        },
+        {
+          "title": "拒绝审批",
+          "api": "/workflowCaseProcessHistory/refuse",
+          "effect": "refuse",
+          "service": "refuseData",
+          "type": "singleData"
+        },
+        {
+          "title": "撤销审批",
+          "api": "/workflowCaseProcessHistory/cancelApprove",
+          "effect": "cancelApprove",
+          "service": "cancelApproveData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCaseProcessHistory/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowCaseProcessHistory/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程审批历史",
+      "name": "workflowCaseProcessHistory"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCase/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "进行中的流程分页列表",
+          "api": "/workflowDebugCase/pageListUnderway",
+          "effect": "pageListUnderway",
+          "service": "pageListUnderwayData",
+          "type": "pageList"
+        },
+        {
+          "title": "已审批流程实例分页列表",
+          "api": "/workflowDebugCase/pageListLatestApprove",
+          "effect": "pageListLatestApprove",
+          "service": "pageListLatestApproveData",
+          "type": "pageList"
+        },
+        {
+          "title": "待审批流程实例分页列表",
+          "api": "/workflowDebugCase/pageListWaitApprove",
+          "effect": "pageListWaitApprove",
+          "service": "pageListWaitApproveData",
+          "type": "pageList"
+        },
+        {
+          "title": "当前即将审批节点的下一节点审批人列表",
+          "api": "/workflowDebugCase/singleListNextNodeApprover",
+          "effect": "singleListNextNodeApprover",
+          "service": "singleListNextNodeApproverData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowDebugCase/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "扫码校验",
+          "api": "/workflowDebugCase/verifyCode",
+          "effect": "verifyCode",
+          "service": "verifyCodeData",
+          "type": "singleData"
+        },
+        {
+          "title": "获取流程测试实例详情",
+          "api": "/workflowDebugCase/getByWorkflow",
+          "effect": "getByWorkflow",
+          "service": "getByWorkflowData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过当前表单内容对应的审批节点链",
+          "api": "/workflowDebugCase/getChainByWorkflow",
+          "effect": "getChainByWorkflow",
+          "service": "getChainByWorkflowData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新流程测试实例",
+          "api": "/workflowDebugCase/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否紧急",
+          "api": "/workflowDebugCase/toggleEmergency",
+          "effect": "toggleEmergency",
+          "service": "toggleEmergencyData",
+          "type": "singleData"
+        },
+        {
+          "title": "根据流程命名模板设置实例标题",
+          "api": "/workflowDebugCase/setTitleFromCaseNameTemplate",
+          "effect": "setTitleFromCaseNameTemplate",
+          "service": "setTitleFromCaseNameTemplateData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置申请陈述",
+          "api": "/workflowDebugCase/setApplicantStatement",
+          "effect": "setApplicantStatement",
+          "service": "setApplicantStatementData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置经办人",
+          "api": "/workflowDebugCase/setAttentionUser",
+          "effect": "setAttentionUser",
+          "service": "setAttentionUserData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置经办陈述",
+          "api": "/workflowDebugCase/setAttentionStatement",
+          "effect": "setAttentionStatement",
+          "service": "setAttentionStatementData",
+          "type": "singleData"
+        },
+        {
+          "title": "提交表单信息",
+          "api": "/workflowDebugCase/submitForm",
+          "effect": "submitForm",
+          "service": "submitFormData",
+          "type": "singleData"
+        },
+        {
+          "title": "提交审核",
+          "api": "/workflowDebugCase/submitApproval",
+          "effect": "submitApproval",
+          "service": "submitApprovalData",
+          "type": "singleData"
+        },
+        {
+          "title": "开启撤销审批功能",
+          "api": "/workflowDebugCase/openCancelApproveSwitch",
+          "effect": "openCancelApproveSwitch",
+          "service": "openCancelApproveSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "关闭撤销审批功能",
+          "api": "/workflowDebugCase/closeCancelApproveSwitch",
+          "effect": "closeCancelApproveSwitch",
+          "service": "closeCancelApproveSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "开启重置审批功能",
+          "api": "/workflowDebugCase/openResetAllApproveSwitch",
+          "effect": "openResetAllApproveSwitch",
+          "service": "openResetAllApproveSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "关闭重置审批功能",
+          "api": "/workflowDebugCase/closeResetAllApproveSwitch",
+          "effect": "closeResetAllApproveSwitch",
+          "service": "closeResetAllApproveSwitchData",
+          "type": "singleData"
+        },
+        {
+          "title": "强制结束（即该次审批强制终止）",
+          "api": "/workflowDebugCase/forceEnd",
+          "effect": "forceEnd",
+          "service": "forceEndData",
+          "type": "singleData"
+        },
+        {
+          "title": "作废（即该次审批废弃不再使用）",
+          "api": "/workflowDebugCase/disuse",
+          "effect": "disuse",
+          "service": "disuseData",
+          "type": "singleData"
+        },
+        {
+          "title": "归档",
+          "api": "/workflowDebugCase/archive",
+          "effect": "archive",
+          "service": "archiveData",
+          "type": "singleData"
+        },
+        {
+          "title": "取消归档",
+          "api": "/workflowDebugCase/cancelArchive",
+          "effect": "cancelArchive",
+          "service": "cancelArchiveData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCase/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowDebugCase/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试实例管理",
+      "name": "workflowDebugCase"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseFormAttachment/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowDebugCaseFormAttachment/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowDebugCaseFormAttachment/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加附件",
+          "api": "/workflowDebugCaseFormAttachment/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "追加附件（仅限审批完成的审批实例）",
+          "api": "/workflowDebugCaseFormAttachment/supplement",
+          "effect": "supplement",
+          "service": "supplementData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowDebugCaseFormAttachment/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseFormAttachment/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowDebugCaseFormAttachment/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        },
+        {
+          "title": "",
+          "api": "/workflowDebugCaseFormAttachment/uploadFile",
+          "effect": "uploadFile",
+          "service": "uploadFileData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试表单附件管理",
+      "name": "workflowDebugCaseFormAttachment"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseFormStorage/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowDebugCaseFormStorage/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowDebugCaseFormStorage/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置流程测试表单存储",
+          "api": "/workflowDebugCaseFormStorage/set",
+          "effect": "set",
+          "service": "setData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowDebugCaseFormStorage/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseFormStorage/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowDebugCaseFormStorage/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试表单存储管理",
+      "name": "workflowDebugCaseFormStorage"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseNextProcessApprove/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowDebugCaseNextProcessApprove/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "详情",
+          "api": "/workflowDebugCaseNextProcessApprove/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseNextProcessApprove/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试实例下一审批信息管理",
+      "name": "workflowDebugCaseNextProcessApprove"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseNextProcessNotification/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowDebugCaseNextProcessNotification/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "详情",
+          "api": "/workflowDebugCaseNextProcessNotification/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "发送通知",
+          "api": "/workflowDebugCaseNextProcessNotification/sendNotification",
+          "effect": "sendNotification",
+          "service": "sendNotificationData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseNextProcessNotification/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试实例下一审批通知管理",
+      "name": "workflowDebugCaseNextProcessNotification"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseNextProcessProgress/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowDebugCaseNextProcessProgress/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "pageList"
+        },
+        {
+          "title": "流程实例下一流转过程管理",
+          "api": "/workflowDebugCaseNextProcessProgress/getByFlowCaseId",
+          "effect": "getByFlowCaseId",
+          "service": "getByFlowCaseIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseNextProcessProgress/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "流程测试实例下一流转过程管理",
+      "name": "workflowDebugCaseNextProcessProgress"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowDebugCaseProcessHistory/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowDebugCaseProcessHistory/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过",
+          "api": "/workflowDebugCaseProcessHistory/pass",
+          "effect": "pass",
+          "service": "passData",
+          "type": "singleData"
+        },
+        {
+          "title": "拒绝",
+          "api": "/workflowDebugCaseProcessHistory/refuse",
+          "effect": "refuse",
+          "service": "refuseData",
+          "type": "singleData"
+        },
+        {
+          "title": "撤销审批",
+          "api": "/workflowDebugCaseProcessHistory/cancelApprove",
+          "effect": "cancelApprove",
+          "service": "cancelApproveData",
+          "type": "singleData"
+        },
+        {
+          "title": "重置审批至起点",
+          "api": "/workflowDebugCaseProcessHistory/resetAllApprove",
+          "effect": "resetAllApprove",
+          "service": "resetAllApproveData",
+          "type": "singleData"
+        },
+        {
+          "title": "重置审批至起点(通过审批)",
+          "api": "/workflowDebugCaseProcessHistory/resetAllApproveWithWorkflow",
+          "effect": "resetAllApproveWithWorkflow",
+          "service": "resetAllApproveWithWorkflowData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowDebugCaseProcessHistory/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowDebugCaseProcessHistory/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "工作流测试实例审批历史管理",
+      "name": "workflowDebugCaseProcessHistory"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowFormDesign/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowFormDesign/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过流程设计获取详情",
+          "api": "/workflowFormDesign/getByWorkflow",
+          "effect": "getByWorkflow",
+          "service": "getByWorkflowData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加流程表单设计",
+          "api": "/workflowFormDesign/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新流程表单设计",
+          "api": "/workflowFormDesign/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新流程文档设计",
+          "api": "/workflowFormDesign/updateDocumentSchema",
+          "effect": "updateDocumentSchema",
+          "service": "updateDocumentSchemaData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新流程备注设计",
+          "api": "/workflowFormDesign/updateRemarkSchema",
+          "effect": "updateRemarkSchema",
+          "service": "updateRemarkSchemaData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowFormDesign/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowFormDesign/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程表单设计管理",
+      "name": "workflowFormDesign"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowLine/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowLine/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowLine/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加流程线",
+          "api": "/workflowLine/createLine",
+          "effect": "createLine",
+          "service": "createLineData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新节点",
+          "api": "/workflowLine/updateLine",
+          "effect": "updateLine",
+          "service": "updateLineData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置流程线条的分支进入条件, 仅应在多分支流程中使用",
+          "api": "/workflowLine/setBranchConditionId",
+          "effect": "setBranchConditionId",
+          "service": "setBranchConditionIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowLine/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除全部",
+          "api": "/workflowLine/removeAll",
+          "effect": "removeAll",
+          "service": "removeAllData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowLine/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowLine/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程线管理",
+      "name": "workflowLine"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowNode/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowNode/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowNode/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加起始节点",
+          "api": "/workflowNode/addStartPoint",
+          "effect": "addStartPoint",
+          "service": "addStartPointData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建过程节点",
+          "api": "/workflowNode/addIntermediatePoint",
+          "effect": "addIntermediatePoint",
+          "service": "addIntermediatePointData",
+          "type": "singleData"
+        },
+        {
+          "title": "新建抄送节点",
+          "api": "/workflowNode/addCarbonCopyPoint",
+          "effect": "addCarbonCopyPoint",
+          "service": "addCarbonCopyPointData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加结束节点",
+          "api": "/workflowNode/addEndPoint",
+          "effect": "addEndPoint",
+          "service": "addEndPointData",
+          "type": "singleData"
+        },
+        {
+          "title": "编辑信息",
+          "api": "/workflowNode/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "编辑节点视图配置",
+          "api": "/workflowNode/updateViewConfig",
+          "effect": "updateViewConfig",
+          "service": "updateViewConfigData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除",
+          "api": "/workflowNode/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowNode/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowNode/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程节点管理",
+      "name": "workflowNode"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowNodeApprover/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowNodeApprover/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "指定节点审批人用户单页列表",
+          "api": "/workflowNodeApprover/singleListApproverUserWithNodeAndFlowCase",
+          "effect": "singleListApproverUserWithNodeAndFlowCase",
+          "service": "singleListApproverUserWithNodeAndFlowCaseData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowNodeApprover/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加流程节点审批人",
+          "api": "/workflowNodeApprover/addApproverBasicInfo",
+          "effect": "addApproverBasicInfo",
+          "service": "addApproverBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "增加流程节点审批职级",
+          "api": "/workflowNodeApprover/addPositionGradeBasicInfo",
+          "effect": "addPositionGradeBasicInfo",
+          "service": "addPositionGradeBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新排序值",
+          "api": "/workflowNodeApprover/updateSort",
+          "effect": "updateSort",
+          "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "删除流程节点审批人",
+          "api": "/workflowNodeApprover/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowNodeApprover/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowNodeApprover/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程节点审批人管理",
+      "name": "workflowNodeApprover"
+    },
+    {
+      "apis": [
+        {
+          "title": "统计审批实例提交总数",
+          "api": "/workflowStatistic/statisticCaseSubmitCount",
+          "effect": "statisticCaseSubmitCount",
+          "service": "statisticCaseSubmitCountData",
+          "type": "singleData"
+        },
+        {
+          "title": "统计审批实例已办总数",
+          "api": "/workflowStatistic/statisticCaseLatestApproveCount",
+          "effect": "statisticCaseLatestApproveCount",
+          "service": "statisticCaseLatestApproveCountData",
+          "type": "singleData"
+        },
+        {
+          "title": "统计审批实例待办总数",
+          "api": "/workflowStatistic/statisticCaseWaitApproveCount",
+          "effect": "statisticCaseWaitApproveCount",
+          "service": "statisticCaseWaitApproveCountData",
+          "type": "singleData"
+        },
+        {
+          "title": "统计审批实例通知未读总数",
+          "api": "/workflowStatistic/statisticCaseNotificationWaitReadCount",
+          "effect": "statisticCaseNotificationWaitReadCount",
+          "service": "statisticCaseNotificationWaitReadCountData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "审批统计",
+      "name": "workflowStatistic"
+    }
+  ]
+}

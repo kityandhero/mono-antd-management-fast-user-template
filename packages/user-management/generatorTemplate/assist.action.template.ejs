@@ -1,0 +1,69 @@
+import { getValueByKey } from 'easy-soft-utility';
+
+import { actionCore } from 'antd-management-fast-common';
+
+import { modelTypeCollection } from '../../../../modelBuilders';
+import { fieldData } from '../Common/data';
+
+export async function setEnableAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.<%= o.model%>TypeCollection.setEnable,
+    params: {
+      <%= o.key%>: getValueByKey({
+        data: handleData,
+        key: fieldData.<%= o.key%>.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
+export async function setDisableAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.<%= o.model%>TypeCollection.setDisable,
+    params: {
+      <%= o.key%>: getValueByKey({
+        data: handleData,
+        key: fieldData.<%= o.key%>.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
+export async function refreshCacheAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage = null,
+}) {
+  actionCore({
+    api: modelTypeCollection.<%= o.model %>TypeCollection.refreshCache,
+    params: {
+      <%= o.key %>: getValueByKey({
+        data: handleData,
+        key: fieldData.<%= o.key %>.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}

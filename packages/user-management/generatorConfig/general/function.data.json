@@ -1,0 +1,344 @@
+{
+  "list": [
+    {
+      "functionSegment": "JsonItemType",
+      "label": "值类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "Channel",
+      "label": "适用渠道",
+      "name": "channel"
+    },
+    {
+      "functionSegment": "FileType",
+      "label": "文件类型",
+      "name": "fileType"
+    },
+    {
+      "functionSegment": "Gender",
+      "label": "性别",
+      "name": "gender"
+    },
+    {
+      "functionSegment": "BusinessMode",
+      "label": "适用业务",
+      "name": "businessMode"
+    },
+    {
+      "functionSegment": "WebChannel",
+      "label": "Web渠道",
+      "name": "webChannelId"
+    },
+    {
+      "functionSegment": "PresetRoleStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "UploadHistorySourceType",
+      "label": "来源",
+      "name": "sourceType"
+    },
+    {
+      "functionSegment": "UploadHistoryStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "NoticeTargetMode",
+      "label": "对象模式",
+      "name": "targetMode"
+    },
+    {
+      "functionSegment": "NoticeStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "NoticeAttachmentStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "NoticeUserRelationStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "CloudStorageSourceType",
+      "label": "来源",
+      "name": "sourceType"
+    },
+    {
+      "functionSegment": "CloudStorageStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "AdministrativeDivisionLevel",
+      "label": "等级",
+      "name": "level"
+    },
+    {
+      "functionSegment": "AdministrativeDivisionStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "PositionStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "PositionGradeStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowDebugApproverMode",
+      "label": "调试审批人模式",
+      "name": "debugApproverMode"
+    },
+    {
+      "functionSegment": "FlowDebugUserMode",
+      "label": "调试申请人模式",
+      "name": "debugUserMode"
+    },
+    {
+      "functionSegment": "FlowApproveAction",
+      "label": "审批动作",
+      "name": "approveAction"
+    },
+    {
+      "functionSegment": "FlowApproveActionMode",
+      "label": "审批动作模式",
+      "name": "approveActionMode"
+    },
+    {
+      "functionSegment": "FlowScope",
+      "label": "适用范围",
+      "name": "scope"
+    },
+    {
+      "functionSegment": "FlowEffectiveRange",
+      "label": "生效范围",
+      "name": "effectiveRange"
+    },
+    {
+      "functionSegment": "FlowStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowRangeEffectiveRelationStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowNodeStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowNodeType",
+      "label": "类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "FlowNodeApproveMode",
+      "label": "审批模式",
+      "name": "approveMode"
+    },
+    {
+      "functionSegment": "FlowNodeApproverMode",
+      "label": "审批人模式",
+      "name": "approverMode"
+    },
+    {
+      "functionSegment": "FlowNodeApproverStatus",
+      "label": "类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "FlowBranchConditionJudgmentMode",
+      "label": "判断模式",
+      "name": "judgmentMode"
+    },
+    {
+      "functionSegment": "FlowBranchConditionStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowBranchConditionItemTargetSourceMode",
+      "label": "目标来源",
+      "name": "targetSourceMode"
+    },
+    {
+      "functionSegment": "FlowBranchConditionItemTargetType",
+      "label": "目标类型",
+      "name": "targetType"
+    },
+    {
+      "functionSegment": "FlowBranchConditionItemTargetType",
+      "label": "目标值类型",
+      "name": "targetType"
+    },
+    {
+      "functionSegment": "FlowBranchConditionItemTargetComparisonMode",
+      "label": "目标对比模式",
+      "name": "targetComparisonMode"
+    },
+    {
+      "functionSegment": "FlowBranchConditionItemStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowLineStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowLineType",
+      "label": "类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "FlowLineFromPosition",
+      "label": "起始位置",
+      "name": "fromPosition"
+    },
+    {
+      "functionSegment": "FlowLineToPosition",
+      "label": "到达位置",
+      "name": "toPosition"
+    },
+    {
+      "functionSegment": "FlowFormDisplayMode",
+      "label": "流程表单显示模式",
+      "name": "displayMode"
+    },
+    {
+      "functionSegment": "FlowFormDesignStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCancelApproveSwitchList",
+      "label": "可撤销开关",
+      "name": "cancelApproveSwitch"
+    },
+    {
+      "functionSegment": "FlowResetAllApproveSwitchList",
+      "label": "可重置开关",
+      "name": "resetAllApproveSwitch"
+    },
+    {
+      "functionSegment": "FlowCaseFormStorageStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseFormAttachmentStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseNextProcessApproveStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseNextProcessNotificationStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseNextProcessProgressStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseProcessHistoryStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "FlowCaseCarbonCopyNotificationStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "UserType",
+      "label": "类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "UserStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "UserSubsidiaryInfoStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "UserDepartmentInfoStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "DepartmentOwnershipMode",
+      "label": "归属模式",
+      "name": "ownershipMode"
+    },
+    {
+      "functionSegment": "DepartmentStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "GeneralDiscourseType",
+      "label": "类型",
+      "name": "type"
+    },
+    {
+      "functionSegment": "GeneralDiscourseStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "SubsidiaryComplaintMessageStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "SubsidiaryFeedbackMessageStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "SubsidiaryReportMessageStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "UserGeneralDiscourseStatus",
+      "label": "状态",
+      "name": "status"
+    },
+    {
+      "functionSegment": "ApplicationUserFeedbackStatus",
+      "label": "状态",
+      "name": "status"
+    }
+  ]
+}

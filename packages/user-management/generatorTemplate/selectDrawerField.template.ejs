@@ -1,0 +1,46 @@
+import React from 'react';
+
+import { buildFieldDescription, getValueByKey } from 'easy-soft-utility';
+
+import { FieldExtra } from 'antd-management-fast-component';
+
+import { fieldData } from '../Common/data';
+import { PageListSelectDrawer } from '../PageListSelectDrawer';
+
+const {
+  SelectFieldExtra: { BaseSelectFieldExtra },
+} = FieldExtra;
+
+class <%= o.name%>SelectDrawerField extends BaseSelectFieldExtra {
+  selectValueText = (data) => {
+    const title = getValueByKey({
+      data,
+      key: fieldData.title.name,
+      defaultValue: '',
+    });
+
+    return title || '';
+  };
+
+  openSelector = () => {
+    PageListSelectDrawer.open();
+  };
+
+  renderPresetSelector = () => {
+    const { label, externalData } = {
+      label: '',
+      ...this.props,
+    };
+
+    return (
+      <PageListSelectDrawer
+        title={buildFieldDescription(label, '选择')}
+        width={1200}
+        externalData={externalData}
+        afterSelectSuccess={this.afterSelectSuccess}
+      />
+    );
+  };
+}
+
+export { <%= o.name%>SelectDrawerField };

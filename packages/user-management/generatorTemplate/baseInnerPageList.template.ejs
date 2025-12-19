@@ -1,0 +1,561 @@
+import React from 'react';
+
+import {
+  checkHasAuthority,
+  convertCollection,
+  getValueByKey,
+  handleItem,
+  showSimpleErrorMessage,
+} from 'easy-soft-utility';
+
+import {
+  columnFacadeMode,
+  defaultEmptyImage,
+  dropdownExpandItemType,
+  listViewConfig,
+  searchCardConfig,
+} from 'antd-management-fast-common';
+import {
+  buildListViewItemExtra,
+  ColorText,
+  iconBuilder,
+} from 'antd-management-fast-component';
+import { DataMultiPageView } from 'antd-management-fast-framework';
+
+import { accessWayCollection } from '../../../../customConfig';
+import { get<%= o.name%>StatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
+import { AddBasicInfoDrawer } from '../AddBasicInfoDrawer';
+import {
+  refreshCacheAction,
+  setDisableAction,
+  setEnableAction,
+} from '../Assist/action';
+import { getStatusBadge } from '../Assist/tools';
+import { ChangeImageModal } from '../ChangeImageModal';
+import { fieldData, statusCollection } from '../Common/data';
+import { OperateLogDrawer } from '../OperateLogDrawer';
+import { UpdateBasicInfoDrawer } from '../UpdateBasicInfoDrawer';
+
+const { InnerMultiPage } = DataMultiPageView;
+
+class BaseInnerPageList extends InnerMultiPage {
+  constructor(properties) {
+    super(properties);
+
+    this.state = {
+      ...this.state,
+      listViewMode: listViewConfig.viewMode.list,
+      pageTitle: '列表',
+      loadApiPath: modelTypeCollection.<%= o.model%>TypeCollection.pageList,
+      currentRecord: null,
+    };
+  }
+
+  handleItemStatus = ({ target, handleData, remoteData }) => {
+    handleItem({
+      target,
+      value: getValueByKey({
+        data: handleData,
+        key: fieldData.<%= o.key%>.name,
+      }),
+      compareValueHandler: (o) =>
+        getValueByKey({
+          data: o,
+          key: fieldData.<%= o.key%>.name,
+        }),
+      handler: (d) => {
+        const o = d;
+
+        o[fieldData.status.name] = getValueByKey({
+          data: remoteData,
+          key: fieldData.status.name,
+        });
+
+        o[fieldData.statusNote.name] = getValueByKey({
+          data: remoteData,
+          key: fieldData.statusNote.name,
+        });
+
+        return d;
+      },
+    });
+  };
+
+  handleMenuClick = ({ key, handleData }) => {
+    switch (key) {
+      case 'updateBasicInfo': {
+        this.showUpdateBasicInfoDrawer(handleData);
+        break;
+      }
+
+      case 'updateSort': {
+        this.showChangeSortModal(handleData);
+        break;
+      }
+
+      case 'updateImage': {
+        this.showChangeImageModal(handleData);
+        break;
+      }
+
+      case 'setEnable': {
+        this.setEnable(handleData);
+        break;
+      }
+
+      case 'setDisable': {
+        this.setDisable(handleData);
+        break;
+      }
+
+      case 'showOperateLog': {
+        this.showOperateLogDrawer(handleData);
+        break;
+      }
+
+      case 'refreshCache': {
+        this.refreshCache(handleData);
+        break;
+      }
+
+      default: {
+        showSimpleErrorMessage(`can not find matched key "${key}"`);
+        break;
+      }
+    }
+  };
+
+  setEnable = (r) => {
+    setEnableAction({
+      target: this,
+      handleData: r,
+      successCallback: ({ target, handleData, remoteData }) => {
+        target.handleItemStatus({ target, handleData, remoteData });
+      },
+    });
+  };
+
+  setDisable = (r) => {
+    setDisableAction({
+      target: this,
+      handleData: r,
+      successCallback: ({ target, handleData, remoteData }) => {
+        target.handleItemStatus({ target, handleData, remoteData });
+      },
+    });
+  };
+
+  refreshCache = (record) => {
+    refreshCacheAction({
+      target: this,
+      handleData: record,
+    });
+  };
+
+  showAddBasicInfoDrawer = () => {
+    AddBasicInfoDrawer.open();
+  };
+
+  afterAddBasicInfoDrawerOk = ({
+    // eslint-disable-next-line no-unused-vars
+    singleData,
+    // eslint-disable-next-line no-unused-vars
+    listData,
+    // eslint-disable-next-line no-unused-vars
+    extraData,
+    // eslint-disable-next-line no-unused-vars
+    responseOriginalData,
+    // eslint-disable-next-line no-unused-vars
+    submitData,
+    // eslint-disable-next-line no-unused-vars
+    subjoinData,
+  }) => {
+    this.refreshDataWithReloadAnimalPrompt({});
+  };
+
+  showUpdateBasicInfoDrawer = (r) => {
+    const that = this;
+
+    that.setState(
+      {
+        currentRecord: r,
+      },
+      () => {
+        UpdateBasicInfoDrawer.open();
+      },
+    );
+  };
+
+  afterUpdateBasicInfoDrawerOk = () => {
+    this.refreshDataWithReloadAnimalPrompt({});
+  };
+
+  showChangeSortModal = (r) => {
+    this.setState(
+      {
+        currentRecord: r,
+      },
+      () => {
+        ChangeSortModal.open();
+      },
+    );
+  };
+
+  afterChangeSortModalOk = ({
+    // eslint-disable-next-line no-unused-vars
+    singleData,
+    // eslint-disable-next-line no-unused-vars
+    listData,
+    // eslint-disable-next-line no-unused-vars
+    extraData,
+    // eslint-disable-next-line no-unused-vars
+    responseOriginalData,
+    // eslint-disable-next-line no-unused-vars
+    submitData,
+    // eslint-disable-next-line no-unused-vars
+    subjoinData,
+  }) => {
+    this.refreshDataWithReloadAnimalPrompt({});
+  };
+
+  showChangeImageModal = (r) => {
+    this.setState({ currentRecord: r }, () => {
+      ChangeImageModal.open();
+    });
+  };
+
+  afterChangeImageModalOk = ({
+    // eslint-disable-next-line no-unused-vars
+    singleData,
+    // eslint-disable-next-line no-unused-vars
+    listData,
+    // eslint-disable-next-line no-unused-vars
+    extraData,
+    // eslint-disable-next-line no-unused-vars
+    responseOriginalData,
+    // eslint-disable-next-line no-unused-vars
+    submitData,
+    // eslint-disable-next-line no-unused-vars
+    subjoinData,
+  }) => {
+    this.refreshDataWithReloadAnimalPrompt({});
+  };
+
+  showOperateLogDrawer = (item) => {
+    this.setState(
+      {
+        currentRecord: item,
+      },
+      () => {
+        OperateLogDrawer.open();
+      },
+    );
+  };
+
+  goToEdit = (record) => {
+    const id = getValueByKey({
+      data: record,
+      key: fieldData.<%= o.key%>.name,
+      defaultValue: '',
+    });
+
+    this.goToPath(`/<%= o.model%>/edit/load/${id}/key/basicInfo`);
+  };
+
+  establishSearchCardConfig = () => {
+    return {
+      list: [
+        {
+          lg: 6,
+          type: searchCardConfig.contentItemType.input,
+          fieldData: fieldData.title,
+        },
+        {
+          lg: 6,
+          type: searchCardConfig.contentItemType.component,
+          component: this.buildSearchCardButtonCore(),
+        },
+      ],
+    };
+  };
+
+  establishDataContainerExtraActionCollectionConfig = () => {
+    return [
+      {
+        buildType:
+          listViewConfig.dataContainerExtraActionBuildType.generalExtraButton,
+        type: 'primary',
+        icon: iconBuilder.plus(),
+        text: '新增',
+        hidden: !checkHasAuthority(
+          accessWayCollection.<%= o.model%>.addBasicInfo.permission,
+        ),
+        handleClick: this.showAddBasicInfoDrawer,
+      },
+    ];
+  };
+
+  establishListItemDropdownConfig = (item) => {
+    const status = getValueByKey({
+      data: item,
+      key: fieldData.status.name,
+      convert: convertCollection.number,
+    });
+
+    return {
+      size: 'small',
+      text: '修改',
+      icon: iconBuilder.edit(),
+      disabled: !checkHasAuthority(accessWayCollection.<%= o.model%>.get.permission),
+      handleButtonClick: ({ handleData }) => {
+        this.goToEdit(handleData);
+      },
+      handleData: item,
+      handleMenuClick: ({ key, handleData }) => {
+        this.handleMenuClick({ key, handleData });
+      },
+      items: [
+        {
+          key: 'updateBasicInfo',
+          icon: iconBuilder.edit(),
+          text: '设置基本信息',
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.updateBasicInfo.permission,
+          ),
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'updateSort',
+          icon: iconBuilder.sortAscending(),
+          text: '设置排序值',
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.updateSort.permission,
+          ),
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'updateImage',
+          icon: iconBuilder.picture(),
+          text: `设置图片`,
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.updateImage.permission,
+          ),
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'setEnable',
+          icon: iconBuilder.upload(),
+          text: '设为启用',
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.setEnable.permission,
+          ),
+          disabled: status === statusCollection.enable,
+          confirm: true,
+          title: '将要设为启用，确定吗？',
+        },
+        {
+          key: 'setDisable',
+          icon: iconBuilder.download(),
+          text: '设为禁用',
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.setEnable.permission,
+          ),
+          disabled: status === statusCollection.disable,
+          confirm: true,
+          title: '将要设为禁用，确定吗？',
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'showOperateLog',
+          icon: iconBuilder.read(),
+          text: '操作日志',
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'refreshCache',
+          icon: iconBuilder.reload(),
+          text: '刷新缓存',
+          hidden: !checkHasAuthority(
+            accessWayCollection.<%= o.model%>.refreshCache.permission,
+          ),
+          confirm: true,
+          title: '即将刷新缓存，确定吗？',
+        },
+      ],
+    };
+  };
+
+  establishListViewItemLayout = () => {
+    return 'vertical';
+  };
+
+  renderPresetListViewItemExtra = (record, index) => {
+    return buildListViewItemExtra({
+      index,
+      imageUrl: getValueByKey({
+        data: record,
+        key: fieldData.image.name,
+        defaultValue: defaultEmptyImage,
+      }),
+    });
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  establishPresetListViewItemInnerConfig = (item, index) => {
+    const title = getValueByKey({
+      data: item,
+      key: fieldData.title.name,
+      convert: convertCollection.string,
+    });
+
+    const status = getValueByKey({
+      data: item,
+      key: fieldData.status.name,
+      convert: convertCollection.number,
+    });
+
+    return {
+      image: getValueByKey({
+        data: item,
+        key: fieldData.image.name,
+        defaultValue: defaultEmptyImage,
+      }),
+      title: {
+        label: fieldData.title.label,
+        text: title,
+      },
+      descriptionList: [
+        {
+          label: fieldData.description.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldData.description.name,
+          }),
+          color: '#999999',
+          extra: (
+            <ColorText
+              textPrefix={fieldData.status.label}
+              text={get<%= o.name%>StatusName({
+                value: status,
+              })}
+              randomColor
+              randomSeed={(status + 6) * 10 + 5}
+              separatorStyle={{
+                paddingRight: '4px',
+              }}
+              seedOffset={18}
+            />
+          ),
+        },
+      ],
+      actionList: [
+        {
+          label: fieldData.<%= o.key%>.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldData.<%= o.key%>.name,
+          }),
+          canCopy: true,
+          color: '#999999',
+        },
+        {
+          label: fieldData.createTime.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldData.createTime.name,
+          }),
+          color: '#999999',
+        },
+      ],
+    };
+  };
+
+  getColumnWrapper = () => [
+    {
+      dataTarget: fieldData.image,
+      width: 60,
+      showRichFacade: true,
+      facadeMode: columnFacadeMode.image,
+    },
+    {
+      dataTarget: fieldData.title,
+      align: 'left',
+      showRichFacade: true,
+      emptyValue: '--',
+    },
+    {
+      dataTarget: fieldData.status,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeMode: columnFacadeMode.badge,
+      facadeConfigBuilder: (value) => {
+        return {
+          status: getStatusBadge(value),
+          text: get<%= o.name%>StatusName({
+            value: value,
+          }),
+        };
+      },
+    },
+    {
+      dataTarget: fieldData.<%= o.key%>,
+      width: 120,
+      showRichFacade: true,
+      canCopy: true,
+    },
+    {
+      dataTarget: fieldData.createTime,
+      width: 160,
+      showRichFacade: true,
+      facadeMode: columnFacadeMode.datetime,
+    },
+  ];
+
+  renderAddBasicInfoDrawer = () => {
+    return null;
+  };
+
+  renderPresetOther = () => {
+    const { currentRecord } = this.state;
+
+    return (
+      <>
+        {this.renderAddBasicInfoDrawer()}
+
+        <UpdateBasicInfoDrawer
+          externalData={currentRecord}
+          afterOK={this.afterUpdateBasicInfoDrawerOk}
+        />
+
+        <ChangeSortModal
+          externalData={currentRecord}
+          afterOK={this.afterChangeSortModalOk}
+        />
+
+        <ChangeImageModal
+          externalData={currentRecord}
+          afterOK={this.afterChangeImageModalOk}
+        />
+
+        <OperateLogDrawer externalData={currentRecord} />
+      </>
+    );
+  };
+}
+
+export { BaseInnerPageList };
