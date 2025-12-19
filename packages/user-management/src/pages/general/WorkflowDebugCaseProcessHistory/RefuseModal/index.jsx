@@ -30,7 +30,7 @@ import {
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseProcessHistoryRefuseModal } from '../../../pageBases';
+import { BaseFlowCaseProcessHistoryRefuseModal } from '../../../../pageBases';
 import { singleListAction } from '../../GeneralDiscourse/Assist/action';
 import { typeCollection } from '../../GeneralDiscourse/Common/data';
 import { fieldData as fieldDataUser } from '../../User/Common/data';

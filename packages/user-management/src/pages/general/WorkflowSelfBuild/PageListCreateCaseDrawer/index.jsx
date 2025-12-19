@@ -20,8 +20,8 @@ import {
   flowStatusCollection,
 } from '../../../../customConfig';
 import { getFlowStatusName } from '../../../../customSpecialComponents';
-import { addBasicInfoAction } from '../../../pageBases/WorkflowCase/Assist/action';
-import { getFlowStatusBadge } from '../../../utils';
+import { addBasicInfoAction } from '../../../../pageBases/WorkflowCase/Assist/action';
+import { getFlowStatusBadge } from '../../../../utils';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
 import { fieldData as fieldDataWorkflowCaseMadeByMe } from '../../WorkflowCaseMadeByMe/Common/data';
 import { fieldData } from '../Common/data';

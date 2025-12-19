@@ -1,6 +1,6 @@
 import { getDerivedStateFromPropertiesForUrlParameters } from 'antd-management-fast-common';
 
-import BaseInnerPageList from '../../../../../pages/OperationLog/BaseInnerPageList';
+import BaseInnerPageList from '../../../../../pages/general/OperationLog/BaseInnerPageList';
 import {
   checkNeedUpdateAssist,
   parseUrlParametersForSetState,

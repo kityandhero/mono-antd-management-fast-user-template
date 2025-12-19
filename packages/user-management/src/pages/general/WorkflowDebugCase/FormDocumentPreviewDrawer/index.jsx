@@ -4,7 +4,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseFormDocumentPreviewDrawer } from '../../../pageBases';
+import { BaseFlowCaseFormDocumentPreviewDrawer } from '../../../../pageBases';
 import { getChainByWorkflowAction } from '../Assist/action';
 import { fieldData as fieldDataWorkflowDebugCase } from '../Common/data';
 

@@ -2,7 +2,7 @@ import { connect } from 'easy-soft-dva';
 
 import { switchControlAssist } from 'antd-management-fast-framework';
 
-import { BaseFlowCaseProcessChainDrawer } from '../../../pageBases';
+import { BaseFlowCaseProcessChainDrawer } from '../../../../pageBases';
 
 const visibleFlag = 'd3ed843693fe45f0bf547ae0e04614a7';
 

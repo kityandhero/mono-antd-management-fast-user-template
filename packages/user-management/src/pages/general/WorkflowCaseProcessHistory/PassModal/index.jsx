@@ -33,8 +33,8 @@ import {
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseProcessHistoryPassModal } from '../../../pageBases';
-import { singleListNextNodeApproverAction } from '../../../pageBases/WorkflowCase/Assist/action';
+import { BaseFlowCaseProcessHistoryPassModal } from '../../../../pageBases';
+import { singleListNextNodeApproverAction } from '../../../../pageBases/WorkflowCase/Assist/action';
 import { singleListAction } from '../../GeneralDiscourse/Assist/action';
 import { typeCollection } from '../../GeneralDiscourse/Common/data';
 import { fieldData as fieldDataUser } from '../../User/Common/data';

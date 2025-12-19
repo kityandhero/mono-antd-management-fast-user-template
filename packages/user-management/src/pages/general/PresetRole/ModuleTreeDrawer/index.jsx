@@ -9,7 +9,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
-import { accessWayCollection } from '../../../customConfig/accessWayCollection';
+import { accessWayCollection } from '../../../../customConfig/accessWayCollection';
 import { fieldData } from '../Common/data';
 
 const { BaseVerticalFlexDrawer } = DataDrawer;

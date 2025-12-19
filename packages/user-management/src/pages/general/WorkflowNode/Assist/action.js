@@ -2,7 +2,7 @@ import { getValueByKey, request } from 'easy-soft-utility';
 
 import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 
-import { updateViewConfigDataApiAddress } from '../../../services/workflowNode';
+import { updateViewConfigDataApiAddress } from '../../../../services/workflowNode';
 import { fieldData } from '../Common/data';
 
 export function updateViewConfigAction({ handleData }) {

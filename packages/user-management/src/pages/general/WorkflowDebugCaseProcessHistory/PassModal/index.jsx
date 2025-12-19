@@ -34,7 +34,7 @@ import {
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseProcessHistoryPassModal } from '../../../pageBases';
+import { BaseFlowCaseProcessHistoryPassModal } from '../../../../pageBases';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
 import { singleListNextNodeApproverAction } from '../../WorkflowDebugCase/Assist/action';
 import { fieldData as fieldDataWorkflowDebugCase } from '../../WorkflowDebugCase/Common/data';

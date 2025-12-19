@@ -9,7 +9,7 @@ export const entrance = {
     { path: '/entrance', redirect: '/entrance/signIn' },
     {
       path: '/entrance/signIn',
-      component: './general/general/Entrance',
+      component: './general/Entrance',
     },
   ],
 };
@@ -1244,7 +1244,7 @@ export const currentAccount = {
         {
           path: '/currentAccount/loginLog/pageList/:pageKey',
           hideInMenu: true,
-          component: './general/general/CurrentAccount/LoginLog/PageList',
+          component: './general/CurrentAccount/LoginLog/PageList',
         },
       ],
     },
@@ -1266,42 +1266,42 @@ export const result = {
     {
       path: '/result/forbidden',
       name: 'forbidden',
-      component: './general/general/Result/Forbidden',
+      component: './general/Result/Forbidden',
     },
     {
       path: '/result/serverError',
       name: 'serverError',
-      component: './general/general/Result/ServerError',
+      component: './general/Result/ServerError',
     },
     {
       path: '/result/localError',
       name: 'localError',
-      component: './general/general/Result/LocalError',
+      component: './general/Result/LocalError',
     },
     {
       path: '/result/success',
       name: 'success',
-      component: './general/general/Result/Success',
+      component: './general/Result/Success',
     },
     {
       path: '/result/info',
       name: 'info',
-      component: './general/general/Result/Info',
+      component: './general/Result/Info',
     },
     {
       path: '/result/warn',
       name: 'warn',
-      component: './general/general/Result/Warn',
+      component: './general/Result/Warn',
     },
     {
       path: '/result/notFound',
       name: 'notFound',
-      component: './general/general/Result/NotFound',
+      component: './general/Result/NotFound',
     },
   ],
 };
 
 export const notFound = {
   path: '/*',
-  component: './general/general/Result/NotFound',
+  component: './general/Result/NotFound',
 };

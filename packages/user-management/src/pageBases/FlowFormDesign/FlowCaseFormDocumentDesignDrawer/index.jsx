@@ -25,8 +25,8 @@ import {
   getSimpleAttentionConfig,
 } from '../../../flowAssist';
 import { modelTypeCollection } from '../../../modelBuilders';
-import { getChainByWorkflowAction } from '../../../pages/WorkflowDebugCase/Assist/action';
-import { fieldData as fieldDataWorkflowDebugCase } from '../../../pages/WorkflowDebugCase/Common/data';
+import { getChainByWorkflowAction } from '../../../pages/general/WorkflowDebugCase/Assist/action';
+import { fieldData as fieldDataWorkflowDebugCase } from '../../../pages/general/WorkflowDebugCase/Common/data';
 import { updateDocumentSchemaAction } from '../Assist/action';
 
 const { BaseVerticalFlexDrawer } = DataDrawer;

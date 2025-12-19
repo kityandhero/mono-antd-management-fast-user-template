@@ -21,12 +21,12 @@ import {
 } from '../../../../customConfig';
 import { getFlowCaseStatusName } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { getFlowCaseStatusBadge, WorkflowCase } from '../../../pageBases';
+import { getFlowCaseStatusBadge, WorkflowCase } from '../../../../pageBases';
 import {
   disuseAction,
   forceEndAction,
-} from '../../../pageBases/WorkflowCase/Assist/action';
-import { fieldData } from '../../../pageBases/WorkflowCase/Common/data';
+} from '../../../../pageBases/WorkflowCase/Assist/action';
+import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 import { FormDrawer } from '../../WorkflowCaseFormStorage/FormDrawer';
 import { OperateLogDrawer } from '../OperateLogDrawer';
 

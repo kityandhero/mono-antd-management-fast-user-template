@@ -31,7 +31,7 @@ import {
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../modelBuilders';
-import { fieldData as fieldDataUser } from '../../../pages/User/Common/data';
+import { fieldData as fieldDataUser } from '../../../pages/general/User/Common/data';
 import { BaseFlowCaseSubmitApprovalModal } from '../..';
 import { singleListNextNodeApproverAction } from '../Assist/action';
 import { fieldData as fieldDataWorkflowCase } from '../Common/data';

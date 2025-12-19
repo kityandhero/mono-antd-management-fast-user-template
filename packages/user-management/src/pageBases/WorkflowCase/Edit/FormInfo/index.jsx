@@ -50,19 +50,19 @@ import {
   buildFlowCaseFormInitialValues,
   SealImage,
 } from '../../../../flowAssist';
-import { FlowDisplayDrawer } from '../../../../pages/Workflow/FlowDisplayDrawer';
-import { AddAttachmentModal } from '../../../../pages/WorkflowCaseFormAttachment/AddAttachmentModal';
-import { removeAction } from '../../../../pages/WorkflowCaseFormAttachment/Assist/action';
-import { fieldData as fieldDataWorkflowCaseFormAttachment } from '../../../../pages/WorkflowCaseFormAttachment/Common/data';
-import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../../pages/WorkflowCaseFormAttachment/PreviewDrawer';
-import { SupplementAttachmentModal } from '../../../../pages/WorkflowCaseFormAttachment/SupplementAttachmentModal';
-import { cancelApproveAction } from '../../../../pages/WorkflowCaseProcessHistory/Assist/action';
-import { fieldData as fieldDataWorkflowCaseProcessHistory } from '../../../../pages/WorkflowCaseProcessHistory/Common/data';
-import { PassModal } from '../../../../pages/WorkflowCaseProcessHistory/PassModal';
-import { RefuseModal } from '../../../../pages/WorkflowCaseProcessHistory/RefuseModal';
-import { fieldData as fieldDataWorkflowFormDesign } from '../../../../pages/WorkflowFormDesign/Common/data';
-import { FlowCaseFormDocumentDisplayDrawer } from '../../../../pages/WorkflowFormDesign/FlowCaseFormDocumentDisplayDrawer';
-import { fieldData as fieldDataWorkflowNode } from '../../../../pages/WorkflowNode/Common/data';
+import { FlowDisplayDrawer } from '../../../../pages/general/Workflow/FlowDisplayDrawer';
+import { AddAttachmentModal } from '../../../../pages/general/WorkflowCaseFormAttachment/AddAttachmentModal';
+import { removeAction } from '../../../../pages/general/WorkflowCaseFormAttachment/Assist/action';
+import { fieldData as fieldDataWorkflowCaseFormAttachment } from '../../../../pages/general/WorkflowCaseFormAttachment/Common/data';
+import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../../pages/general/WorkflowCaseFormAttachment/PreviewDrawer';
+import { SupplementAttachmentModal } from '../../../../pages/general/WorkflowCaseFormAttachment/SupplementAttachmentModal';
+import { cancelApproveAction } from '../../../../pages/general/WorkflowCaseProcessHistory/Assist/action';
+import { fieldData as fieldDataWorkflowCaseProcessHistory } from '../../../../pages/general/WorkflowCaseProcessHistory/Common/data';
+import { PassModal } from '../../../../pages/general/WorkflowCaseProcessHistory/PassModal';
+import { RefuseModal } from '../../../../pages/general/WorkflowCaseProcessHistory/RefuseModal';
+import { fieldData as fieldDataWorkflowFormDesign } from '../../../../pages/general/WorkflowFormDesign/Common/data';
+import { FlowCaseFormDocumentDisplayDrawer } from '../../../../pages/general/WorkflowFormDesign/FlowCaseFormDocumentDisplayDrawer';
+import { fieldData as fieldDataWorkflowNode } from '../../../../pages/general/WorkflowNode/Common/data';
 import { getChainAction } from '../../Assist/action';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData } from '../../Common/data';

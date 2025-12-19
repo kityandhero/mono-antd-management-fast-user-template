@@ -15,10 +15,10 @@ import {
   getCurrentOperator,
 } from 'antd-management-fast-framework';
 
-import { getFlowCaseStatusName } from '../../customSpecialComponents';
-import { getFlowCaseStatusBadge } from '../../pageBases';
-import { ApprovalDrawer } from '../../pageBases/WorkflowCase/ApprovalDrawer';
-import { fieldData } from '../WorkflowCaseMadeByMe/Common/data';
+import { getFlowCaseStatusName } from '../../../customSpecialComponents';
+import { getFlowCaseStatusBadge } from '../../../pageBases';
+import { ApprovalDrawer } from '../../../pageBases/WorkflowCase/ApprovalDrawer';
+import { fieldData } from '../../general/WorkflowCaseMadeByMe/Common/data';
 
 import { CaseLatestApproveCount } from './CaseLatestApproveCount';
 import { CaseSubmitCount } from './CaseSubmitCount';

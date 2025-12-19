@@ -29,10 +29,10 @@ import {
   renderFormFlowBranchConditionItemTargetComparisonModeSelect,
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../customSpecialComponents';
-import { singleListAction } from '../../../pages/GeneralDiscourse/Assist/action';
-import { typeCollection } from '../../../pages/GeneralDiscourse/Common/data';
-import { fieldData as fieldDataUser } from '../../../pages/User/Common/data';
-import { singleListNextNodeApproverAction } from '../../../pages/WorkflowDebugCase/Assist/action';
+import { singleListAction } from '../../../pages/general/GeneralDiscourse/Assist/action';
+import { typeCollection } from '../../../pages/general/GeneralDiscourse/Common/data';
+import { fieldData as fieldDataUser } from '../../../pages/general/User/Common/data';
+import { singleListNextNodeApproverAction } from '../../../pages/general/WorkflowDebugCase/Assist/action';
 
 const { BaseUpdateModal } = DataModal;
 

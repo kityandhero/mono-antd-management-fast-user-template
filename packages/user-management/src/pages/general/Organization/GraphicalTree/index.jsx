@@ -7,7 +7,7 @@ import { iconBuilder } from 'antd-management-fast-component';
 import { DataForm } from 'antd-management-fast-framework';
 
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { buildOrganizationGraphConfig } from '../../../utils';
+import { buildOrganizationGraphConfig } from '../../../../utils';
 
 const { BaseUpdateForm } = DataForm;
 

@@ -24,7 +24,7 @@ import {
   flowNodeApproverModeCollection,
   flowNodeTypeCollection,
 } from '../../../../../customConfig';
-import { NodeFooter } from '../../../../flowAssist';
+import { NodeFooter } from '../../../../../flowAssist';
 import { modelTypeCollection } from '../../../../../modelBuilders';
 import { BranchConditionDrawer } from '../../../WorkflowBranchCondition/BranchConditionDrawer';
 import { AddLineDrawer } from '../../../WorkflowLine/AddLineDrawer';

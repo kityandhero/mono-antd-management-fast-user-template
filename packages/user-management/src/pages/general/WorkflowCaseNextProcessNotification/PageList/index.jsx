@@ -10,7 +10,7 @@ import { modelTypeCollection } from '../../../../modelBuilders';
 import {
   BaseFlowCaseNextProcessNotificationPageList,
   WorkflowCase,
-} from '../../../pageBases';
+} from '../../../../pageBases';
 import { refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
 import { WorkflowCaseNextProcessNotificationPreviewDrawer } from '../PreviewDrawer';

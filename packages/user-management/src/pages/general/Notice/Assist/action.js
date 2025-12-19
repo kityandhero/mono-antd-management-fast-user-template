@@ -2,7 +2,7 @@ import { getValueByKey, request } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
-import { updateTitleColorDataApiAddress } from '../../../services/notice';
+import { updateTitleColorDataApiAddress } from '../../../../services/notice';
 import { fieldData } from '../Common/data';
 
 export async function getAction({

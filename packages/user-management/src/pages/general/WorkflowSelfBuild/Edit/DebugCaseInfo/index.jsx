@@ -29,7 +29,7 @@ import {
 } from 'antd-management-fast-design-playground';
 import { Flow, FlowProcessHistory } from 'antd-management-fast-flow';
 
-import { FilePreviewDrawer } from '../../../../components';
+import { FilePreviewDrawer } from '../../../../../components';
 import {
   accessWayCollection,
   emptySignet,
@@ -39,7 +39,7 @@ import {
   flowNodeTypeCollection,
 } from '../../../../../customConfig';
 import { getChannelName } from '../../../../../customSpecialComponents';
-import { adjustFlowCaseDataToState } from '../../../../flowAssist';
+import { adjustFlowCaseDataToState } from '../../../../../flowAssist';
 import { modelTypeCollection } from '../../../../../modelBuilders';
 import {
   buildColumnsCarbonCopyNotification,
@@ -48,7 +48,7 @@ import {
   buildColumnsNextProcessNotification,
   convertProcessHistoryItemData,
   convertProcessHistoryNextData,
-} from '../../../../pageBases';
+} from '../../../../../pageBases';
 import {
   archiveAction,
   cancelArchiveAction,

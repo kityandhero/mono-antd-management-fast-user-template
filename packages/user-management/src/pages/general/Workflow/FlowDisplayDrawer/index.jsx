@@ -17,7 +17,7 @@ import {
   flowLineTypeCollection,
   flowNodeTypeCollection,
 } from '../../../../customConfig';
-import { NodeFooter } from '../../../flowAssist';
+import { NodeFooter } from '../../../../flowAssist';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowLine } from '../../WorkflowLine/Common/data';
 import { fieldData as fieldDataWorkflowNode } from '../../WorkflowNode/Common/data';

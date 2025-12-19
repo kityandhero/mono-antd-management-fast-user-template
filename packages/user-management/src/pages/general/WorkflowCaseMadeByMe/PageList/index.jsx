@@ -22,8 +22,8 @@ import {
   flowCaseStatusCollection,
 } from '../../../../customConfig';
 import { getFlowCaseStatusName } from '../../../../customSpecialComponents';
-import { getFlowCaseStatusBadge, WorkflowCase } from '../../../pageBases';
-import { fieldData } from '../../../pageBases/WorkflowCase/Common/data';
+import { getFlowCaseStatusBadge, WorkflowCase } from '../../../../pageBases';
+import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 // import { PageListCreateCaseDrawer as WorkflowSelfBuildPageListCreateCaseDrawer } from '../../WorkflowSelfBuild/PageListCreateCaseDrawer';
 import { PageListCreateCaseDrawer as WorkflowUsablePageListCreateCaseDrawer } from '../../WorkflowUsable/PageListCreateCaseDrawer';
 

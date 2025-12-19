@@ -29,7 +29,7 @@ import {
   renderSearchFlowStatusSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { getFlowStatusBadge } from '../../../utils';
+import { getFlowStatusBadge } from '../../../../utils';
 import { ChangeSortModal } from '../../Workflow/ChangeSortModal';
 import { FlowCaseFormExampleDocumentDisplayDrawer } from '../../WorkflowFormDesign/FlowCaseFormExampleDocumentDisplayDrawer';
 import { refreshCacheAction } from '../Assist/action';

@@ -49,14 +49,14 @@ import {
   flowNodeTypeCollection,
   signetStyle,
 } from '../../../customConfig';
-import { FlowDisplayDrawer } from '../../../pages/Workflow/FlowDisplayDrawer';
-import { AddAttachmentModal } from '../../../pages/WorkflowCaseFormAttachment/AddAttachmentModal';
-import { removeAction } from '../../../pages/WorkflowCaseFormAttachment/Assist/action';
-import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../pages/WorkflowCaseFormAttachment/PreviewDrawer';
-import { cancelApproveAction } from '../../../pages/WorkflowCaseProcessHistory/Assist/action';
-import { PassModal } from '../../../pages/WorkflowCaseProcessHistory/PassModal';
-import { RefuseModal } from '../../../pages/WorkflowCaseProcessHistory/RefuseModal';
-import { FlowCaseFormDocumentDisplayDrawer } from '../../../pages/WorkflowFormDesign/FlowCaseFormDocumentDisplayDrawer';
+import { FlowDisplayDrawer } from '../../../pages/general/Workflow/FlowDisplayDrawer';
+import { AddAttachmentModal } from '../../../pages/general/WorkflowCaseFormAttachment/AddAttachmentModal';
+import { removeAction } from '../../../pages/general/WorkflowCaseFormAttachment/Assist/action';
+import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../pages/general/WorkflowCaseFormAttachment/PreviewDrawer';
+import { cancelApproveAction } from '../../../pages/general/WorkflowCaseProcessHistory/Assist/action';
+import { PassModal } from '../../../pages/general/WorkflowCaseProcessHistory/PassModal';
+import { RefuseModal } from '../../../pages/general/WorkflowCaseProcessHistory/RefuseModal';
+import { FlowCaseFormDocumentDisplayDrawer } from '../../../pages/general/WorkflowFormDesign/FlowCaseFormDocumentDisplayDrawer';
 import { buildFlowCaseFormInitialValues } from '../../../utils';
 import { BaseFlowCaseApprovalDrawer } from '../../FlowCase';
 import { getChainAction, submitApprovalAction } from '../Assist/action';

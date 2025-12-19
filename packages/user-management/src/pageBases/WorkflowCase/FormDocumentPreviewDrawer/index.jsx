@@ -16,7 +16,7 @@ import {
   flowCaseStatusCollection,
 } from '../../../customConfig';
 import { modelTypeCollection } from '../../../modelBuilders';
-import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../pages/WorkflowCaseFormAttachment/PreviewDrawer';
+import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../../pages/general/WorkflowCaseFormAttachment/PreviewDrawer';
 import { BaseFlowCaseFormDocumentPreviewDrawer } from '../..';
 import { getChainAction } from '../Assist/action';
 import { fieldData as fieldDataWorkflowCase } from '../Common/data';

@@ -30,7 +30,7 @@ import {
 
 import { accessWayCollection } from '../../../../../customConfig';
 import { modelTypeCollection } from '../../../../../modelBuilders';
-import { FlowCaseFormDocumentDesignDrawer } from '../../../../pageBases';
+import { FlowCaseFormDocumentDesignDrawer } from '../../../../../pageBases';
 import { fieldData as fieldDataWorkflowFormDesign } from '../../../WorkflowFormDesign/Common/data';
 import { DesignDrawer } from '../../../WorkflowFormDesign/DesignDrawer';
 import { RemarkEditDrawer } from '../../../WorkflowFormDesign/RemarkEditDrawer';

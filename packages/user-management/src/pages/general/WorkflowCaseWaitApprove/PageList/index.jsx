@@ -4,8 +4,8 @@ import { checkHasAuthority, getValueByKey } from 'easy-soft-utility';
 import { iconBuilder } from 'antd-management-fast-component';
 
 import { accessWayCollection } from '../../../../customConfig';
-import { WorkflowCase } from '../../../pageBases';
-import { fieldData } from '../../../pageBases/WorkflowCase/Common/data';
+import { WorkflowCase } from '../../../../pageBases';
+import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 
 const { PageList: PageListWorkflowCase } = WorkflowCase;
 

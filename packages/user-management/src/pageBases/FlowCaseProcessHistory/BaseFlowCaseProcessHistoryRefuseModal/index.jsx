@@ -27,8 +27,8 @@ import {
   renderFormFlowBranchConditionItemTargetComparisonModeSelect,
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../customSpecialComponents';
-import { singleListAction } from '../../../pages/GeneralDiscourse/Assist/action';
-import { typeCollection } from '../../../pages/GeneralDiscourse/Common/data';
+import { singleListAction } from '../../../pages/general/GeneralDiscourse/Assist/action';
+import { typeCollection } from '../../../pages/general/GeneralDiscourse/Common/data';
 
 const { BaseUpdateModal } = DataModal;
 

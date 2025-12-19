@@ -4,7 +4,7 @@ import { checkHasAuthority } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
-import { BaseFlowCasePageListUnderwayDrawer } from '../../../pageBases';
+import { BaseFlowCasePageListUnderwayDrawer } from '../../../../pageBases';
 import { forceEndAction, refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
 

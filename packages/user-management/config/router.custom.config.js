@@ -25,7 +25,7 @@ export const dashboard = {
       redirect: '/dashboard/workbench',
     },
     {
-      component: './Workbench',
+      component: './custom/Workbench',
       icon: 'bars',
       name: 'workbench',
       path: '/dashboard/workbench',
