@@ -1,17 +1,18 @@
+import { dashboard, root } from './router.custom.config';
 import {
   currentAccount,
-  dashboard,
   enterprise,
+  entrance,
   flow,
   flowCase,
+  notFound,
   notice,
   organization,
   permission,
   person,
-  root,
+  result,
   subsidiaryMessages,
-} from './router.custom.config';
-import { entrance, notFound, result } from './router.general.config';
+} from './router.general.config';
 
 export default [
   entrance,
