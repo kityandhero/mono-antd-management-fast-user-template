@@ -15,6 +15,7 @@ import {
 } from 'antd-management-fast-component';
 import { DataSingleView } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { parseUrlParametersForSetState } from '../Assist/config';
 import { fieldData } from '../Common/data';
 
@@ -33,7 +34,7 @@ class Detail extends DataLoad {
     this.state = {
       ...this.state,
       pageTitle: '通告详情',
-      loadApiPath: 'notice/get',
+      loadApiPath: modelTypeCollection.noticeTypeCollection.get,
       parentId: '',
       parentName: '',
     };

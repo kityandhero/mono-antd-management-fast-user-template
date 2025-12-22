@@ -10,6 +10,7 @@ import {
 } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig/accessWayCollection';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseVerticalFlexDrawer } = DataDrawer;
@@ -32,7 +33,7 @@ class ModuleTreeDrawer extends BaseVerticalFlexDrawer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'presetRole/listTreeModule',
+      loadApiPath: modelTypeCollection.presetRoleTypeCollection.listTreeModule,
       defaultExpandedKeys: [],
     };
   }

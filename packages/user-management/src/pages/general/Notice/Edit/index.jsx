@@ -13,6 +13,7 @@ import {
   DataTabContainerSupplement,
   getNoticeStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import {
   refreshCacheAction,
   setOfflineAction,
@@ -79,7 +80,7 @@ class Detail extends DataTabContainerSupplement {
     this.state = {
       ...this.state,
       pageTitle: '',
-      loadApiPath: 'notice/get',
+      loadApiPath: modelTypeCollection.noticeTypeCollection.get,
       backPath: `/notice/pageList/key`,
       noticeId: null,
     };

@@ -16,6 +16,7 @@ import {
 
 import { accessWayCollection } from '../../../../../customConfig';
 import { buildUpdateTimeAndOperatorFieldItem } from '../../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { updateTitleColorAction } from '../../Assist/action';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData } from '../../Common/data';
@@ -33,8 +34,8 @@ class BasicInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'notice/get',
-      submitApiPath: 'notice/updateBasicInfo',
+      loadApiPath: modelTypeCollection.noticeTypeCollection.get,
+      submitApiPath: modelTypeCollection.noticeTypeCollection.updateBasicInfo,
       noticeId: null,
       image: '',
       titleColor: '',

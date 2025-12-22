@@ -12,6 +12,7 @@ import { iconBuilder } from 'antd-management-fast-component';
 import { MobileContainor } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../../customConfig';
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData } from '../../Common/data';
 import { TabPageBase } from '../../TabPageBase';
@@ -34,8 +35,8 @@ class ContentInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'notice/get',
-      submitApiPath: 'notice/updateContentInfo',
+      loadApiPath: modelTypeCollection.noticeTypeCollection.get,
+      submitApiPath: modelTypeCollection.noticeTypeCollection.updateContentInfo,
       noticeId: null,
       initContent: '',
       contentPreview: '',

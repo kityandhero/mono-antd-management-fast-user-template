@@ -27,6 +27,7 @@ import {
   getNoticeStatusName,
   renderSearchNoticeStatusSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataNoticeTagRelation } from '../../NoticeTagRelation/Common/data';
 import { AddModal } from '../AddModal';
 import {
@@ -54,7 +55,7 @@ class PageList extends MultiPage {
       ...this.state,
       pageTitle: '通知公告列表',
       paramsKey: accessWayCollection.notice.pageList.paramsKey,
-      loadApiPath: 'notice/pageList',
+      loadApiPath: modelTypeCollection.noticeTypeCollection.pageList,
       dateRangeFieldName: '创建时间',
       currentRecord: null,
     };

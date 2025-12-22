@@ -17,6 +17,7 @@ import {
 
 import { fileTypeCollection } from '../../../../customConfig';
 import { getCloudStorageStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseLoadDrawer } = DataDrawer;
@@ -40,7 +41,7 @@ class PreviewDrawer extends BaseLoadDrawer {
     this.state = {
       ...this.state,
       pageTitle: '附件详细',
-      loadApiPath: 'noticeAttachment/get',
+      loadApiPath: modelTypeCollection.noticeAttachmentTypeCollection.get,
     };
   }
 

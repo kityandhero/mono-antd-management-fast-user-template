@@ -16,6 +16,7 @@ import { DataMultiPageView } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../../../customConfig';
 import { getFileTypeName } from '../../../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../../../modelBuilders';
 import {
   refreshCacheAction,
   removeAction,
@@ -39,7 +40,7 @@ class PageList extends InnerMultiPage {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'noticeAttachment/pageList',
+      loadApiPath: modelTypeCollection.noticeAttachmentTypeCollection.pageList,
       noticeId: null,
       currentRecord: null,
     };

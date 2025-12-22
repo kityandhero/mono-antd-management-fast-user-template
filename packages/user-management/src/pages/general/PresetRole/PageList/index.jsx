@@ -19,6 +19,7 @@ import {
   getChannelName,
   getPresetRoleStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { refreshCacheAction } from '../Assist/action';
 import { parseUrlParametersForSetState } from '../Assist/config';
 import { getStatusBadge } from '../Assist/tools';
@@ -39,7 +40,7 @@ class PageList extends MultiPage {
       ...this.state,
       paramsKey: accessWayCollection.presetRole.pageList.paramsKey,
       pageTitle: '预设角色列表',
-      loadApiPath: 'presetRole/pageList',
+      loadApiPath: modelTypeCollection.presetRoleTypeCollection.pageList,
     };
   }
 
