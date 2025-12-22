@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function addBasicInfoAction({
@@ -11,7 +12,8 @@ export async function addBasicInfoAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'workflowDebugCaseFormAttachment/addBasicInfo',
+    api: modelTypeCollection.workflowDebugCaseFormAttachmentTypeCollection
+      .addBasicInfo,
     params: handleData,
     target,
     handleData,
@@ -27,7 +29,8 @@ export async function removeAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'workflowDebugCaseFormAttachment/remove',
+    api: modelTypeCollection.workflowDebugCaseFormAttachmentTypeCollection
+      .remove,
     params: {
       workflowDebugCaseFormAttachmentId: getValueByKey({
         data: handleData,
@@ -50,7 +53,8 @@ export async function removeConfirmAction({
   confirmActionCore({
     title: `移除附件`,
     content: `即将移除附件，确定吗？`,
-    api: 'workflowDebugCaseFormAttachment/remove',
+    api: modelTypeCollection.workflowDebugCaseFormAttachmentTypeCollection
+      .remove,
     params: {
       workflowDebugCaseFormAttachmentId: getValueByKey({
         data: handleData,
@@ -71,7 +75,8 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowDebugCaseFormAttachment/refreshCache',
+    api: modelTypeCollection.workflowDebugCaseFormAttachmentTypeCollection
+      .refreshCache,
     params: {
       workflowDebugCaseFormAttachmentId: getValueByKey({
         data: handleData,

@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function addBasicInfoAction({
@@ -11,7 +12,7 @@ export async function addBasicInfoAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCase/addBasicInfo',
+    api: modelTypeCollection.workflowCaseTypeCollection.addBasicInfo,
     params: {
       workflowId: getValueByKey({
         data: handleData,
@@ -32,28 +33,7 @@ export async function submitApprovalAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCase/submitApproval',
-    params: {
-      workflowCaseId: getValueByKey({
-        data: handleData,
-        key: fieldData.workflowCaseId.name,
-      }),
-    },
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
-export async function removeAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage,
-}) {
-  actionCore({
-    api: 'workflowCase/remove',
+    api: modelTypeCollection.workflowCaseTypeCollection.submitApproval,
     params: {
       workflowCaseId: getValueByKey({
         data: handleData,
@@ -74,7 +54,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCase/refreshCache',
+    api: modelTypeCollection.workflowCaseTypeCollection.refreshCache,
     params: {
       workflowCaseId: getValueByKey({
         data: handleData,

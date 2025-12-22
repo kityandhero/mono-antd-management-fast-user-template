@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function addBasicInfoAction({
@@ -11,7 +12,7 @@ export async function addBasicInfoAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'cloudStorage/addBasicInfo',
+    api: modelTypeCollection.cloudStorageTypeCollection.addBasicInfo,
     params: handleData,
     target,
     handleData,
@@ -27,7 +28,7 @@ export function removeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'cloudStorage/remove',
+    api: modelTypeCollection.cloudStorageTypeCollection.remove,
     params: {
       cloudStorageId: getValueByKey({
         data: handleData,
@@ -48,7 +49,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'cloudStorage/refreshCache',
+    api: modelTypeCollection.cloudStorageTypeCollection.refreshCache,
     params: {
       cloudStorageId: getValueByKey({
         data: handleData,

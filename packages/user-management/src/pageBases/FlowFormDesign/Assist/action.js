@@ -3,6 +3,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 import { actionCore } from 'antd-management-fast-common';
 
 import { fieldDataFlowFormDesign } from '../../../customConfig';
+import { modelTypeCollection } from '../../../modelBuilders';
 
 export async function getByWorkflowAction({
   target,
@@ -11,7 +12,7 @@ export async function getByWorkflowAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowFormDesign/getByWorkflow',
+    api: modelTypeCollection.workflowFormDesignTypeCollection.getByWorkflow,
     params: {
       workflowId: getValueByKey({
         data: handleData,
@@ -34,7 +35,8 @@ export async function updateDocumentSchemaAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowFormDesign/updateDocumentSchema',
+    api: modelTypeCollection.workflowFormDesignTypeCollection
+      .updateDocumentSchema,
     params: handleData,
     target,
     handleData,
@@ -50,7 +52,8 @@ export async function updateRemarkSchemaAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowFormDesign/updateRemarkSchema',
+    api: modelTypeCollection.workflowFormDesignTypeCollection
+      .updateRemarkSchema,
     params: handleData,
     target,
     handleData,
@@ -66,7 +69,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowLine/refreshCache',
+    api: modelTypeCollection.workflowFormDesignTypeCollection.refreshCache,
     params: {
       workflowFormDesignId: getValueByKey({
         data: handleData,

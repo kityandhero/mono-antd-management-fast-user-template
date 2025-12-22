@@ -35,7 +35,7 @@ export function addBasicInfoAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowNodeApprover/addBasicInfo',
+    api: modelTypeCollection.workflowNodeApproverTypeCollection.addBasicInfo,
     params: handleData || {},
     target,
     handleData,
@@ -54,7 +54,7 @@ export async function removeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowNodeApprover/remove',
+    api: modelTypeCollection.workflowNodeApproverTypeCollection.remove,
     params: {
       workflowNodeApproverId: getValueByKey({
         data: handleData,
@@ -77,7 +77,7 @@ export async function removeConfirmAction({
   confirmActionCore({
     title: `移除流程节点审批人`,
     content: `即将流程节点审批人, 确定吗？`,
-    api: 'workflowNodeApprover/remove',
+    api: modelTypeCollection.workflowNodeApproverTypeCollection.remove,
     params: {
       workflowNodeApproverId: getValueByKey({
         data: handleData,
@@ -98,7 +98,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowNodeApprover/refreshCache',
+    api: modelTypeCollection.workflowNodeApproverTypeCollection.refreshCache,
     params: {
       workflowNodeApproverId: getValueByKey({
         data: handleData,

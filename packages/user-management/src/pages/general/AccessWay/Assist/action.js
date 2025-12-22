@@ -5,6 +5,7 @@ import {
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function testPermissionAction({
@@ -13,7 +14,7 @@ export async function testPermissionAction({
   successCallback,
 }) {
   actionCore({
-    api: 'accessWay/testPermissionAction',
+    api: modelTypeCollection.accessWayTypeCollection.testPermissionAction,
     params: {},
     target,
     handleData,
@@ -38,7 +39,7 @@ export async function removeAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'accessWay/remove',
+    api: modelTypeCollection.accessWayTypeCollection.remove,
     params: {
       accessWayId: getValueByKey({
         data: handleData,
@@ -59,7 +60,7 @@ export async function refreshCacheAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'accessWay/refreshCache',
+    api: modelTypeCollection.accessWayTypeCollection.refreshCache,
     params: {
       accessWayId: getValueByKey({
         data: handleData,

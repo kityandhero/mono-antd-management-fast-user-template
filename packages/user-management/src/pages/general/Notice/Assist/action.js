@@ -2,7 +2,7 @@ import { getValueByKey, request } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
-import { updateTitleColorDataApiAddress } from '../../../../services/notice';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function getAction({
@@ -12,7 +12,7 @@ export async function getAction({
   successMessage,
 }) {
   actionCore({
-    api: 'notice/get',
+    api: modelTypeCollection.noticeTypeCollection.get,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -29,7 +29,7 @@ export async function getAction({
 
 export function updateTitleColorAction({ handleData }) {
   request({
-    api: updateTitleColorDataApiAddress,
+    api: modelTypeCollection.noticeTypeCollection.updateTitleColor,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -52,7 +52,7 @@ export async function setTargetModeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'notice/setTargetMode',
+    api: modelTypeCollection.noticeTypeCollection.setTargetMode,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -79,7 +79,7 @@ export async function setOnlineAction({
   successMessage,
 }) {
   actionCore({
-    api: 'notice/setOnline',
+    api: modelTypeCollection.noticeTypeCollection.setOnline,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -100,7 +100,7 @@ export async function setOfflineAction({
   successMessage,
 }) {
   actionCore({
-    api: 'notice/setOffline',
+    api: modelTypeCollection.noticeTypeCollection.setOffline,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -121,7 +121,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'notice/refreshCache',
+    api: modelTypeCollection.noticeTypeCollection.refreshCache,
     params: {
       noticeId: getValueByKey({
         data: handleData,

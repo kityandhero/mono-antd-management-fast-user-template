@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function toggleSignetPasswordSwitchAction({
@@ -12,7 +13,7 @@ export async function toggleSignetPasswordSwitchAction({
   failCallback = null,
 }) {
   actionCore({
-    api: 'user/toggleSignetPasswordSwitch',
+    api: modelTypeCollection.userTypeCollection.toggleSignetPasswordSwitch,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -34,7 +35,7 @@ export async function openSignetPasswordSwitchAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/openSignetPasswordSwitch',
+    api: modelTypeCollection.userTypeCollection.openSignetPasswordSwitch,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -55,7 +56,7 @@ export async function closeSignetPasswordSwitchAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/closeSignetPasswordSwitch',
+    api: modelTypeCollection.userTypeCollection.closeSignetPasswordSwitch,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -76,7 +77,7 @@ export async function clearParentAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/clearParent',
+    api: modelTypeCollection.userTypeCollection.clearParent,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -97,7 +98,7 @@ export async function setEnableAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/setEnable',
+    api: modelTypeCollection.userTypeCollection.setEnable,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -118,7 +119,7 @@ export async function setDisableAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/setDisable',
+    api: modelTypeCollection.userTypeCollection.setDisable,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -139,7 +140,7 @@ export async function removeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/remove',
+    api: modelTypeCollection.userTypeCollection.remove,
     params: {
       userId: getValueByKey({
         data: handleData,
@@ -160,7 +161,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'user/refreshCache',
+    api: modelTypeCollection.userTypeCollection.refreshCache,
     params: {
       userId: getValueByKey({
         data: handleData,

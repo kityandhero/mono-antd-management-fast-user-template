@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData, statusCollection } from '../Common/data';
 
 export async function singleListAction({
@@ -11,7 +12,7 @@ export async function singleListAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'generalDiscourse/singleList',
+    api: modelTypeCollection.generalDiscourseTypeCollection.singleList,
     params: {
       ...handleData,
       status: statusCollection.enable,
@@ -24,69 +25,6 @@ export async function singleListAction({
   });
 }
 
-export function setEnableAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage = null,
-}) {
-  actionCore({
-    api: 'generalDiscourse/setEnable',
-    params: {
-      generalDiscourseId: getValueByKey({
-        data: handleData,
-        key: fieldData.generalDiscourseId.name,
-      }),
-    },
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
-export function setDisableAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage = null,
-}) {
-  actionCore({
-    api: 'generalDiscourse/setDisable',
-    params: {
-      generalDiscourseId: getValueByKey({
-        data: handleData,
-        key: fieldData.generalDiscourseId.name,
-      }),
-    },
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
-export function removeAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage = null,
-}) {
-  actionCore({
-    api: 'generalDiscourse/remove',
-    params: {
-      generalDiscourseId: getValueByKey({
-        data: handleData,
-        key: fieldData.generalDiscourseId.name,
-      }),
-    },
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
 export async function refreshCacheAction({
   target,
   handleData,
@@ -94,7 +32,7 @@ export async function refreshCacheAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'generalDiscourse/refreshCache',
+    api: modelTypeCollection.generalDiscourseTypeCollection.refreshCache,
     params: {
       generalDiscourseId: getValueByKey({
         data: handleData,

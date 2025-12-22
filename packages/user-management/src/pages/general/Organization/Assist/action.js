@@ -1,5 +1,7 @@
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
+
 export async function getGraphicalTreeAction({
   target,
   handleData,
@@ -8,7 +10,7 @@ export async function getGraphicalTreeAction({
   failCallback = null,
 }) {
   actionCore({
-    api: 'organization/getGraphicalTree',
+    api: modelTypeCollection.organizationTypeCollection.getGraphicalTree,
     params: {},
     target,
     handleData,

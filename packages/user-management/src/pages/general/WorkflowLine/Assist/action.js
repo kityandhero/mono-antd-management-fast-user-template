@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function removeConfirmAction({
@@ -13,7 +14,7 @@ export async function removeConfirmAction({
   confirmActionCore({
     title: `移除流程线`,
     content: `即将移除流程线，确定吗？`,
-    api: 'workflowLine/remove',
+    api: modelTypeCollection.workflowLineTypeCollection.remove,
     params: {
       workflowLineId: getValueByKey({
         data: handleData,
@@ -34,7 +35,7 @@ export async function removeAllAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'workflowLine/removeAll',
+    api: modelTypeCollection.workflowLineTypeCollection.removeAll,
     params: {
       workflowId: getValueByKey({
         data: handleData,
@@ -55,7 +56,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowLine/refreshCache',
+    api: modelTypeCollection.workflowLineTypeCollection.refreshCache,
     params: {
       workflowLineId: getValueByKey({
         data: handleData,

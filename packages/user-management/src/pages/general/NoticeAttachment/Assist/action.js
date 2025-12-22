@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function addAction({
@@ -11,50 +12,8 @@ export async function addAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'noticeAttachment/add',
+    api: modelTypeCollection.noticeAttachmentTypeCollection.add,
     params: handleData,
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
-export async function setOnlineAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage,
-}) {
-  actionCore({
-    api: 'noticeAttachment/setOnline',
-    params: {
-      noticeAttachmentId: getValueByKey({
-        data: handleData,
-        key: fieldData.noticeAttachmentId.name,
-      }),
-    },
-    target,
-    handleData,
-    successCallback,
-    successMessage,
-  });
-}
-
-export async function setOfflineAction({
-  target,
-  handleData,
-  successCallback,
-  successMessage,
-}) {
-  actionCore({
-    api: 'noticeAttachment/setOffline',
-    params: {
-      noticeAttachmentId: getValueByKey({
-        data: handleData,
-        key: fieldData.noticeAttachmentId.name,
-      }),
-    },
     target,
     handleData,
     successCallback,
@@ -69,7 +28,7 @@ export async function removeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'noticeAttachment/remove',
+    api: modelTypeCollection.noticeAttachmentTypeCollection.remove,
     params: {
       noticeAttachmentId: getValueByKey({
         data: handleData,
@@ -90,7 +49,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'noticeAttachment/refreshCache',
+    api: modelTypeCollection.noticeAttachmentTypeCollection.refreshCache,
     params: {
       noticeAttachmentId: getValueByKey({
         data: handleData,

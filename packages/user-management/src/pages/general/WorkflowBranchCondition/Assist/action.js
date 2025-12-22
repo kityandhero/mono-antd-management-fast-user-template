@@ -2,6 +2,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 
 import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function singleListAction({
@@ -11,7 +12,7 @@ export async function singleListAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowBranchCondition/singleList',
+    api: modelTypeCollection.workflowBranchConditionTypeCollection.singleList,
     params: {
       workflowNodeId: getValueByKey({
         data: handleData,
@@ -36,7 +37,7 @@ export async function removeConfirmAction({
   confirmActionCore({
     title: `移除条件`,
     content: `即将移除条件，确定吗？`,
-    api: 'workflowBranchCondition/remove',
+    api: modelTypeCollection.workflowBranchConditionTypeCollection.remove,
     params: {
       workflowBranchConditionId: getValueByKey({
         data: handleData,
@@ -57,7 +58,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowBranchCondition/refreshCache',
+    api: modelTypeCollection.workflowBranchConditionTypeCollection.refreshCache,
     params: {
       workflowBranchConditionId: getValueByKey({
         data: handleData,

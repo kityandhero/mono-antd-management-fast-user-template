@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function addAction({
@@ -11,7 +12,7 @@ export async function addAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'noticeUserRelation/add',
+    api: modelTypeCollection.noticeUserRelationTypeCollection.add,
     params: handleData,
     target,
     handleData,
@@ -27,7 +28,7 @@ export async function addBatchAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'noticeUserRelation/addBatch',
+    api: modelTypeCollection.noticeUserRelationTypeCollection.addBatch,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -54,7 +55,7 @@ export async function removeAction({
   successMessage,
 }) {
   actionCore({
-    api: 'noticeUserRelation/remove',
+    api: modelTypeCollection.noticeUserRelationTypeCollection.remove,
     params: {
       noticeId: getValueByKey({
         data: handleData,
@@ -81,7 +82,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'noticeUserRelation/refreshCache',
+    api: modelTypeCollection.noticeUserRelationTypeCollection.refreshCache,
     params: {
       noticeUserRelationId: getValueByKey({
         data: handleData,

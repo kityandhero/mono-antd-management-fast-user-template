@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export function singleTreeListAction({
@@ -11,7 +12,7 @@ export function singleTreeListAction({
   successMessage,
 }) {
   actionCore({
-    api: 'department/singleTreeList',
+    api: modelTypeCollection.departmentTypeCollection.singleTreeList,
     params: {
       ...handleData,
     },
@@ -29,7 +30,7 @@ export async function setNormalAction({
   successMessage,
 }) {
   actionCore({
-    api: 'department/setNormal',
+    api: modelTypeCollection.departmentTypeCollection.setNormal,
     params: {
       departmentId: getValueByKey({
         data: handleData,
@@ -50,7 +51,7 @@ export async function setInvalidAction({
   successMessage,
 }) {
   actionCore({
-    api: 'department/setInvalid',
+    api: modelTypeCollection.departmentTypeCollection.setInvalid,
     params: {
       departmentId: getValueByKey({
         data: handleData,
@@ -71,7 +72,7 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'department/refreshCache',
+    api: modelTypeCollection.departmentTypeCollection.refreshCache,
     params: {
       departmentId: getValueByKey({
         data: handleData,

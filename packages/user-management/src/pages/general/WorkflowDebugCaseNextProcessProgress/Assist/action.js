@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function refreshCacheAction({
@@ -11,7 +12,8 @@ export async function refreshCacheAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'workflowDebugCaseNextProcessProgress/refreshCache',
+    api: modelTypeCollection.workflowDebugCaseNextProcessProgressTypeCollection
+      .refreshCache,
     params: {
       workflowDebugCaseNextProcessProgressId: getValueByKey({
         data: handleData,

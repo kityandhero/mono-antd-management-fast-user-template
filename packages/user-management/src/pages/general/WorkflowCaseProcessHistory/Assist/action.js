@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 export async function passAction({
@@ -11,7 +12,7 @@ export async function passAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCaseProcessHistory/pass',
+    api: modelTypeCollection.workflowCaseProcessHistoryTypeCollection.pass,
     params: {
       flowCaseId: getValueByKey({
         data: handleData,
@@ -37,7 +38,7 @@ export async function refuseAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCaseProcessHistory/refuse',
+    api: modelTypeCollection.workflowCaseProcessHistoryTypeCollection.refuse,
     params: {
       flowCaseId: getValueByKey({
         data: handleData,
@@ -63,7 +64,8 @@ export async function cancelApproveAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCaseProcessHistory/cancelApprove',
+    api: modelTypeCollection.workflowCaseProcessHistoryTypeCollection
+      .cancelApprove,
     params: {
       flowCaseId: getValueByKey({
         data: handleData,
@@ -89,7 +91,8 @@ export async function refreshCacheAction({
   successMessage,
 }) {
   actionCore({
-    api: 'workflowCaseProcessHistory/refreshCache',
+    api: modelTypeCollection.workflowCaseProcessHistoryTypeCollection
+      .refreshCache,
     params: {
       workflowCaseProcessHistoryId: getValueByKey({
         data: handleData,

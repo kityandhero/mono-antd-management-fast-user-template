@@ -2,6 +2,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData, statusCollection } from '../Common/data';
 
 export async function singleListAction({
@@ -11,7 +12,7 @@ export async function singleListAction({
   successMessage,
 }) {
   actionCore({
-    api: 'userGeneralDiscourse/singleList',
+    api: modelTypeCollection.userGeneralDiscourseTypeCollection.singleList,
     params: {
       ...handleData,
       status: statusCollection.enable,
@@ -32,7 +33,7 @@ export function setEnableAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'userGeneralDiscourse/setEnable',
+    api: modelTypeCollection.userGeneralDiscourseTypeCollection.setEnable,
     params: {
       userGeneralDiscourseId: getValueByKey({
         data: handleData,
@@ -53,7 +54,7 @@ export function setDisableAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'userGeneralDiscourse/setDisable',
+    api: modelTypeCollection.userGeneralDiscourseTypeCollection.setDisable,
     params: {
       userGeneralDiscourseId: getValueByKey({
         data: handleData,
@@ -74,7 +75,7 @@ export function removeAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'userGeneralDiscourse/remove',
+    api: modelTypeCollection.userGeneralDiscourseTypeCollection.remove,
     params: {
       userGeneralDiscourseId: getValueByKey({
         data: handleData,
@@ -95,7 +96,7 @@ export async function refreshCacheAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'userGeneralDiscourse/refreshCache',
+    api: modelTypeCollection.userGeneralDiscourseTypeCollection.refreshCache,
     params: {
       userGeneralDiscourseId: getValueByKey({
         data: handleData,

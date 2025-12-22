@@ -3,6 +3,8 @@
 
 import { actionCore } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../modelBuilders';
+
 export async function listSelectAction({
   target,
   handleData,
@@ -10,7 +12,7 @@ export async function listSelectAction({
   successMessage = null,
 }) {
   actionCore({
-    api: 'presetRole/listSelect',
+    api: modelTypeCollection.presetRoleTypeCollection.listSelect,
     params: handleData,
     target,
     handleData,
