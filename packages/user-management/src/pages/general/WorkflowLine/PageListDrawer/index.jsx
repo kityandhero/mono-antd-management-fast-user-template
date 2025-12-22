@@ -22,6 +22,7 @@ import {
   getFlowLineStatusName,
   getFlowLineTypeName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { refreshCacheAction } from '../Assist/action';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
@@ -50,7 +51,7 @@ class PageListDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '流程线条列表',
-      loadApiPath: 'workflowLine/pageList',
+      loadApiPath: modelTypeCollection.workflowLineTypeCollection.pageList,
       tableScrollX: 1480,
     };
   }

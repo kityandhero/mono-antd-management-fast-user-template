@@ -8,6 +8,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseUpdateDrawer } = DataDrawer;
@@ -29,8 +30,9 @@ class Index extends BaseUpdateDrawer {
     this.state = {
       ...this.state,
       pageTitle: '编辑常用语信息',
-      loadApiPath: 'userGeneralDiscourse/get',
-      submitApiPath: 'userGeneralDiscourse/updateBasicInfo',
+      loadApiPath: modelTypeCollection.userGeneralDiscourseTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.userGeneralDiscourseTypeCollection.updateBasicInfo,
     };
   }
 

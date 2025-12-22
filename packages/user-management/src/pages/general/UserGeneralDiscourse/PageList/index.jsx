@@ -28,6 +28,7 @@ import {
   getUserGeneralDiscourseStatusName,
   renderSearchGeneralDiscourseTypeSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import AddBasicInfoDrawer from '../AddBasicInfoDrawer';
 import {
   refreshCacheAction,
@@ -54,7 +55,8 @@ class PageList extends MultiPage {
       ...this.state,
       paramsKey: accessWayCollection.userGeneralDiscourse.pageList.paramsKey,
       pageTitle: '我的常用语列表',
-      loadApiPath: 'userGeneralDiscourse/pageList',
+      loadApiPath:
+        modelTypeCollection.userGeneralDiscourseTypeCollection.pageList,
       currentRecord: null,
     };
   }

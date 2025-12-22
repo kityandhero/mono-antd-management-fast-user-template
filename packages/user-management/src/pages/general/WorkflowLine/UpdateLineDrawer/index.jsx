@@ -13,6 +13,7 @@ import {
   renderFormFlowLineToPositionSelect,
   renderFormFlowLineTypeSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowNode } from '../../WorkflowNode/Common/data';
 import { FromNodeSelectModalField } from '../../WorkflowNode/FromNodeSelectModalField';
 import { ToNodeSelectModalField } from '../../WorkflowNode/ToNodeSelectModalField';
@@ -37,8 +38,8 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
     this.state = {
       ...this.state,
       pageTitle: '更新流程线',
-      loadApiPath: 'workflowLine/get',
-      submitApiPath: 'workflowLine/updateLine',
+      loadApiPath: modelTypeCollection.workflowLineTypeCollection.get,
+      submitApiPath: modelTypeCollection.workflowLineTypeCollection.updateLine,
       fromId: '',
       fromName: '',
       toId: '',
