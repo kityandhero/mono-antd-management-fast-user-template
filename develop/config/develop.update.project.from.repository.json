@@ -1,6 +1,6 @@
 {
-  "repository": "https://codeload.github.com/kityandhero/mono-taro-fast-framework-template/zip/refs/heads/main",
-  "sourcePath": "mono-taro-fast-framework-template-main/packages/application/",
+  "repository": "https://codeload.github.com/kityandhero/mono-antd-management-fast-template/zip/refs/heads/main",
+  "sourcePath": "mono-antd-management-fast-template-main/packages/management/",
   "targetPath": "packages/application/",
   "syncFolders": [
     "generatorTemplate/",
