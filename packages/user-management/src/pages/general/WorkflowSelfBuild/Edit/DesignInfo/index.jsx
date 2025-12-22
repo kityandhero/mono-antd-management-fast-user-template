@@ -40,12 +40,8 @@ import { AddIntermediatePointDrawer } from '../../../WorkflowNode/AddIntermediat
 import {
   addEndPointAction,
   addStartPointAction,
-  clearBackwardIdAction,
-  clearForwardIdAction,
   refreshCacheAction as refreshNodeCacheAction,
   removeConfirmAction as removeNodeConfirmAction,
-  updateBackwardIdAction,
-  updateForwardIdAction,
   updateViewConfigAction,
 } from '../../../WorkflowNode/Assist/action';
 import { ChangeBackwardModal } from '../../../WorkflowNode/ChangeBackwardModal';
@@ -361,65 +357,6 @@ class Index extends TabPageBase {
       },
       successCallback: ({ target }) => {
         target.reloadData({});
-      },
-    });
-  };
-
-  updateForwardId = (o) => {
-    const { sourceNodeId: workflowNodeId, targetNodeId: forwardId } = o;
-
-    updateForwardIdAction({
-      target: this,
-      handleData: {
-        workflowNodeId,
-        forwardId,
-      },
-      successCallback: ({ target, remoteData }) => {
-        target.setState({ metaData: remoteData });
-      },
-    });
-  };
-
-  clearForwardId = (o) => {
-    const { sourceNodeId: workflowNodeId } = o;
-
-    clearForwardIdAction({
-      target: this,
-      handleData: {
-        workflowNodeId,
-      },
-
-      successCallback: ({ target, remoteData }) => {
-        target.setState({ metaData: remoteData });
-      },
-    });
-  };
-
-  updateBackwardId = (o) => {
-    const { sourceNodeId: workflowNodeId, targetNodeId: backwardId } = o;
-
-    updateBackwardIdAction({
-      target: this,
-      handleData: {
-        workflowNodeId,
-        backwardId,
-      },
-      successCallback: ({ target, remoteData }) => {
-        target.setState({ metaData: remoteData });
-      },
-    });
-  };
-
-  clearBackwardId = (o) => {
-    const { sourceNodeId: workflowNodeId } = o;
-
-    clearBackwardIdAction({
-      target: this,
-      handleData: {
-        workflowNodeId,
-      },
-      successCallback: ({ target, remoteData }) => {
-        target.setState({ metaData: remoteData });
       },
     });
   };

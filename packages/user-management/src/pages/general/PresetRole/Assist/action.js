@@ -5,6 +5,22 @@ import { actionCore } from 'antd-management-fast-common';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
+export async function listSelectAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage = null,
+}) {
+  actionCore({
+    api: modelTypeCollection.presetRoleTypeCollection.listSelect,
+    params: handleData,
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function refreshCacheAction({
   target,
   handleData,

@@ -3,9 +3,9 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { switchControlAssist } from 'antd-management-fast-framework';
 
-import { listSelectAction } from '../../../../commonAssist';
 import BaseUpdateRoleModal from '../../../../customSpecialComponents/BaseUpdateRoleModal';
 import { modelTypeCollection } from '../../../../modelBuilders';
+import { listSelectAction } from '../../PresetRole/Assist/action';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = 'f4df1383ab594341b1034714ec52fb46';
