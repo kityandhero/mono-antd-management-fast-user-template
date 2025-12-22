@@ -12,6 +12,7 @@ import {
 } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { MultiPageDrawer } = DataMultiPageView;
@@ -42,7 +43,7 @@ class PageListSelectActionDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '请选择用户操作',
-      loadApiPath: 'user/pageList',
+      loadApiPath: modelTypeCollection.userTypeCollection.pageList,
       listViewMode: listViewConfig.viewMode.list,
     };
   }

@@ -19,6 +19,7 @@ import {
   getGenderName,
   getUserStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import AddBasicInfoDrawer from '../AddBasicInfoDrawer';
 import {
   refreshCacheAction,
@@ -47,7 +48,7 @@ class PageList extends MultiPage {
       tableScrollX: 1588,
       pageTitle: '用户列表',
       paramsKey: accessWayCollection.user.pageList.paramsKey,
-      loadApiPath: 'user/pageList',
+      loadApiPath: modelTypeCollection.userTypeCollection.pageList,
       dateRangeFieldName: '创建时间',
     };
   }

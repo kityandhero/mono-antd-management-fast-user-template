@@ -12,6 +12,7 @@ import {
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getUserStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
 
@@ -39,7 +40,7 @@ class PageListModal extends MultiPageSelectModal {
     this.state = {
       ...this.state,
       tableScrollX: 1200,
-      loadApiPath: 'user/pageList',
+      loadApiPath: modelTypeCollection.userTypeCollection.pageList,
       listViewMode: listViewConfig.viewMode.table,
     };
   }

@@ -14,6 +14,7 @@ import {
   getGenderName,
   getUserStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getGraphicalTreeAction } from '../../Organization/Assist/action';
 import { getStatusBadge } from '../../User/Assist/tools';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
@@ -36,7 +37,7 @@ class PageList extends MultiPage {
       ...this.state,
       pageTitle: '通讯录',
       paramsKey: accessWayCollection.user.pageList.paramsKey,
-      loadApiPath: 'user/pageList',
+      loadApiPath: modelTypeCollection.userTypeCollection.pageList,
       dateRangeFieldName: '创建时间',
       departmentId: '',
       organizationTreeData: [],
