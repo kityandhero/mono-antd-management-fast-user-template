@@ -20,6 +20,7 @@ import {
   flowStatusCollection,
 } from '../../../../customConfig';
 import { getFlowStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { addBasicInfoAction } from '../../../../pageBases/WorkflowCase/Assist/action';
 import { getFlowStatusBadge } from '../../../../utils';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
@@ -56,7 +57,7 @@ class PageListCreateCaseDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '创建自制流程实例',
-      loadApiPath: 'workflow/pageListSelfBuild',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.pageListSelfBuild,
       tableScrollX: 920,
       newWorkflowCaseId: '',
     };

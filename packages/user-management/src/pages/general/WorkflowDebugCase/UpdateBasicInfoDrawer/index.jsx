@@ -8,6 +8,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseUpdateDrawer } = DataDrawer;
@@ -31,8 +32,9 @@ class UpdateBasicInfoDrawer extends BaseUpdateDrawer {
     this.state = {
       ...this.state,
       pageTitle: '编辑测试实例信息',
-      loadApiPath: 'workflowDebugCase/get',
-      submitApiPath: 'workflowDebugCase/updateBasicInfo',
+      loadApiPath: modelTypeCollection.workflowDebugCaseTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.workflowDebugCaseTypeCollection.updateBasicInfo,
     };
   }
 

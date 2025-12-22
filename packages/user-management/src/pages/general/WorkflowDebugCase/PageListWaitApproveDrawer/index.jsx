@@ -4,6 +4,7 @@ import { checkHasAuthority, getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { BaseFlowCasePageListWaitApproveDrawer } from '../../../../pageBases';
 import { refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
@@ -29,7 +30,8 @@ class WorkflowDebugCasePageListWaitApproveDrawer extends BaseFlowCasePageListWai
     this.state = {
       ...this.state,
       pageTitle: '待审批列表【仅与当前测试相关】',
-      loadApiPath: 'workflowDebugCase/pageListWaitApprove',
+      loadApiPath:
+        modelTypeCollection.workflowDebugCaseTypeCollection.pageListWaitApprove,
     };
   }
 

@@ -21,6 +21,7 @@ import {
   flowStatusCollection,
 } from '../../../../customConfig';
 import { getFlowStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { addBasicInfoAction } from '../../../../pageBases/WorkflowCase/Assist/action';
 import { getFlowStatusBadge } from '../../../../utils';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
@@ -61,7 +62,7 @@ class PageListCreateCaseDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '创新新的审批流程',
-      loadApiPath: 'workflow/pageListUsable',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.pageListUsable,
       tableScrollX: 920,
     };
   }

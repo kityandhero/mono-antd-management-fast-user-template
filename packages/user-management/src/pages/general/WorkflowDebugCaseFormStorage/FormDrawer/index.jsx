@@ -4,6 +4,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { BaseFlowCaseStorageFormDrawer } from '../../../../pageBases/FlowCaseFormStorage/BaseFlowCaseStorageFormDrawer';
 import { getChainByWorkflowAction } from '../../WorkflowDebugCase/Assist/action';
 import { fieldData as fieldDataWorkflowDebugCase } from '../../WorkflowDebugCase/Common/data';
@@ -42,7 +43,7 @@ class FormDrawer extends BaseFlowCaseStorageFormDrawer {
     this.state = {
       ...this.state,
       pageTitle: '工作流测试实例表单',
-      loadApiPath: 'workflowDebugCase/get',
+      loadApiPath: modelTypeCollection.workflowDebugCaseTypeCollection.get,
       submitApiPath: 'workflowDebugCase/submitForm',
       currentAttachment: null,
     };

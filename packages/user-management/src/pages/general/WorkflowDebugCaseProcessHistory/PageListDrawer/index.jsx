@@ -23,6 +23,7 @@ import {
   getFlowApproveActionName,
   getFlowCaseProcessHistoryStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowDebugCase } from '../../WorkflowDebugCase/Common/data';
 import { refreshCacheAction } from '../Assist/action';
 import { getStatusBadge } from '../Assist/tools';
@@ -53,7 +54,9 @@ class WorkflowDebugCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '测试流程审批记录列表',
-      loadApiPath: 'workflowDebugCaseProcessHistory/pageList',
+      loadApiPath:
+        modelTypeCollection.workflowDebugCaseProcessHistoryTypeCollection
+          .pageList,
       tableScrollX: 1420,
     };
   }

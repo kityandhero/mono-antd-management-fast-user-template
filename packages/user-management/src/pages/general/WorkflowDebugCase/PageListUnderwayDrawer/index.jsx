@@ -4,6 +4,7 @@ import { checkHasAuthority } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { BaseFlowCasePageListUnderwayDrawer } from '../../../../pageBases';
 import { forceEndAction, refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
@@ -31,7 +32,8 @@ class WorkflowDebugCasePageListUnderwayDrawer extends BaseFlowCasePageListUnderw
     this.state = {
       ...this.state,
       pageTitle: '进行中的审批实例列表【仅与当前测试相关】',
-      loadApiPath: 'workflowDebugCase/pageListUnderway',
+      loadApiPath:
+        modelTypeCollection.workflowDebugCaseTypeCollection.pageListUnderway,
     };
   }
 
