@@ -9,6 +9,7 @@ import {
 import { defaultUserAvatar } from 'antd-management-fast-common';
 import { DataMenuContainer } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 @connect(({ currentOperator, currentAccount, schedulingControl }) => ({
@@ -36,8 +37,9 @@ class Setting extends DataMenuContainer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'currentAccount/get',
-      submitApiPath: 'currentAccount/updateBasicInfo',
+      loadApiPath: modelTypeCollection.currentAccountTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.currentAccountTypeCollection.updateBasicInfo,
       avatar: '',
     };
   }

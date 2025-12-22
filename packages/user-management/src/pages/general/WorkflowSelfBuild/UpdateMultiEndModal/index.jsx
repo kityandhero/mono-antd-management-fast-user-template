@@ -3,6 +3,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 
 import { DataModal, switchControlAssist } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseUpdateModal } = DataModal;
@@ -24,8 +25,8 @@ class UpdateMultiEndModal extends BaseUpdateModal {
     this.state = {
       ...this.state,
       pageTitle: '启用多终点模式',
-      loadApiPath: 'workflow/get',
-      submitApiPath: 'workflow/openMultiEnd',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.get,
+      submitApiPath: modelTypeCollection.workflowTypeCollection.openMultiEnd,
     };
   }
 

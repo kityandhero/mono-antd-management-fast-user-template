@@ -4,6 +4,7 @@ import { convertCollection, getValueByKey, isArray } from 'easy-soft-utility';
 import { cardConfig } from 'antd-management-fast-common';
 import { DataModal, switchControlAssist } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataWorkflow } from '../../WorkflowSelfBuild/Common/data';
 import { fieldData } from '../Common/data';
 
@@ -27,8 +28,9 @@ class ChangeBackwardModal extends BaseUpdateModal {
     this.state = {
       ...this.state,
       pageTitle: '更改回退流程',
-      loadApiPath: 'workflow/get',
-      submitApiPath: 'workflowNode/updateBackwardId',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.workflowNodeTypeCollection.updateBackwardId,
     };
   }
 

@@ -4,6 +4,7 @@ import { getValueByKey } from 'easy-soft-utility';
 import { cardConfig, getCorsDomain } from 'antd-management-fast-common';
 import { iconBuilder } from 'antd-management-fast-component';
 
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { fieldData } from '../../Common/data';
 import MenuPageBase from '../../MenuPageBase';
 
@@ -17,8 +18,9 @@ class BasicInfo extends MenuPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'currentAccount/get',
-      submitApiPath: 'currentAccount/updateBasicInfo',
+      loadApiPath: modelTypeCollection.currentAccountTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.currentAccountTypeCollection.updateBasicInfo,
       avatar: '',
     };
   }

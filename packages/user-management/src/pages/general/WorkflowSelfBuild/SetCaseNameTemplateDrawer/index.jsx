@@ -9,6 +9,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getByWorkflowAction } from '../../WorkflowFormDesign/Assist/action';
 import { fieldData as fieldDataWorkflowFormDesign } from '../../WorkflowFormDesign/Common/data';
 import { fieldData } from '../Common/data';
@@ -32,8 +33,9 @@ class SetCaseNameTemplateDrawer extends BaseUpdateDrawer {
     this.state = {
       ...this.state,
       pageTitle: '设置实例名模板',
-      loadApiPath: 'workflow/get',
-      submitApiPath: 'workflow/setCaseNameTemplate',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.workflowTypeCollection.setCaseNameTemplate,
       dataSchemaList: [],
     };
   }

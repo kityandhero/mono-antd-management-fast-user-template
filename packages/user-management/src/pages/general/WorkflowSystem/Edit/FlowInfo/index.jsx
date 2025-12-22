@@ -19,6 +19,7 @@ import {
   flowLineTypeCollection,
   flowNodeTypeCollection,
 } from '../../../../../customConfig';
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowLine } from '../../../WorkflowLine/Common/data';
 import { fieldData as fieldDataWorkflowNode } from '../../../WorkflowNode/Common/data';
 import { fieldData as fieldDataWorkflowNodeApprover } from '../../../WorkflowNodeApprover/Common/data';
@@ -38,7 +39,7 @@ class FlowInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflow/get',
+      loadApiPath: modelTypeCollection.workflowTypeCollection.get,
       workflowId: null,
     };
   }
