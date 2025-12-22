@@ -13,6 +13,7 @@ import {
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getDepartmentStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
 import { addBasicInfoAction } from '../../UserDepartmentInfo/Assist/action';
 import { getStatusBadge } from '../Assist/tools';
@@ -43,7 +44,7 @@ class PageListBindUserDrawer extends MultiPageDrawer {
     this.state = {
       ...this.state,
       pageTitle: '设置所属部门',
-      loadApiPath: 'department/pageList',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.pageList,
       tableScrollX: 920,
     };
   }

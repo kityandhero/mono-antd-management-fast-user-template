@@ -4,6 +4,7 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 import { cardConfig } from 'antd-management-fast-common';
 import { DataModal, switchControlAssist } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseUpdateModal } = DataModal;
@@ -26,8 +27,8 @@ class ChangeSortModal extends BaseUpdateModal {
     this.state = {
       ...this.state,
       pageTitle: '排序值设置',
-      loadApiPath: 'department/get',
-      submitApiPath: 'department/updateSort',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.get,
+      submitApiPath: modelTypeCollection.departmentTypeCollection.updateSort,
     };
   }
 

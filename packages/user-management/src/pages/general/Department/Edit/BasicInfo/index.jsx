@@ -12,6 +12,7 @@ import {
   buildUpdateTimeAndOperatorFieldItem,
   getDepartmentOwnershipModeName,
 } from '../../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData, ownershipModeCollection } from '../../Common/data';
 import { DepartmentSelectField } from '../../SelectField';
@@ -29,8 +30,9 @@ class BasicInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'department/get',
-      submitApiPath: 'department/updateBasicInfo',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.departmentTypeCollection.updateBasicInfo,
       departmentId: null,
       logo: '',
       parentId: '',

@@ -6,6 +6,7 @@ import { getValueByKey } from 'easy-soft-utility';
 import { cardConfig } from 'antd-management-fast-common';
 import { DataOperation } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseView } = DataOperation;
@@ -20,7 +21,7 @@ class TreeCard extends BaseView {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'department/singleTreeList',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.singleTreeList,
     };
   }
 

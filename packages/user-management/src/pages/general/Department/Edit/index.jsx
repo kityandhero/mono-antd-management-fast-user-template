@@ -14,6 +14,7 @@ import {
   getDepartmentOwnershipModeName,
   getDepartmentStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import {
   refreshCacheAction,
   setInvalidAction,
@@ -53,7 +54,7 @@ class Detail extends DataTabContainerSupplement {
     this.state = {
       ...this.state,
       pageTitle: '',
-      loadApiPath: 'department/get',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.get,
       backPath: `/organization/department/pageList/key`,
       departmentId: null,
     };

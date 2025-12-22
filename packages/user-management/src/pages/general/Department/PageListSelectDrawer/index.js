@@ -15,6 +15,7 @@ import {
   getDepartmentOwnershipModeName,
   getDepartmentStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
 
@@ -41,7 +42,7 @@ class PageListSelectDrawer extends MultiPageSelectDrawer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'department/pageList',
+      loadApiPath: modelTypeCollection.departmentTypeCollection.pageList,
     };
   }
 
