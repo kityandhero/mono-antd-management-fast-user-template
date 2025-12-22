@@ -4,8 +4,6 @@ export const unknownLabel = '未知';
 
 export const amapkey = 'bff966857f8311eb68ea03dcbac869ad';
 
-export const channelMasterManagement = 'b4e618f907dc41b797f599c1695c1c70';
-
 export const colorCollection = {
   yesColor: '#52c41a',
   noColor: '#ec8402',
