@@ -1,7 +1,10 @@
 {
   "repository": "https://codeload.github.com/kityandhero/mono-antd-management-fast-template/zip/refs/heads/main",
   "sourcePath": "mono-antd-management-fast-template-main/packages/management/",
-  "targetPath": "packages/application/",
+  "targetPath": "packages/user-management/",
+  "syncConfigs": [
+    "../../update.project.from.template.for.user.repository.config.json"
+  ],
   "syncFolders": [
     "generatorTemplate/",
     "src/customSpecialComponents/BaseUpdateRoleModal/",
