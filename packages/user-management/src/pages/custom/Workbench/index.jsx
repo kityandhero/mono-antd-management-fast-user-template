@@ -16,6 +16,7 @@ import {
 } from 'antd-management-fast-framework';
 
 import { getFlowCaseStatusName } from '../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../modelBuilders';
 import { getFlowCaseStatusBadge } from '../../../pageBases';
 import { ApprovalDrawer } from '../../../pageBases/WorkflowCase/ApprovalDrawer';
 import { fieldData } from '../../general/WorkflowCaseMadeByMe/Common/data';
@@ -48,7 +49,8 @@ class Index extends MultiPage {
       ...this.state,
       pageTitle: '工作台',
       listTitle: '待我审批的流程列表',
-      loadApiPath: 'workflowCase/pageListWaitApprove',
+      loadApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.pageListWaitApprove,
       tableScrollX: 1020,
       pageSize: 8,
       currentOperator: null,

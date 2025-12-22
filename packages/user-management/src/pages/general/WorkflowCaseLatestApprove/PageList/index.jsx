@@ -10,6 +10,7 @@ import { iconBuilder } from 'antd-management-fast-component';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getFlowApproveActionName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { WorkflowCase } from '../../../../pageBases';
 import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 
@@ -31,7 +32,8 @@ class PageList extends PageListWorkflowCase {
       pageTitle: '我已审批的审批实例列表',
       paramsKey:
         accessWayCollection.workflowCase.pageListLatestApprove.paramsKey,
-      loadApiPath: 'workflowCase/pageListLatestApprove',
+      loadApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.pageListLatestApprove,
     };
   }
 

@@ -20,6 +20,7 @@ import {
   getChannelName,
   getFlowCaseNextProcessApproveStatusName,
 } from '../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../modelBuilders';
 import { getFlowCaseNextProcessApproveStatusBadge } from '../Assist/tools';
 
 const { MultiPage } = DataMultiPageView;
@@ -32,7 +33,7 @@ class BaseFlowCaseNextProcessApprovePageList extends MultiPage {
       ...this.state,
       pageTitle: '流程实例下一审批信息列表',
       paramsKey: accessWayCollection.workflowCase.pageList.paramsKey,
-      loadApiPath: 'workflowCase/pageList',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.pageList,
       dateRangeFieldName: '创建时间',
       currentRecord: null,
     };

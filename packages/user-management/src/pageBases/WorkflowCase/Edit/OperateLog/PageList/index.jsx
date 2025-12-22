@@ -1,5 +1,6 @@
 import { getDerivedStateFromPropertiesForUrlParameters } from 'antd-management-fast-common';
 
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import BaseInnerPageList from '../../../../../pages/general/OperationLog/BaseInnerPageList';
 import {
   checkNeedUpdateAssist,
@@ -12,7 +13,8 @@ class PageList extends BaseInnerPageList {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowCase/pageListOperateLog',
+      loadApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.pageListOperateLog,
       dateRangeFieldName: '操作时间',
       workflowCaseId: null,
       currentRecord: null,

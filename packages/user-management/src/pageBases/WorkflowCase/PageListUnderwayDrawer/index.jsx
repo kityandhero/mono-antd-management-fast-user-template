@@ -4,6 +4,7 @@ import { checkHasAuthority } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../customConfig';
+import { modelTypeCollection } from '../../../modelBuilders';
 import { BaseFlowCasePageListUnderwayDrawer } from '../..';
 import { forceEndAction, refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
@@ -29,7 +30,8 @@ class WorkflowCasePageListUnderwayDrawer extends BaseFlowCasePageListUnderwayDra
     this.state = {
       ...this.state,
       pageTitle: '进行中的审批实例列表',
-      loadApiPath: 'workflowCase/pageListUnderway',
+      loadApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.pageListUnderway,
     };
   }
 

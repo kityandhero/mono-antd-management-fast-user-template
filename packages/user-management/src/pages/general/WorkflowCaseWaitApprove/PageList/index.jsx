@@ -4,6 +4,7 @@ import { checkHasAuthority, getValueByKey } from 'easy-soft-utility';
 import { iconBuilder } from 'antd-management-fast-component';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { WorkflowCase } from '../../../../pageBases';
 import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 
@@ -23,7 +24,8 @@ class PageList extends PageListWorkflowCase {
       ...this.state,
       pageTitle: '待我审批的审批实例列表',
       paramsKey: accessWayCollection.workflowCase.pageListWaitApprove.paramsKey,
-      loadApiPath: 'workflowCase/pageListWaitApprove',
+      loadApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.pageListWaitApprove,
       currentRecord: null,
     };
   }

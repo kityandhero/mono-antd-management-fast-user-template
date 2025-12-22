@@ -22,6 +22,7 @@ import {
   flowCaseStatusCollection,
 } from '../../../../customConfig';
 import { getFlowCaseStatusName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getFlowCaseStatusBadge, WorkflowCase } from '../../../../pageBases';
 import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
 // import { PageListCreateCaseDrawer as WorkflowSelfBuildPageListCreateCaseDrawer } from '../../WorkflowSelfBuild/PageListCreateCaseDrawer';
@@ -42,7 +43,7 @@ class PageList extends PageListWorkflowCase {
       ...this.state,
       pageTitle: '我发起的审批实例列表',
       paramsKey: accessWayCollection.workflowCase.pageList.paramsKey,
-      loadApiPath: 'workflowCase/pageList',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.pageList,
     };
   }
 

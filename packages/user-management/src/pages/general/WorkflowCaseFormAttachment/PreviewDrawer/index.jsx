@@ -3,6 +3,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { switchControlAssist } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { BasePreviewDrawer } from '../../../../pageBases';
 import { fieldData } from '../Common/data';
 
@@ -24,7 +25,8 @@ class PreviewDrawer extends BasePreviewDrawer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowCaseFormAttachment/get',
+      loadApiPath:
+        modelTypeCollection.workflowCaseFormAttachmentTypeCollection.get,
     };
   }
 
