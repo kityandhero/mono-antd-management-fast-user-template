@@ -1,9 +1,9 @@
 {
-  "repository": "https://codeload.github.com/kityandhero/mono-antd-management-fast-template/zip/refs/heads/main",
-  "sourcePath": "mono-antd-management-fast-template-main/packages/management/",
+  "repository": "https://codeload.github.com/kityandhero/mono-antd-management-fast-user-template/zip/refs/heads/main",
+  "sourcePath": "mono-antd-management-fast-user-template-main/packages/user-management/",
   "targetPath": "packages/user-management/",
   "syncConfigs": [
-    "../../update.project.from.template.for.user.repository.config.json"
+    "../../update.project.from.user.template.repository.config.json"
   ],
   "syncFolders": [
     "generatorConfig/general/",
