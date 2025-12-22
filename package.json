@@ -12,7 +12,7 @@
     "precommit": "npm run z:lint:staged:quiet",
     "prepare": "echo do other prepare work with here before install package",
     "start": "cd packages/user-management && npm run start:ignore:generate",
-    "start:build": "cd packages/user-management && npm run start",
+    "start:generate": "cd packages/user-management && npm run start:generate",
     "test:user-management": "cd packages/user-management && npm run z:test",
     "x:create-model-functionSpecialComponent": "cd packages/user-management && npm run x:create-model-functionSpecialComponent",
     "x:template:build:all": "cd packages/user-management && npm run x:template:item:all",

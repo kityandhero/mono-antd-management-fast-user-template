@@ -5,6 +5,7 @@ import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { listSelectAction } from '../../../../commonAssist';
 import BaseUpdateRoleModal from '../../../../customSpecialComponents/BaseUpdateRoleModal';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = 'f4df1383ab594341b1034714ec52fb46';
@@ -26,8 +27,9 @@ class UpdateRoleModal extends BaseUpdateRoleModal {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'user/get',
-      submitApiPath: 'user/changePermission',
+      // loadApiPath: 'user/get',
+      loadApiPath: modelTypeCollection.userTypeCollection.get,
+      submitApiPath: modelTypeCollection.userTypeCollection.changePermission,
     };
   }
 
