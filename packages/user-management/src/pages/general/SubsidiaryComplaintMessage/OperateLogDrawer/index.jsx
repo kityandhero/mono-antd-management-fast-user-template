@@ -3,6 +3,7 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { switchControlAssist } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { BasePageListDrawer } from '../../OperationLog/BasePageListDrawer';
 import { fieldData } from '../Common/data';
 
@@ -23,7 +24,9 @@ class OperateLogDrawer extends BasePageListDrawer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'subsidiaryComplaintMessage/pageListOperateLog',
+      loadApiPath:
+        modelTypeCollection.subsidiaryComplaintMessageTypeCollection
+          .pageListOperateLog,
       subsidiaryComplaintMessageId: null,
     };
   }
