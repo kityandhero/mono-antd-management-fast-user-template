@@ -7,6 +7,8 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
+
 const { BaseVerticalFlexDrawer } = DataDrawer;
 
 const visibleFlag = '00eb2038b6824205a07060ec9df561ca';
@@ -26,7 +28,8 @@ class NonePermissionActionMapDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '系统无需鉴权 Action Map 信息',
-      loadApiPath: 'accessWay/getNonePermissionActionMap',
+      loadApiPath:
+        modelTypeCollection.accessWayTypeCollection.getNonePermissionActionMap,
     };
   }
 

@@ -16,6 +16,7 @@ import {
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getChannelName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { removeAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
 
@@ -35,7 +36,8 @@ class PageListAssemblyVerifyDrawer extends MultiPageDrawer {
       ...this.state,
       pageTitle: '检测有误的权限数据',
       tableScrollX: 1520,
-      loadApiPath: 'accessWay/pageListAssemblyVerify',
+      loadApiPath:
+        modelTypeCollection.accessWayTypeCollection.pageListAssemblyVerify,
       dateRangeFieldName: '创建时间',
       currentRecord: null,
     };

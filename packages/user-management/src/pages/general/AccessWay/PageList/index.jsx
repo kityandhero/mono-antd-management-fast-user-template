@@ -16,6 +16,7 @@ import { DataMultiPageView } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getChannelName } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { ActionMapDrawer } from '../ActionMapDrawer';
 import { refreshCacheAction, testPermissionAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
@@ -44,7 +45,7 @@ class PageList extends MultiPage {
       ...this.state,
       paramsKey: accessWayCollection.accessWay.pageList.paramsKey,
       pageTitle: '模块列表',
-      loadApiPath: 'accessWay/pageList',
+      loadApiPath: modelTypeCollection.accessWayTypeCollection.pageList,
     };
   }
 

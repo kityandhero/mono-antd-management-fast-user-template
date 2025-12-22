@@ -7,6 +7,8 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
+
 const { BaseVerticalFlexDrawer } = DataDrawer;
 
 const visibleFlag = '4a3ef38010d944e8992ec5a740c71f37';
@@ -26,7 +28,7 @@ class ActionMapDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '系统 Action Map 信息',
-      loadApiPath: 'accessWay/getActionMap',
+      loadApiPath: modelTypeCollection.accessWayTypeCollection.getActionMap,
     };
   }
 

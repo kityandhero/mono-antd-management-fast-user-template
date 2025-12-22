@@ -7,6 +7,8 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
+
 const { BaseVerticalFlexDrawer } = DataDrawer;
 
 const visibleFlag = 'f1446cb570034a4080f360a6019b28e9';
@@ -26,7 +28,8 @@ class PermissionActionUniqueDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '测试权限唯一性信息',
-      loadApiPath: 'accessWay/testPermissionActionUnique',
+      loadApiPath:
+        modelTypeCollection.accessWayTypeCollection.testPermissionActionUnique,
     };
   }
 
