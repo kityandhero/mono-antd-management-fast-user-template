@@ -49,6 +49,7 @@ import {
   flowNodeTypeCollection,
   signetStyle,
 } from '../../../customConfig';
+import { modelTypeCollection } from '../../../modelBuilders';
 import { FlowDisplayDrawer } from '../../../pages/general/Workflow/FlowDisplayDrawer';
 import { AddAttachmentModal } from '../../../pages/general/WorkflowCaseFormAttachment/AddAttachmentModal';
 import { removeAction } from '../../../pages/general/WorkflowCaseFormAttachment/Assist/action';
@@ -84,8 +85,8 @@ class ApprovalDrawer extends BaseFlowCaseApprovalDrawer {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowCase/get',
-      submitApiPath: 'workflowCase/submitForm',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
+      submitApiPath: modelTypeCollection.workflowCaseTypeCollection.submitForm,
     };
   }
 

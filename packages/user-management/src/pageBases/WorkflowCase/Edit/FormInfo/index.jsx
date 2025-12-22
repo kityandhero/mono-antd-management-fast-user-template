@@ -50,6 +50,7 @@ import {
   buildFlowCaseFormInitialValues,
   SealImage,
 } from '../../../../flowAssist';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { FlowDisplayDrawer } from '../../../../pages/general/Workflow/FlowDisplayDrawer';
 import { AddAttachmentModal } from '../../../../pages/general/WorkflowCaseFormAttachment/AddAttachmentModal';
 import { removeAction } from '../../../../pages/general/WorkflowCaseFormAttachment/Assist/action';
@@ -165,8 +166,8 @@ class FormInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowCase/get',
-      submitApiPath: 'workflowCase/submitForm',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
+      submitApiPath: modelTypeCollection.workflowCaseTypeCollection.submitForm,
       workflowCaseId: null,
       currentAttachment: null,
       workflowFormDesign: null,

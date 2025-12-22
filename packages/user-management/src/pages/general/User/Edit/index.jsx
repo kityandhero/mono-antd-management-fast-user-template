@@ -16,6 +16,7 @@ import {
   getUserStatusName,
   getUserTypeName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import {
   refreshCacheAction,
   setDisableAction,
@@ -63,7 +64,7 @@ class Detail extends DataTabContainerSupplement {
     this.state = {
       ...this.state,
       pageTitle: '',
-      loadApiPath: 'user/get',
+      loadApiPath: modelTypeCollection.userTypeCollection.get,
       backPath: `/person/user/pageList/key`,
       userId: null,
     };

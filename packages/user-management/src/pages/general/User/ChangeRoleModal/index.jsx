@@ -27,7 +27,6 @@ class UpdateRoleModal extends BaseUpdateRoleModal {
 
     this.state = {
       ...this.state,
-      // loadApiPath: 'user/get',
       loadApiPath: modelTypeCollection.userTypeCollection.get,
       submitApiPath: modelTypeCollection.userTypeCollection.changePermission,
     };

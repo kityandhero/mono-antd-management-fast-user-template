@@ -7,6 +7,7 @@ import {
 import { iconBuilder } from 'antd-management-fast-component';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData } from '../../Common/data';
 import { TabPageBase } from '../../TabPageBase';
@@ -19,8 +20,9 @@ class BasicInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowCase/get',
-      submitApiPath: 'workflowCase/updateBasicInfo',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
+      submitApiPath:
+        modelTypeCollection.workflowCaseTypeCollection.updateBasicInfo,
       workflowCaseId: null,
     };
   }

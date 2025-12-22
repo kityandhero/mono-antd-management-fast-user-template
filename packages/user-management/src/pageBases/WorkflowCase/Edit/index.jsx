@@ -13,6 +13,7 @@ import {
   DataTabContainerSupplement,
   getFlowCaseStatusName,
 } from '../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../modelBuilders';
 import { refreshCacheAction } from '../Assist/action';
 import {
   checkNeedUpdateAssist,
@@ -53,7 +54,7 @@ class Edit extends DataTabContainerSupplement {
     this.state = {
       ...this.state,
       pageTitle: '',
-      loadApiPath: 'workflowCase/get',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
       workflowCaseId: null,
     };
   }

@@ -24,6 +24,7 @@ import {
   renderFormFlowBranchConditionItemTargetComparisonModeSelect,
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { singleListAction } from '../../GeneralDiscourse/Assist/action';
 import { typeCollection } from '../../GeneralDiscourse/Common/data';
 import { fieldData as fieldDataWorkflowCase } from '../../WorkflowCaseMadeByMe/Common/data';
@@ -63,8 +64,8 @@ class RefuseModal extends BaseUpdateModal {
     this.state = {
       ...this.state,
       pageTitle: '拒绝审批',
-      loadApiPath: 'workflowCase/get',
-      submitApiPath: 'workflowCaseProcessHistory/refuse',
+      loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
+      submitApiPath: modelTypeCollection.workflowCaseTypeCollection.refuse,
       generalDiscourseList: [],
     };
   }
