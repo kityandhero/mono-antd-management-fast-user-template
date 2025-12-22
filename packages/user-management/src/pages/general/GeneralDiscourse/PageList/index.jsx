@@ -25,6 +25,7 @@ import {
   getGeneralDiscourseTypeName,
   renderSearchSmsCategoryStatusSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import AddBasicInfoDrawer from '../AddBasicInfoDrawer';
 import {
   refreshCacheAction,
@@ -50,7 +51,7 @@ class PageList extends MultiPage {
       ...this.state,
       paramsKey: accessWayCollection.generalDiscourse.pageList.paramsKey,
       pageTitle: '常用语列表',
-      loadApiPath: 'generalDiscourse/pageList',
+      loadApiPath: modelTypeCollection.generalDiscourseTypeCollection.pageList,
       currentRecord: null,
     };
   }

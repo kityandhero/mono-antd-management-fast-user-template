@@ -8,6 +8,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseVerticalFlexDrawer } = DataDrawer;
@@ -28,7 +29,8 @@ class DataSchemaDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '表单数据配置信息',
-      loadApiPath: 'workflowFormDesign/getByWorkflow',
+      loadApiPath:
+        modelTypeCollection.workflowFormDesignTypeCollection.getByWorkflow,
       dataSchemaList: [],
     };
   }

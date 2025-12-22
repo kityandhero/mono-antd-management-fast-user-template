@@ -16,6 +16,7 @@ import {
   getFlowNodeTypeName,
   renderSearchWorkflowNodeStatusSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
 
@@ -30,7 +31,7 @@ class BaseNodePageListSelectDrawer extends MultiPageSelectDrawer {
     this.state = {
       ...this.state,
       tableScrollX: 440,
-      loadApiPath: 'workflowNode/pageList',
+      loadApiPath: modelTypeCollection.workflowNodeTypeCollection.pageList,
     };
   }
 

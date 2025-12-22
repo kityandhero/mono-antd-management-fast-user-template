@@ -10,6 +10,7 @@ import {
 } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { AddAttachmentModal } from '../../WorkflowDebugCaseFormAttachment/AddAttachmentModal';
 import { fieldData as fieldDataWorkflowNodeApprover } from '../../WorkflowNodeApprover/Common/data';
 import { fieldData } from '../Common/data';
@@ -39,7 +40,7 @@ class WorkflowNodeDetailDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '工作流节点信息',
-      loadApiPath: 'workflowNode/get',
+      loadApiPath: modelTypeCollection.workflowNodeTypeCollection.get,
       workflowNodeId: null,
     };
   }

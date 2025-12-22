@@ -19,6 +19,7 @@ import {
   getCloudStorageSourceTypeName,
   getCloudStorageStatusName,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { BaseVerticalFlexDrawer } = DataDrawer;
@@ -42,7 +43,7 @@ class PreviewDrawer extends BaseVerticalFlexDrawer {
     this.state = {
       ...this.state,
       pageTitle: '文件预览',
-      loadApiPath: 'cloudStorage/get',
+      loadApiPath: modelTypeCollection.cloudStorageTypeCollection.get,
       overlayButtonOpenText: '查看文件信息',
       overlayButtonCloseText: '关闭文件信息',
     };

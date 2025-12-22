@@ -12,6 +12,7 @@ import {
   switchControlAssist,
 } from 'antd-management-fast-framework';
 
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = '222817ac11294bf7a0a6b67daf577271';
@@ -44,7 +45,7 @@ class PageListSelectDrawer extends MultiPageSelectDrawer {
       showSelect: true,
       pageTitle: '标签列表',
       // 页面加载时自动加载的远程请求
-      loadApiPath: 'tag/pageList',
+      loadApiPath: modelTypeCollection.tagTypeCollection.pageList,
       // 设置默认试图模式为 table
       listViewMode: listViewConfig.viewMode.table,
       // table 显示模式行长度, 合理设置可以提升美观以及用户体验，超出可见区域将显示滚动条

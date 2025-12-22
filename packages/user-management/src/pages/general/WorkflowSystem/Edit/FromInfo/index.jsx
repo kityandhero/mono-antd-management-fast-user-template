@@ -24,6 +24,7 @@ import {
 } from 'antd-management-fast-design-playground';
 
 import { accessWayCollection } from '../../../../../customConfig';
+import { modelTypeCollection } from '../../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowFormDesign } from '../../../WorkflowFormDesign/Common/data';
 import { parseUrlParametersForSetState } from '../../Assist/config';
 import { fieldData } from '../../Common/data';
@@ -42,7 +43,8 @@ class FromInfo extends TabPageBase {
 
     this.state = {
       ...this.state,
-      loadApiPath: 'workflowFormDesign/getByWorkflow',
+      loadApiPath:
+        modelTypeCollection.workflowFormDesignTypeCollection.getByWorkflow,
       workflowId: null,
     };
   }

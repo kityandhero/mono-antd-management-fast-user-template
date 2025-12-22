@@ -21,6 +21,7 @@ import {
   renderSearchFileTypeSelect,
   renderSearchUploadHistorySourceTypeSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { refreshCacheAction, removeAction } from '../Assist/action';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
@@ -46,7 +47,7 @@ class PageList extends MultiPage {
       ...this.state,
       pageTitle: '企业云盘列表',
       paramsKey: accessWayCollection.cloudStorage.pageList.paramsKey,
-      loadApiPath: 'cloudStorage/pageList',
+      loadApiPath: modelTypeCollection.cloudStorageTypeCollection.pageList,
       dateRangeFieldName: '上传时间',
       tableScrollX: 1520,
       currentRecord: null,
