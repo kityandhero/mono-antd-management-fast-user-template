@@ -3,7 +3,7 @@ import { connect } from 'easy-soft-dva';
 import { getDerivedStateFromPropertiesForUrlParameters } from 'antd-management-fast-common';
 
 import { modelTypeCollection } from '../../../../../../modelBuilders';
-import BaseInnerPageList from '../../../../OperationLog/BaseInnerPageList';
+import { BaseInnerPageList } from '../../../../OperationLog/BaseInnerPageList';
 import {
   checkNeedUpdateAssist,
   parseUrlParametersForSetState,
