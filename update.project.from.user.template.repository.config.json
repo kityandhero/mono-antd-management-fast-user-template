@@ -71,6 +71,8 @@
     "generatorConfig/custom/template.data.json",
     "generatorConfig/custom/updateBasicInfoDrawer.config.json",
     "src/app.config.jsx",
+    "src/components/MenuCard/index.jsx",
+    "src/components/index.jsx",
     "src/customConfig/accessWayCollection.js",
     "src/customConfig/custom/accessWayCollection.js",
     "src/customConfig/custom/constants.js",
