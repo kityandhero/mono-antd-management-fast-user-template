@@ -9,8 +9,12 @@ import {
   datetimeFormat,
   formatDatetime,
   getValueByKey,
+  isArray,
+  isEmptyArray,
   isEmptyObject,
+  isFunction,
   isNull,
+  isObject,
 } from 'easy-soft-utility';
 
 import { cardConfig } from 'antd-management-fast-common';
@@ -320,4 +324,57 @@ export function buildOrganizationGraphConfig() {
     },
     type: 'boxed',
   };
+}
+
+/**
+ * build upload file data
+ * @param {Object} options options
+ * @param {string} options.uniqueFlag unique flag
+ * @param {string} options.name file name
+ * @param {string} options.url file url
+ * @param {Function} options.adjustCallback adjust data callback, must be function and return object
+ * @returns upload file data
+ */
+export function buildUploadFileData({
+  uniqueFlag,
+  name = '',
+  url,
+  adjustCallback = null,
+}) {
+  let data = {
+    uid: uniqueFlag,
+    name: name ?? '',
+    status: 'done',
+    url: url,
+  };
+
+  if (isFunction(adjustCallback)) {
+    const dataAdjust = adjustCallback(data);
+
+    if (isObject(dataAdjust)) {
+      data = dataAdjust;
+    }
+  }
+
+  return data;
+}
+
+/**
+ * 获取指定元数据首项值
+ * @param {*} list 指定的元数据项集合
+ * @returns 元数据首项值
+ */
+export function getTargetMetaDataFirstFlag(list) {
+  if (!isArray(list) || isEmptyArray(list)) {
+    return null;
+  }
+
+  const first = list[0];
+
+  const { flag } = {
+    flag: '',
+    ...first,
+  };
+
+  return flag || '';
 }

@@ -1,7 +1,7 @@
 import { getDerivedStateFromPropertiesForUrlParameters } from 'antd-management-fast-common';
 
 import { modelTypeCollection } from '../../../../../modelBuilders';
-import BaseInnerPageList from '../../../../../pages/general/OperationLog/BaseInnerPageList';
+import { BaseInnerPageList } from '../../../../../pages/general/OperationLog/BaseInnerPageList';
 import {
   checkNeedUpdateAssist,
   parseUrlParametersForSetState,
