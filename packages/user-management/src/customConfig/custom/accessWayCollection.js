@@ -1,1 +1,1 @@
-export const accessWayBusinessCollection = {};
+export const accessWayCustomCollection = {};
