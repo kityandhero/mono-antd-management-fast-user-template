@@ -11,10 +11,6 @@ import {
   cloudStorageTypeCollection,
 } from './cloudStorage';
 import {
-  buildModel as buildCurrentAccountModel,
-  currentAccountTypeCollection,
-} from './currentAccount';
-import {
   buildModel as buildDepartmentModel,
   departmentTypeCollection,
 } from './department';
@@ -23,23 +19,6 @@ import {
   buildModel as buildGeneralDiscourseModel,
   generalDiscourseTypeCollection,
 } from './generalDiscourse';
-import {
-  buildModel as buildMetaDataModel,
-  metaDataTypeCollection,
-} from './metaData';
-import { buildModel as buildNoticeModel, noticeTypeCollection } from './notice';
-import {
-  buildModel as buildNoticeAttachmentModel,
-  noticeAttachmentTypeCollection,
-} from './noticeAttachment';
-import {
-  buildModel as buildNoticeTagRelationModel,
-  noticeTagRelationTypeCollection,
-} from './noticeTagRelation';
-import {
-  buildModel as buildNoticeUserRelationModel,
-  noticeUserRelationTypeCollection,
-} from './noticeUserRelation';
 import {
   buildModel as buildOperationLogModel,
   operationLogTypeCollection,
@@ -78,6 +57,10 @@ import {
   buildModel as buildUserGeneralDiscourseModel,
   userGeneralDiscourseTypeCollection,
 } from './userGeneralDiscourse';
+import {
+  buildModel as buildUserWorkflowConfigureModel,
+  userWorkflowConfigureTypeCollection,
+} from './userWorkflowConfigure';
 import {
   buildModel as buildWorkflowModel,
   workflowTypeCollection,
@@ -171,15 +154,9 @@ export const modelTypeCollection = {
   accessWayTypeCollection,
   applicationUserFeedbackTypeCollection,
   cloudStorageTypeCollection,
-  currentAccountTypeCollection,
   departmentTypeCollection,
   editorTypeCollection,
   generalDiscourseTypeCollection,
-  metaDataTypeCollection,
-  noticeTypeCollection,
-  noticeAttachmentTypeCollection,
-  noticeTagRelationTypeCollection,
-  noticeUserRelationTypeCollection,
   operationLogTypeCollection,
   organizationTypeCollection,
   presetRoleTypeCollection,
@@ -191,6 +168,7 @@ export const modelTypeCollection = {
   userTypeCollection,
   userDepartmentInfoTypeCollection,
   userGeneralDiscourseTypeCollection,
+  userWorkflowConfigureTypeCollection,
   workflowTypeCollection,
   workflowBranchConditionTypeCollection,
   workflowBranchConditionItemTypeCollection,
@@ -222,15 +200,9 @@ export function listModelBuilder() {
     buildAccessWayModel,
     buildApplicationUserFeedbackModel,
     buildCloudStorageModel,
-    buildCurrentAccountModel,
     buildDepartmentModel,
     buildEditorModel,
     buildGeneralDiscourseModel,
-    buildMetaDataModel,
-    buildNoticeModel,
-    buildNoticeAttachmentModel,
-    buildNoticeTagRelationModel,
-    buildNoticeUserRelationModel,
     buildOperationLogModel,
     buildOrganizationModel,
     buildPresetRoleModel,
@@ -242,6 +214,7 @@ export function listModelBuilder() {
     buildUserModel,
     buildUserDepartmentInfoModel,
     buildUserGeneralDiscourseModel,
+    buildUserWorkflowConfigureModel,
     buildWorkflowModel,
     buildWorkflowBranchConditionModel,
     buildWorkflowBranchConditionItemModel,

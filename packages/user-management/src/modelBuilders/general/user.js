@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -30,26 +31,26 @@ import {
 } from '../../services/user';
 
 export const userTypeCollection = {
-  pageList: 'user/pageList',
-  get: 'user/get',
-  addBasicInfoWithLoginInfo: 'user/addBasicInfoWithLoginInfo',
-  updateBasicInfo: 'user/updateBasicInfo',
-  updateParent: 'user/updateParent',
-  clearParent: 'user/clearParent',
-  setSignet: 'user/setSignet',
-  openSignetPasswordSwitch: 'user/openSignetPasswordSwitch',
-  closeSignetPasswordSwitch: 'user/closeSignetPasswordSwitch',
-  toggleSignetPasswordSwitch: 'user/toggleSignetPasswordSwitch',
-  setEnable: 'user/setEnable',
-  setDisable: 'user/setDisable',
-  resetSignetPassword: 'user/resetSignetPassword',
-  resetPassword: 'user/resetPassword',
-  changePermission: 'user/changePermission',
-  remove: 'user/remove',
-  refreshCache: 'user/refreshCache',
-  uploadImage: 'user/uploadImage',
-  pageListOperateLog: 'user/pageListOperateLog',
-};
+  pageList: "user/pageList",
+  get: "user/get",
+  addBasicInfoWithLoginInfo: "user/addBasicInfoWithLoginInfo",
+  updateBasicInfo: "user/updateBasicInfo",
+  updateParent: "user/updateParent",
+  clearParent: "user/clearParent",
+  setSignet: "user/setSignet",
+  openSignetPasswordSwitch: "user/openSignetPasswordSwitch",
+  closeSignetPasswordSwitch: "user/closeSignetPasswordSwitch",
+  toggleSignetPasswordSwitch: "user/toggleSignetPasswordSwitch",
+  setEnable: "user/setEnable",
+  setDisable: "user/setDisable",
+  resetSignetPassword: "user/resetSignetPassword",
+  resetPassword: "user/resetPassword",
+  changePermission: "user/changePermission",
+  remove: "user/remove",
+  refreshCache: "user/refreshCache",
+  uploadImage: "user/uploadImage",
+  pageListOperateLog: "user/pageListOperateLog",
+}
 
 export function buildModel() {
   return {

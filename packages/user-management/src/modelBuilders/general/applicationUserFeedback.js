@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -17,13 +18,13 @@ import {
 } from '../../services/applicationUserFeedback';
 
 export const applicationUserFeedbackTypeCollection = {
-  pageList: 'applicationUserFeedback/pageList',
-  get: 'applicationUserFeedback/get',
-  add: 'applicationUserFeedback/add',
-  refreshCache: 'applicationUserFeedback/refreshCache',
-  pageListOperateLog: 'applicationUserFeedback/pageListOperateLog',
-  uploadImage: 'applicationUserFeedback/uploadImage',
-};
+  pageList: "applicationUserFeedback/pageList",
+  get: "applicationUserFeedback/get",
+  add: "applicationUserFeedback/add",
+  refreshCache: "applicationUserFeedback/refreshCache",
+  pageListOperateLog: "applicationUserFeedback/pageListOperateLog",
+  uploadImage: "applicationUserFeedback/uploadImage",
+}
 
 export function buildModel() {
   return {

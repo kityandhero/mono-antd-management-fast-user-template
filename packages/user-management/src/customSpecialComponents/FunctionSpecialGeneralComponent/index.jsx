@@ -2,6 +2,7 @@ export * from './AdministrativeDivisionLevel';
 export * from './AdministrativeDivisionStatus';
 export * from './ApplicationUserFeedbackStatus';
 export * from './BusinessMode';
+export * from './CarryMode';
 export * from './Channel';
 export * from './CloudStorageSourceType';
 export * from './CloudStorageStatus';

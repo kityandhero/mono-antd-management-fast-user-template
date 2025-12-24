@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -25,20 +26,20 @@ import {
 } from '../../services/department';
 
 export const departmentTypeCollection = {
-  pageList: 'department/pageList',
-  singleList: 'department/singleList',
-  singleTreeList: 'department/singleTreeList',
-  get: 'department/get',
-  addBasicInfo: 'department/addBasicInfo',
-  updateBasicInfo: 'department/updateBasicInfo',
-  updateParentId: 'department/updateParentId',
-  updateSubsidiaryId: 'department/updateSubsidiaryId',
-  updateSort: 'department/updateSort',
-  setNormal: 'department/setNormal',
-  setInvalid: 'department/setInvalid',
-  refreshCache: 'department/refreshCache',
-  pageListOperateLog: 'department/pageListOperateLog',
-};
+  pageList: "department/pageList",
+  singleList: "department/singleList",
+  singleTreeList: "department/singleTreeList",
+  get: "department/get",
+  addBasicInfo: "department/addBasicInfo",
+  updateBasicInfo: "department/updateBasicInfo",
+  updateParentId: "department/updateParentId",
+  updateSubsidiaryId: "department/updateSubsidiaryId",
+  updateSort: "department/updateSort",
+  setNormal: "department/setNormal",
+  setInvalid: "department/setInvalid",
+  refreshCache: "department/refreshCache",
+  pageListOperateLog: "department/pageListOperateLog",
+}
 
 export function buildModel() {
   return {

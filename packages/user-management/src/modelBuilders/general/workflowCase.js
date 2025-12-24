@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -31,26 +32,26 @@ import {
 } from '../../services/workflowCase';
 
 export const workflowCaseTypeCollection = {
-  pageList: 'workflowCase/pageList',
-  pageListUnderway: 'workflowCase/pageListUnderway',
-  pageListLatestApprove: 'workflowCase/pageListLatestApprove',
-  pageListWaitApprove: 'workflowCase/pageListWaitApprove',
-  pageListUserMonitor: 'workflowCase/pageListUserMonitor',
-  singleListNextNodeApprover: 'workflowCase/singleListNextNodeApprover',
-  get: 'workflowCase/get',
-  verifyCode: 'workflowCase/verifyCode',
-  getChain: 'workflowCase/getChain',
-  addBasicInfo: 'workflowCase/addBasicInfo',
-  updateBasicInfo: 'workflowCase/updateBasicInfo',
-  toggleEmergency: 'workflowCase/toggleEmergency',
-  submitForm: 'workflowCase/submitForm',
-  submitApproval: 'workflowCase/submitApproval',
-  forceEnd: 'workflowCase/forceEnd',
-  disuse: 'workflowCase/disuse',
-  hide: 'workflowCase/hide',
-  refreshCache: 'workflowCase/refreshCache',
-  pageListOperateLog: 'workflowCase/pageListOperateLog',
-};
+  pageList: "workflowCase/pageList",
+  pageListUnderway: "workflowCase/pageListUnderway",
+  pageListLatestApprove: "workflowCase/pageListLatestApprove",
+  pageListWaitApprove: "workflowCase/pageListWaitApprove",
+  pageListUserMonitor: "workflowCase/pageListUserMonitor",
+  singleListNextNodeApprover: "workflowCase/singleListNextNodeApprover",
+  get: "workflowCase/get",
+  verifyCode: "workflowCase/verifyCode",
+  getChain: "workflowCase/getChain",
+  addBasicInfo: "workflowCase/addBasicInfo",
+  updateBasicInfo: "workflowCase/updateBasicInfo",
+  toggleEmergency: "workflowCase/toggleEmergency",
+  submitForm: "workflowCase/submitForm",
+  submitApproval: "workflowCase/submitApproval",
+  forceEnd: "workflowCase/forceEnd",
+  disuse: "workflowCase/disuse",
+  hide: "workflowCase/hide",
+  refreshCache: "workflowCase/refreshCache",
+  pageListOperateLog: "workflowCase/pageListOperateLog",
+}
 
 export function buildModel() {
   return {

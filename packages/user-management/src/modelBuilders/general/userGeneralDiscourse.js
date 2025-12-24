@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -22,17 +23,17 @@ import {
 } from '../../services/userGeneralDiscourse';
 
 export const userGeneralDiscourseTypeCollection = {
-  pageList: 'userGeneralDiscourse/pageList',
-  singleList: 'userGeneralDiscourse/singleList',
-  get: 'userGeneralDiscourse/get',
-  addBasicInfo: 'userGeneralDiscourse/addBasicInfo',
-  updateBasicInfo: 'userGeneralDiscourse/updateBasicInfo',
-  setEnable: 'userGeneralDiscourse/setEnable',
-  setDisable: 'userGeneralDiscourse/setDisable',
-  remove: 'userGeneralDiscourse/remove',
-  refreshCache: 'userGeneralDiscourse/refreshCache',
-  pageListOperateLog: 'userGeneralDiscourse/pageListOperateLog',
-};
+  pageList: "userGeneralDiscourse/pageList",
+  singleList: "userGeneralDiscourse/singleList",
+  get: "userGeneralDiscourse/get",
+  addBasicInfo: "userGeneralDiscourse/addBasicInfo",
+  updateBasicInfo: "userGeneralDiscourse/updateBasicInfo",
+  setEnable: "userGeneralDiscourse/setEnable",
+  setDisable: "userGeneralDiscourse/setDisable",
+  remove: "userGeneralDiscourse/remove",
+  refreshCache: "userGeneralDiscourse/refreshCache",
+  pageListOperateLog: "userGeneralDiscourse/pageListOperateLog",
+}
 
 export function buildModel() {
   return {
