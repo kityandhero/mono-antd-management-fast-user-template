@@ -48,7 +48,7 @@ import {
   buildColumnsNextProcessNotification,
   convertProcessHistoryItemData,
   convertProcessHistoryNextData,
-} from '../../../../../pageBases';
+} from '../../../../../pageBases/general';
 import {
   archiveAction,
   cancelArchiveAction,

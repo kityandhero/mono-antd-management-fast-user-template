@@ -13,7 +13,7 @@ import {
   flowCaseStatusCollection,
 } from '../../../../customConfig';
 import { WorkflowCase } from '../../../../pageBases';
-import { toggleEmergencyAction } from '../../../../pageBases/WorkflowCase/Assist/action';
+import { toggleEmergencyAction } from '../../../../pageBases/general/WorkflowCase/Assist/action';
 import { fieldData } from '../Common/data';
 
 const { Edit: EditWorkflowCase } = WorkflowCase;

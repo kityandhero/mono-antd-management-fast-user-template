@@ -5,8 +5,8 @@ import { iconBuilder } from 'antd-management-fast-component';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { WorkflowCase } from '../../../../pageBases';
-import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
+import { WorkflowCase } from '../../../../pageBases/general';
+import { fieldData } from '../../../../pageBases/general/WorkflowCase/Common/data';
 
 const { PageList: PageListWorkflowCase } = WorkflowCase;
 

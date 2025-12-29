@@ -17,8 +17,8 @@ import {
 
 import { getFlowCaseStatusName } from '../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../modelBuilders';
-import { getFlowCaseStatusBadge } from '../../../pageBases';
-import { ApprovalDrawer } from '../../../pageBases/WorkflowCase/ApprovalDrawer';
+import { getFlowCaseStatusBadge } from '../../../pageBases/general';
+import { ApprovalDrawer } from '../../../pageBases/general/WorkflowCase/ApprovalDrawer';
 import { fieldData } from '../../general/WorkflowCaseMadeByMe/Common/data';
 
 import { CaseLatestApproveCount } from './CaseLatestApproveCount';

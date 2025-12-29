@@ -4,7 +4,7 @@ import { getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseNextProcessNotificationPreviewDrawer } from '../../../../pageBases';
+import { BaseFlowCaseNextProcessNotificationPreviewDrawer } from '../../../../pageBases/general';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = '1d19a9a590654eec9941ea7bd08a6179';

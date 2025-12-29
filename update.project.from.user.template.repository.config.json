@@ -16,7 +16,7 @@
     "src/customSpecialComponents/FunctionCommonComponent/",
     "src/customSpecialComponents/UpdateModuleModalBase/",
     "src/flowAssist/",
-    "src/pageBases/",
+    "src/pageBases/general/",
     "src/pages/general/",
     "src/utils/general/"
   ],
@@ -37,6 +37,7 @@
     "src/localeConfig/index.js",
     "src/locales/zh-CN/menu.js",
     "src/modelBuilders/index.js",
+    "src/pageBases/index.jsx",
     "src/utils/index.jsx",
     "src/utils/init.js",
     "tsconfig.json"
@@ -97,7 +98,7 @@
     "src/locales/zh-CN/settingDrawer.js",
     "src/locales/zh-CN/settings.js",
     "src/overrides.less",
-    "src/pageBases/index.jsx",
+    "src/pageBases/custom/index.jsx",
     "src/pages/custom/Workbench/PageHeaderContent/index.jsx",
     "src/pages/custom/Workbench/ShortcutPanel/index.jsx",
     "src/pages/custom/Workbench/index.jsx",

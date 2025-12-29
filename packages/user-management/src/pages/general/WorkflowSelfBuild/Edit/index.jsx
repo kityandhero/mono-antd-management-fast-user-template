@@ -28,7 +28,7 @@ import {
   getFlowStatusName,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { WorkflowCasePageListUnderwayDrawer } from '../../../../pageBases/WorkflowCase/PageListUnderwayDrawer';
+import { WorkflowCasePageListUnderwayDrawer } from '../../../../pageBases/general/WorkflowCase/PageListUnderwayDrawer';
 import { ChangeSortModal } from '../../Workflow/ChangeSortModal';
 import { FlowDisplayDrawer } from '../../Workflow/FlowDisplayDrawer';
 import { PageListDrawer as WorkflowBranchConditionPageListDrawer } from '../../WorkflowBranchCondition/PageListDrawer';

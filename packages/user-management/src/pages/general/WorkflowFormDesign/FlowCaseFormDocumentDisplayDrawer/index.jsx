@@ -4,9 +4,9 @@ import { convertCollection, getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseFormDocumentDisplayDrawer } from '../../../../pageBases';
-import { getChainAction } from '../../../../pageBases/WorkflowCase/Assist/action';
-import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/WorkflowCase/Common/data';
+import { BaseFlowCaseFormDocumentDisplayDrawer } from '../../../../pageBases/general';
+import { getChainAction } from '../../../../pageBases/general/WorkflowCase/Assist/action';
+import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/general/WorkflowCase/Common/data';
 
 const visibleFlag = '010012cdadee4558bb71f2617793f2ef';
 

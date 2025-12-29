@@ -13,7 +13,7 @@ import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseNextProcessNotificationPreviewDrawer } from '../../../../pageBases';
+import { BaseFlowCaseNextProcessNotificationPreviewDrawer } from '../../../../pageBases/general';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = '6aae5f3c691942bb8f366610aa04d66f';

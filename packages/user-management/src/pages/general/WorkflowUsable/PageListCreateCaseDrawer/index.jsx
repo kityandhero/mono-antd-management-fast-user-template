@@ -22,7 +22,7 @@ import {
 } from '../../../../customConfig';
 import { getFlowStatusName } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { addBasicInfoAction } from '../../../../pageBases/WorkflowCase/Assist/action';
+import { addBasicInfoAction } from '../../../../pageBases/general/WorkflowCase/Assist/action';
 import { getFlowStatusBadge } from '../../../../utils';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
 import { fieldData as fieldDataWorkflowCaseMadeByMe } from '../../WorkflowCaseMadeByMe/Common/data';

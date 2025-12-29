@@ -5,9 +5,9 @@ import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseStorageFormDrawer } from '../../../../pageBases/FlowCaseFormStorage/BaseFlowCaseStorageFormDrawer';
-import { getChainAction } from '../../../../pageBases/WorkflowCase/Assist/action';
-import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/WorkflowCase/Common/data';
+import { BaseFlowCaseStorageFormDrawer } from '../../../../pageBases/general/FlowCaseFormStorage/BaseFlowCaseStorageFormDrawer';
+import { getChainAction } from '../../../../pageBases/general/WorkflowCase/Assist/action';
+import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/general/WorkflowCase/Common/data';
 import { PreviewDrawer as WorkflowCaseFormAttachmentPreviewDrawer } from '../../WorkflowCaseFormAttachment/PreviewDrawer';
 
 const visibleFlag = 'f3cc04cdf88f4097b6536b643c34f806';

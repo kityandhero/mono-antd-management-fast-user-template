@@ -1,1 +1,1 @@
-export * from '../../../../pageBases/FlowCaseCarbonCopyNotification/Assist';
+export * from '../../../../pageBases/general/FlowCaseCarbonCopyNotification/Assist';

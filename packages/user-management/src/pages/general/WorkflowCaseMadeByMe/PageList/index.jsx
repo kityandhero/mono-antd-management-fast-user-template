@@ -23,8 +23,11 @@ import {
 } from '../../../../customConfig';
 import { getFlowCaseStatusName } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { getFlowCaseStatusBadge, WorkflowCase } from '../../../../pageBases';
-import { fieldData } from '../../../../pageBases/WorkflowCase/Common/data';
+import {
+  getFlowCaseStatusBadge,
+  WorkflowCase,
+} from '../../../../pageBases/general';
+import { fieldData } from '../../../../pageBases/general/WorkflowCase/Common/data';
 // import { PageListCreateCaseDrawer as WorkflowSelfBuildPageListCreateCaseDrawer } from '../../WorkflowSelfBuild/PageListCreateCaseDrawer';
 import { PageListCreateCaseDrawer as WorkflowUsablePageListCreateCaseDrawer } from '../../WorkflowUsable/PageListCreateCaseDrawer';
 

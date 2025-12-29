@@ -3,8 +3,8 @@ import { getValueByKey } from 'easy-soft-utility';
 
 import { switchControlAssist } from 'antd-management-fast-framework';
 
-import { BaseAddAttachmentModal } from '../../../../pageBases';
-import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/WorkflowCase/Common/data';
+import { BaseAddAttachmentModal } from '../../../../pageBases/general';
+import { fieldData as fieldDataWorkflowCase } from '../../../../pageBases/general/WorkflowCase/Common/data';
 import { addBasicInfoAction } from '../Assist/action';
 
 const visibleFlag = 'a4f35fb66c684e418af5e030ecc29e65';

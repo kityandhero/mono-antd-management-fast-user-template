@@ -5,7 +5,7 @@ import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCasePageListUnderwayDrawer } from '../../../../pageBases';
+import { BaseFlowCasePageListUnderwayDrawer } from '../../../../pageBases/general';
 import { forceEndAction, refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
 

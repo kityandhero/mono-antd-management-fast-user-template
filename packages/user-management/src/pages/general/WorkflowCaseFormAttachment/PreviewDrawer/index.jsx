@@ -4,7 +4,7 @@ import { getValueByKey } from 'easy-soft-utility';
 import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BasePreviewDrawer } from '../../../../pageBases';
+import { BasePreviewDrawer } from '../../../../pageBases/general';
 import { fieldData } from '../Common/data';
 
 const visibleFlag = 'a404781120e544f58faacd6733150e85';

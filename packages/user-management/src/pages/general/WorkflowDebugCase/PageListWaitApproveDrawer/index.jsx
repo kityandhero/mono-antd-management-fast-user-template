@@ -5,7 +5,7 @@ import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCasePageListWaitApproveDrawer } from '../../../../pageBases';
+import { BaseFlowCasePageListWaitApproveDrawer } from '../../../../pageBases/general';
 import { refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
 

@@ -1,4 +1,4 @@
-import { fieldData as fieldDataSource } from '../../../../pageBases/WorkflowCase/Common/data';
+import { fieldData as fieldDataSource } from '../../../../pageBases/general/WorkflowCase/Common/data';
 
 export const fieldData = {
   ...fieldDataSource,

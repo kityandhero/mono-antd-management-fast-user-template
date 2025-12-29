@@ -32,7 +32,7 @@ import {
   renderFormFlowBranchConditionItemTargetTypeSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { BaseFlowCaseSubmitApprovalModal } from '../../../../pageBases';
+import { BaseFlowCaseSubmitApprovalModal } from '../../../../pageBases/general';
 import { fieldData as fieldDataUser } from '../../User/Common/data';
 import { singleListNextNodeApproverAction } from '../Assist/action';
 import { fieldData as fieldDataWorkflowDebugCase } from '../Common/data';

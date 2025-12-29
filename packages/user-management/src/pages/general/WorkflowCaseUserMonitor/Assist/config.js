@@ -1,1 +1,1 @@
-export * from '../../../../pageBases/WorkflowCase/Assist/config';
+export * from '../../../../pageBases/general/WorkflowCase/Assist/config';
