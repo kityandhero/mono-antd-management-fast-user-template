@@ -58,6 +58,16 @@ export async function singleListNextNodeApproverData(parameters) {
   });
 }
 
+export const getNextNextNodeApproverAndWorkflowNodeDataApiAddress =
+  '/workflowCase/getNextNextNodeApproverAndWorkflowNode';
+
+export async function getNextNextNodeApproverAndWorkflowNodeData(parameters) {
+  return request({
+    api: getNextNextNodeApproverAndWorkflowNodeDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const getDataApiAddress = '/workflowCase/get';
 
 export async function getData(parameters) {

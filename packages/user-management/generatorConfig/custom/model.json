@@ -1,3 +1,67 @@
 {
-  "list": []
+  "list": [
+    {
+      "apis": [
+        {
+          "title": "获取详情",
+          "api": "/currentAccount/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "通告列表",
+          "api": "/currentAccount/listNotice",
+          "effect": "listNotice",
+          "service": "listNoticeData",
+          "type": "singleList"
+        },
+        {
+          "title": "更新基本信息",
+          "api": "/currentAccount/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "变更密码",
+          "api": "/currentAccount/changePassword",
+          "effect": "changePassword",
+          "service": "changePasswordData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新前端配置文件",
+          "api": "/currentAccount/refreshFrontEndApplicationConfig",
+          "effect": "refreshFrontEndApplicationConfig",
+          "service": "refreshFrontEndApplicationConfigData",
+          "type": "singleData"
+        },
+        {
+          "title": "上传图片",
+          "api": "/currentAccount/uploadImage",
+          "effect": "uploadImage",
+          "service": "uploadImageData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "当前账户",
+      "name": "currentAccount"
+    },
+    {
+      "apis": [
+        {
+          "title": "获取",
+          "api": "/metaData/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "元数据集合",
+      "name": "metaData"
+    }
+  ]
 }

@@ -6,11 +6,18 @@ import {
   reducerNameCollection,
 } from 'easy-soft-utility';
 
-import { toggleAllowScanCodeVerificationData } from '../../services/userWorkflowConfigure';
+import {
+  setMobileApproveViewModeData,
+  toggleAllowAutoReuseProcessHistoryData,
+  toggleAllowScanCodeVerificationData,
+} from '../../services/userWorkflowConfigure';
 
 export const userWorkflowConfigureTypeCollection = {
+  setMobileApproveViewMode: 'userWorkflowConfigure/setMobileApproveViewMode',
   toggleAllowScanCodeVerification:
     'userWorkflowConfigure/toggleAllowScanCodeVerification',
+  toggleAllowAutoReuseProcessHistory:
+    'userWorkflowConfigure/toggleAllowAutoReuseProcessHistory',
 };
 
 export function buildModel() {
@@ -22,6 +29,32 @@ export function buildModel() {
     },
 
     effects: {
+      *setMobileApproveViewMode(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(setMobileApproveViewModeData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
       *toggleAllowScanCodeVerification(
         {
           payload,
@@ -33,6 +66,35 @@ export function buildModel() {
       ) {
         const response = yield call(
           toggleAllowScanCodeVerificationData,
+          payload,
+        );
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *toggleAllowAutoReuseProcessHistory(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(
+          toggleAllowAutoReuseProcessHistoryData,
           payload,
         );
 

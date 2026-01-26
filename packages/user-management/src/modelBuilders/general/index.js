@@ -19,6 +19,19 @@ import {
   buildModel as buildGeneralDiscourseModel,
   generalDiscourseTypeCollection,
 } from './generalDiscourse';
+import { buildModel as buildNoticeModel, noticeTypeCollection } from './notice';
+import {
+  buildModel as buildNoticeAttachmentModel,
+  noticeAttachmentTypeCollection,
+} from './noticeAttachment';
+import {
+  buildModel as buildNoticeTagRelationModel,
+  noticeTagRelationTypeCollection,
+} from './noticeTagRelation';
+import {
+  buildModel as buildNoticeUserRelationModel,
+  noticeUserRelationTypeCollection,
+} from './noticeUserRelation';
 import {
   buildModel as buildOperationLogModel,
   operationLogTypeCollection,
@@ -157,6 +170,10 @@ export const modelTypeCollection = {
   departmentTypeCollection,
   editorTypeCollection,
   generalDiscourseTypeCollection,
+  noticeTypeCollection,
+  noticeAttachmentTypeCollection,
+  noticeTagRelationTypeCollection,
+  noticeUserRelationTypeCollection,
   operationLogTypeCollection,
   organizationTypeCollection,
   presetRoleTypeCollection,
@@ -203,6 +220,10 @@ export function listModelBuilder() {
     buildDepartmentModel,
     buildEditorModel,
     buildGeneralDiscourseModel,
+    buildNoticeModel,
+    buildNoticeAttachmentModel,
+    buildNoticeTagRelationModel,
+    buildNoticeUserRelationModel,
     buildOperationLogModel,
     buildOrganizationModel,
     buildPresetRoleModel,

@@ -368,6 +368,258 @@
       "apis": [
         {
           "title": "分页列表",
+          "api": "/notice/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/notice/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增信息",
+          "api": "/notice/addBasicInfo",
+          "effect": "addBasicInfo",
+          "service": "addBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新信息",
+          "api": "/notice/updateBasicInfo",
+          "effect": "updateBasicInfo",
+          "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新标题颜色",
+          "api": "/notice/updateTitleColor",
+          "effect": "updateTitleColor",
+          "service": "updateTitleColorData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新图文详情",
+          "api": "/notice/updateContentInfo",
+          "effect": "updateContentInfo",
+          "service": "updateContentInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新排序值",
+          "api": "/notice/updateSort",
+          "effect": "updateSort",
+          "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "设置对象模式",
+          "api": "/notice/setTargetMode",
+          "effect": "setTargetMode",
+          "service": "setTargetModeData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为上线",
+          "api": "/notice/setOnline",
+          "effect": "setOnline",
+          "service": "setOnlineData",
+          "type": "singleData"
+        },
+        {
+          "title": "设为下线",
+          "api": "/notice/setOffline",
+          "effect": "setOffline",
+          "service": "setOfflineData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/notice/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/notice/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "通告管理",
+      "name": "notice"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeAttachment/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeAttachment/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeAttachment/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增附件",
+          "api": "/noticeAttachment/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除附件",
+          "api": "/noticeAttachment/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeAttachment/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告附件管理",
+      "name": "noticeAttachment"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeTagRelation/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeTagRelation/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeTagRelation/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增标签关系",
+          "api": "/noticeTagRelation/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "批量新增标签关系",
+          "api": "/noticeTagRelation/addBatch",
+          "effect": "addBatch",
+          "service": "addBatchData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除标签关系",
+          "api": "/noticeTagRelation/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeTagRelation/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告标签关系管理",
+      "name": "noticeTagRelation"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/noticeUserRelation/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/noticeUserRelation/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/noticeUserRelation/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增人员关系",
+          "api": "/noticeUserRelation/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "批量新增人员关系",
+          "api": "/noticeUserRelation/addBatch",
+          "effect": "addBatch",
+          "service": "addBatchData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除人员关系",
+          "api": "/noticeUserRelation/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/noticeUserRelation/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        }
+      ],
+      "cover": true,
+      "title": "通告人员关系管理",
+      "name": "noticeUserRelation"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
           "api": "/operationLog/pageList",
           "effect": "pageList",
           "service": "pageListData",
@@ -948,10 +1200,24 @@
     {
       "apis": [
         {
+          "title": "设置移动端审批视图模式",
+          "api": "/userWorkflowConfigure/setMobileApproveViewMode",
+          "effect": "setMobileApproveViewMode",
+          "service": "setMobileApproveViewModeData",
+          "type": "singleData"
+        },
+        {
           "title": "切换是否允许扫码校验",
           "api": "/userWorkflowConfigure/toggleAllowScanCodeVerification",
           "effect": "toggleAllowScanCodeVerification",
           "service": "toggleAllowScanCodeVerificationData",
+          "type": "singleData"
+        },
+        {
+          "title": "切换是否允许自动套用审批历史",
+          "api": "/userWorkflowConfigure/toggleAllowAutoReuseProcessHistory",
+          "effect": "toggleAllowAutoReuseProcessHistory",
+          "service": "toggleAllowAutoReuseProcessHistoryData",
           "type": "singleData"
         }
       ],
@@ -1333,6 +1599,13 @@
           "type": "singleList"
         },
         {
+          "title": "获取即将审批节点的下下一节点审批人列表以及审批节点",
+          "api": "/workflowCase/getNextNextNodeApproverAndWorkflowNode",
+          "effect": "getNextNextNodeApproverAndWorkflowNode",
+          "service": "getNextNextNodeApproverAndWorkflowNodeData",
+          "type": "singleData"
+        },
+        {
           "title": "获取详情",
           "api": "/workflowCase/get",
           "effect": "get",
@@ -1709,6 +1982,13 @@
           "effect": "singleListNextNodeApprover",
           "service": "singleListNextNodeApproverData",
           "type": "singleList"
+        },
+        {
+          "title": "获取即将审批节点的下下一节点审批人列表以及审批节点",
+          "api": "/workflowDebugCase/getNextNextNodeApproverAndWorkflowNode",
+          "effect": "getNextNextNodeApproverAndWorkflowNode",
+          "service": "getNextNextNodeApproverAndWorkflowNodeData",
+          "type": "singleData"
         },
         {
           "title": "获取详情",
