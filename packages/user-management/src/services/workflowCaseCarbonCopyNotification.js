@@ -1,7 +1,7 @@
-
 import { request } from 'easy-soft-utility';
 
-export const pageListDataApiAddress = '/workflowCaseCarbonCopyNotification/pageList';
+export const pageListDataApiAddress =
+  '/workflowCaseCarbonCopyNotification/pageList';
 
 export async function pageListData(parameters) {
   return request({
@@ -9,4 +9,3 @@ export async function pageListData(parameters) {
     params: parameters,
   });
 }
-

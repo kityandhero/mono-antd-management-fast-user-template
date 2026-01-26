@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -19,13 +18,13 @@ import {
 } from '../../services/presetRole';
 
 export const presetRoleTypeCollection = {
-  pageList: "presetRole/pageList",
-  listSelect: "presetRole/listSelect",
-  listModule: "presetRole/listModule",
-  listTreeModule: "presetRole/listTreeModule",
-  get: "presetRole/get",
-  refreshCache: "presetRole/refreshCache",
-}
+  pageList: 'presetRole/pageList',
+  listSelect: 'presetRole/listSelect',
+  listModule: 'presetRole/listModule',
+  listTreeModule: 'presetRole/listTreeModule',
+  get: 'presetRole/get',
+  refreshCache: 'presetRole/refreshCache',
+};
 
 export function buildModel() {
   return {

@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -18,13 +17,13 @@ import {
 } from '../../services/userDepartmentInfo';
 
 export const userDepartmentInfoTypeCollection = {
-  pageList: "userDepartmentInfo/pageList",
-  get: "userDepartmentInfo/get",
-  addBasicInfo: "userDepartmentInfo/addBasicInfo",
-  setPrimary: "userDepartmentInfo/setPrimary",
-  remove: "userDepartmentInfo/remove",
-  refreshCache: "userDepartmentInfo/refreshCache",
-}
+  pageList: 'userDepartmentInfo/pageList',
+  get: 'userDepartmentInfo/get',
+  addBasicInfo: 'userDepartmentInfo/addBasicInfo',
+  setPrimary: 'userDepartmentInfo/setPrimary',
+  remove: 'userDepartmentInfo/remove',
+  refreshCache: 'userDepartmentInfo/refreshCache',
+};
 
 export function buildModel() {
   return {

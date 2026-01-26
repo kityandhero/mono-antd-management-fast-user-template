@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -22,16 +21,16 @@ import {
 } from '../../services/workflowDebugCaseFormAttachment';
 
 export const workflowDebugCaseFormAttachmentTypeCollection = {
-  pageList: "workflowDebugCaseFormAttachment/pageList",
-  singleList: "workflowDebugCaseFormAttachment/singleList",
-  get: "workflowDebugCaseFormAttachment/get",
-  addBasicInfo: "workflowDebugCaseFormAttachment/addBasicInfo",
-  supplement: "workflowDebugCaseFormAttachment/supplement",
-  remove: "workflowDebugCaseFormAttachment/remove",
-  refreshCache: "workflowDebugCaseFormAttachment/refreshCache",
-  pageListOperateLog: "workflowDebugCaseFormAttachment/pageListOperateLog",
-  uploadFile: "workflowDebugCaseFormAttachment/uploadFile",
-}
+  pageList: 'workflowDebugCaseFormAttachment/pageList',
+  singleList: 'workflowDebugCaseFormAttachment/singleList',
+  get: 'workflowDebugCaseFormAttachment/get',
+  addBasicInfo: 'workflowDebugCaseFormAttachment/addBasicInfo',
+  supplement: 'workflowDebugCaseFormAttachment/supplement',
+  remove: 'workflowDebugCaseFormAttachment/remove',
+  refreshCache: 'workflowDebugCaseFormAttachment/refreshCache',
+  pageListOperateLog: 'workflowDebugCaseFormAttachment/pageListOperateLog',
+  uploadFile: 'workflowDebugCaseFormAttachment/uploadFile',
+};
 
 export function buildModel() {
   return {
