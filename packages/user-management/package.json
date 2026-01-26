@@ -144,7 +144,7 @@
     "@formily/react": "^2.3.7",
     "@tanem/react-nprogress": "^5.0.58",
     "@umijs/max": "^4.6.24",
-    "antd": "^5.29.1",
+    "antd": "^6.2.1",
     "antd-management-fast-common": "^2.6.184",
     "antd-management-fast-component": "^2.7.79",
     "antd-management-fast-design-playground": "^1.0.235",
