@@ -1,42 +1,24 @@
-/* eslint-disable no-unused-vars */
-import { connect } from 'easy-soft-dva';
 import {
   checkHasAuthority,
-  checkInCollection,
   checkStringIsNullOrWhiteSpace,
   convertCollection,
-  filter,
   getValueByKey,
-  isArray,
-  isEmptyArray,
-  logConsole,
-  toString,
-  zeroString,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import { cardConfig } from 'antd-management-fast-common';
 import { buildButton, iconBuilder } from 'antd-management-fast-component';
-import { DataModal, switchControlAssist } from 'antd-management-fast-framework';
+import { DataModal } from 'antd-management-fast-framework';
 
 import {
   accessWayCollection,
   fieldDataFlowCase,
   fieldDataFlowCaseProcessHistory,
   fieldDataFlowNode,
-  flowBranchConditionItemTargetComparisonModelCollection,
-  flowBranchConditionItemTargetTypeCollection,
-  flowDebugApproverModeCollection,
   flowNodeApproveModeCollection,
 } from '../../../../customConfig';
-import {
-  renderFormFlowBranchConditionItemTargetComparisonModeSelect,
-  renderFormFlowBranchConditionItemTargetTypeSelect,
-} from '../../../../customSpecialComponents';
 import { singleListAction } from '../../../../pages/general/GeneralDiscourse/Assist/action';
 import { typeCollection } from '../../../../pages/general/GeneralDiscourse/Common/data';
-import { fieldData as fieldDataUser } from '../../../../pages/general/User/Common/data';
-import { singleListNextNodeApproverAction } from '../../../../pages/general/WorkflowDebugCase/Assist/action';
-import { singleListApproverUserWithNodeAndFlowCaseAction } from '../../../../pages/general/WorkflowNodeApprover/Assist/action';
 
 const { BaseUpdateModal } = DataModal;
 
@@ -57,7 +39,13 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
 
   nextWorkflowNodeApproverUserRealName = '';
 
+  nextNextWorkflowNodeApproverUserId = '';
+
+  nextNextWorkflowNodeApproverUserRealName = '';
+
   nextNodeApproverUserName = '17158fea9dbc42d4abbe967cdc099ba1';
+
+  nextNextNodeApproverUserName = '1c5b6676095646ce83443bf545b7d4f2';
 
   generalDiscourseName = '991d90f0881b4e14909c7e8f270e593f';
 
@@ -94,6 +82,12 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
     );
   };
 
+  checkHasGetNextNextNodeApproverAndWorkflowNodeAuthority = () => {
+    throw new Error(
+      'checkHasGetNextNextNodeApproverAndWorkflowNodeAuthority need overrode to implement, need return boolean',
+    );
+  };
+
   supplementLoadRequestParams = (o) => {
     const d = { ...o };
     const { externalData } = this.props;
@@ -104,8 +98,6 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
   };
 
   loadGeneralDiscourseList = () => {
-    const { externalData } = this.props;
-
     singleListAction({
       target: this,
       handleData: {
@@ -133,6 +125,40 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
     this.loadNextNodeApproverList();
   };
 
+  loadNextNextNodeApproverAndWorkflowNode = () => {
+    throw new Error(
+      'loadNextNextNodeApproverAndWorkflowNode need overrode to implement, need return boolean',
+    );
+  };
+
+  reloadNextNextNodeApproverAndWorkflowNode = () => {
+    this.loadNextNextNodeApproverAndWorkflowNode();
+  };
+
+  doOtherAfterLoadSuccess = ({
+    metaData = null,
+    // eslint-disable-next-line no-unused-vars
+    metaListData = [],
+    // eslint-disable-next-line no-unused-vars
+    metaExtra = null,
+    // eslint-disable-next-line no-unused-vars
+    metaOriginalData = null,
+  }) => {
+    const nextNextApproveWorkflowNode = getValueByKey({
+      data: metaData,
+      key: fieldDataFlowCase.nextNextApproveWorkflowNode.name,
+    });
+
+    const whetherOneSignatureAllowSkip = getValueByKey({
+      data: nextNextApproveWorkflowNode,
+      key: fieldDataFlowNode.whetherOneSignatureAllowSkip.name,
+    });
+
+    if (whetherOneSignatureAllowSkip === whetherNumber.yes) {
+      this.reloadNextNextNodeApproverAndWorkflowNode();
+    }
+  };
+
   onGeneralDiscourseChange = (v, option) => {
     const { content } = option;
 
@@ -146,6 +172,7 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   onNextNodeApproverChange = (v, option) => {
     this.nextWorkflowNodeApproverUserId = v;
   };
@@ -171,6 +198,7 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
   };
 
   fillInitialValuesAfterLoad = ({
+    // eslint-disable-next-line no-unused-vars
     metaData = null,
     // eslint-disable-next-line no-unused-vars
     metaListData = [],
@@ -188,14 +216,12 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
     return [];
   };
 
+  establishNextNextNodeApproverUserViewConfig = () => {
+    return [];
+  };
+
   establishCardCollectionConfig = () => {
     const { metaData, generalDiscourseList } = this.state;
-
-    const debugApproverMode = getValueByKey({
-      data: metaData,
-      key: fieldDataFlowCase.debugApproverMode.name,
-      convert: convertCollection.number,
-    });
 
     const nextApproveWorkflowNode = getValueByKey({
       data: metaData,
@@ -256,6 +282,7 @@ class BaseFlowCaseProcessHistoryPassModal extends BaseUpdateModal {
               value: `${approveMode}${nextApproveWorkflowNodeName}`,
             },
             ...this.establishNextNodeApproverUserViewConfig(),
+            ...this.establishNextNextNodeApproverUserViewConfig(),
             {
               lg: 24,
               type: cardConfig.contentItemType.select,

@@ -699,10 +699,20 @@ export const accessWayInfrastructureCollection = {
     },
   },
   userWorkflowConfigure: {
+    setMobileApproveViewMode: {
+      title: '设置移动端审批视图模式',
+      paramsKey: 'fe92272e1122f8470943ccdede2ef886',
+      permission: '436a54fff8d8487eb64c9f76e807cf1d',
+    },
     toggleAllowScanCodeVerification: {
       title: '切换是否允许扫码校验',
       paramsKey: '2e4760dca8c05ada807a90e64d0e5b04',
       permission: 'a4ad67531cdc45809be74fd432b5dabf',
+    },
+    toggleAllowAutoReuseProcessHistory: {
+      title: '切换是否允许自动套用审批历史',
+      paramsKey: '71b809969c6569f32965d97640919db3',
+      permission: '3374e8f87eec4f6399dd763acd54fa46',
     },
   },
   workflow: {
@@ -962,6 +972,11 @@ export const accessWayInfrastructureCollection = {
       paramsKey: 'cd683bb897191a5f5162304d394157de',
       permission: '58cc9323a9a244cda9614b8069ba7ae6',
     },
+    getNextNextNodeApproverAndWorkflowNode: {
+      title: '获取即将审批节点的下下一节点审批人列表以及审批节点',
+      paramsKey: '6b2be65655901959926583693a6fff6d',
+      permission: '0ae44d73362d4c30ab6e86331903dca9',
+    },
     get: {
       title: '获取详情',
       paramsKey: '3feb2f6f97736b9889bd593e12372995',
@@ -1200,6 +1215,11 @@ export const accessWayInfrastructureCollection = {
       title: '当前即将审批节点的下一节点审批人列表',
       paramsKey: '840b59d47784f34febac62b477b0918e',
       permission: '3b628bc1527f475ba07040c01fd16424',
+    },
+    getNextNextNodeApproverAndWorkflowNode: {
+      title: '获取即将审批节点的下下一节点审批人列表以及审批节点',
+      paramsKey: 'd31974621aeae896ac4de51fee0d0d7d',
+      permission: 'ffd372cd38474fbd9110f51adeb448fd',
     },
     get: {
       title: '获取详情',
@@ -1577,6 +1597,11 @@ export const accessWayInfrastructureCollection = {
       paramsKey: 'c2deded912c91a90c88ee3bc8cc9c15a',
       permission: 'adc5f02015ec4f99aca01c93f3317e39',
     },
+    updateDescriptiveInfo: {
+      title: '更新描述性信息',
+      paramsKey: '4cb0c3c0204b070a56a7174ff40f04eb',
+      permission: '50e4b64698084a4fbc9fa3e89b0c8822',
+    },
     setBranchConditionId: {
       title: '设置流程线条的分支进入条件, 仅应在多分支流程中使用',
       paramsKey: 'b627b837323bba9a3c072d8cc702f370',
@@ -1643,6 +1668,11 @@ export const accessWayInfrastructureCollection = {
       title: '编辑信息',
       paramsKey: 'fbcac84ae0ee40f12ef37aef050f8b8d',
       permission: '95038e25786e401087971e72467a8cc6',
+    },
+    updateDescriptiveInfo: {
+      title: '更新描述性信息',
+      paramsKey: 'bbbe45abd06612ddbdf69fb6a5657106',
+      permission: '7d535c5123c24489b7bdbdb010f9cd7b',
     },
     updateViewConfig: {
       title: '编辑节点视图配置',

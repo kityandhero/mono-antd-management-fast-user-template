@@ -74,6 +74,16 @@ export async function updateBasicInfoData(parameters) {
   });
 }
 
+export const updateDescriptiveInfoDataApiAddress =
+  '/workflowNode/updateDescriptiveInfo';
+
+export async function updateDescriptiveInfoData(parameters) {
+  return request({
+    api: updateDescriptiveInfoDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const updateViewConfigDataApiAddress = '/workflowNode/updateViewConfig';
 
 export async function updateViewConfigData(parameters) {

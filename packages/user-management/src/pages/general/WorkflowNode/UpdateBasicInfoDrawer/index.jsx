@@ -236,6 +236,12 @@ class UpdateBasicInfoDrawer extends BaseUpdateDrawer {
         key: fieldData.whetherCounterSignatureInSequence.name,
         convert: convertCollection.string,
       });
+
+      values[fieldData.whetherOneSignatureAllowSkip.name] = getValueByKey({
+        data: metaData,
+        key: fieldData.whetherOneSignatureAllowSkip.name,
+        convert: convertCollection.string,
+      });
     }
 
     return values;
@@ -319,6 +325,15 @@ class UpdateBasicInfoDrawer extends BaseUpdateDrawer {
               hidden:
                 currentApproveMode !==
                 flowNodeApproveModeCollection.counterSignature,
+            },
+            {
+              lg: 12,
+              type: cardConfig.contentItemType.whetherSelect,
+              fieldData: fieldData.whetherOneSignatureAllowSkip,
+              require: true,
+              hidden:
+                currentApproveMode !==
+                flowNodeApproveModeCollection.oneSignature,
             },
             {
               lg: 12,

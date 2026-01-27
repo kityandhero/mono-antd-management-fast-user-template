@@ -1,3 +1,4 @@
+
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -14,10 +15,10 @@ import {
 } from '../../services/operationLog';
 
 export const operationLogTypeCollection = {
-  pageList: 'operationLog/pageList',
-  get: 'operationLog/get',
-  refreshCache: 'operationLog/refreshCache',
-};
+  pageList: "operationLog/pageList",
+  get: "operationLog/get",
+  refreshCache: "operationLog/refreshCache",
+}
 
 export function buildModel() {
   return {

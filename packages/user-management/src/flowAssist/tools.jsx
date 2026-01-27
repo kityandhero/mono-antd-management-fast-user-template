@@ -12,7 +12,6 @@ import {
   hasKey,
   isArray,
   isEmptyArray,
-  logConsole,
   logException,
   toLower,
   toLowerFirst,
@@ -604,6 +603,23 @@ export function getDocumentPrintDesignerConfig({
         })
       : '';
 
+  const sealDisuseVisibility = getValueByKey({
+    data: flowCase,
+    key: fieldDataFlowCase.sealDisuseVisibility.name,
+    convert: convertCollection.number,
+    defaultValue: whetherNumber.no,
+  });
+
+  const sealDisuseImage =
+    sealDisuseVisibility === whetherNumber.yes
+      ? getValueByKey({
+          data: flowCase,
+          key: fieldDataFlowCase.sealDisuseImage.name,
+          convert: convertCollection.string,
+          defaultValue: '',
+        })
+      : '';
+
   const documentSchema = getValueByKey({
     data: workflowFormDesign,
     key: fieldDataFlowFormDesign.documentSchema.name,
@@ -756,6 +772,8 @@ export function getDocumentPrintDesignerConfig({
     watermarkText,
     sealRefuseVisibility,
     sealRefuseImage,
+    sealDisuseVisibility,
+    sealDisuseImage,
     workflowTitle,
     general,
     title,
@@ -1056,8 +1074,6 @@ export function SealImage({
 }
 
 export function NodeFooter({ data }) {
-  logConsole({ data }, 'NodeFooter');
-
   const approveMode = getValueByKey({
     data: data,
     key: fieldDataFlowNode.approveMode.name,
@@ -1074,11 +1090,19 @@ export function NodeFooter({ data }) {
   }
 
   let configDescription = '';
+  let whetherOneSignatureAllowSkip = whetherNumber.no;
 
   if (approveMode === flowNodeApproveModeCollection.oneSignature) {
     const whetherOneSignatureDesignateNextApprover = getValueByKey({
       data: data,
       key: fieldDataFlowNode.whetherOneSignatureDesignateNextApprover.name,
+      convert: convertCollection.number,
+      defaultValue: '',
+    });
+
+    whetherOneSignatureAllowSkip = getValueByKey({
+      data: data,
+      key: fieldDataFlowNode.whetherOneSignatureAllowSkip.name,
       convert: convertCollection.number,
       defaultValue: '',
     });
@@ -1102,6 +1126,8 @@ export function NodeFooter({ data }) {
         ? '依照顺序分别签署'
         : '无需依照顺序签署';
   }
+
+  configDescription = `${configDescription}${whetherOneSignatureAllowSkip === whetherNumber.yes ? ', 允许跳过节点审批' : ', 禁止跳过节点审批'}`;
 
   return (
     <div>

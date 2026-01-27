@@ -125,6 +125,9 @@ class AddIntermediatePointDrawer extends BaseAddPointDrawer {
     initialValues[fieldData.whetherCounterSignatureInSequence.name] =
       whetherString.yes;
 
+    initialValues[fieldData.whetherOneSignatureAllowSkip.name] =
+      whetherString.no;
+
     return initialValues;
   };
 
@@ -190,6 +193,14 @@ class AddIntermediatePointDrawer extends BaseAddPointDrawer {
         require: true,
         hidden:
           currentApproveMode !== flowNodeApproveModeCollection.counterSignature,
+      },
+      {
+        lg: 12,
+        type: cardConfig.contentItemType.whetherSelect,
+        fieldData: fieldData.whetherOneSignatureAllowSkip,
+        require: true,
+        hidden:
+          currentApproveMode !== flowNodeApproveModeCollection.oneSignature,
       },
       {
         lg: 12,

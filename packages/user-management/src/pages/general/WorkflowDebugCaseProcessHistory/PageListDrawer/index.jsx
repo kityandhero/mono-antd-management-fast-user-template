@@ -1,35 +1,17 @@
 import { connect } from 'easy-soft-dva';
 import {
-  buildRandomHexColor,
   checkHasAuthority,
+  convertCollection,
   getValueByKey,
-  toNumber,
 } from 'easy-soft-utility';
 
-import {
-  columnFacadeMode,
-  searchCardConfig,
-} from 'antd-management-fast-common';
-import { iconBuilder } from 'antd-management-fast-component';
-import {
-  DataMultiPageView,
-  switchControlAssist,
-} from 'antd-management-fast-framework';
+import { switchControlAssist } from 'antd-management-fast-framework';
 
 import { accessWayCollection } from '../../../../customConfig';
-import {
-  getChannelName,
-  getFlowApproveActionModeName,
-  getFlowApproveActionName,
-  getFlowCaseProcessHistoryStatusName,
-} from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
-import { fieldData as fieldDataWorkflowDebugCase } from '../../WorkflowDebugCase/Common/data';
+import { BaseFlowCaseProcessHistoryPageListDrawer } from '../../../../pageBases';
 import { refreshCacheAction } from '../Assist/action';
-import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
-
-const { MultiPageDrawer } = DataMultiPageView;
 
 // 显隐控制标记, 必须设置, 标记需要全局唯一
 const visibleFlag = 'c3e53fb8af82487a93ad23a1f430cdd6';
@@ -38,7 +20,7 @@ const visibleFlag = 'c3e53fb8af82487a93ad23a1f430cdd6';
   workflowDebugCaseProcessHistory,
   schedulingControl,
 }))
-class WorkflowDebugCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
+class WorkflowDebugCaseProcessHistoryPageListDrawer extends BaseFlowCaseProcessHistoryPageListDrawer {
   reloadWhenShow = true;
 
   componentAuthority =
@@ -57,30 +39,19 @@ class WorkflowDebugCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
       loadApiPath:
         modelTypeCollection.workflowDebugCaseProcessHistoryTypeCollection
           .pageList,
-      tableScrollX: 1420,
     };
   }
 
-  static getDerivedStateFromProps(nextProperties, previousState) {
-    return super.getDerivedStateFromProps(nextProperties, previousState);
-  }
-
-  supplementLoadRequestParams = (o) => {
-    return {
-      ...this.supplementRequestParams(o),
-    };
+  getFlowCaseProcessHistoryId = (o) => {
+    return getValueByKey({
+      data: o,
+      key: fieldData.workflowDebugCaseProcessHistoryId.name,
+      convert: convertCollection.string,
+    });
   };
 
-  supplementRequestParams = (o) => {
-    const d = { ...o };
-    const { externalData } = this.state;
-
-    d[fieldData.flowCaseId.name] = getValueByKey({
-      data: externalData,
-      key: fieldDataWorkflowDebugCase.workflowDebugCaseId.name,
-    });
-
-    return d;
+  getFlowCaseProcessHistoryIdDataTarget = () => {
+    return fieldData.workflowDebugCaseProcessHistoryId;
   };
 
   refreshCache = (r) => {
@@ -90,144 +61,12 @@ class WorkflowDebugCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
     });
   };
 
-  renderPresetTitleIcon = () => null;
-
-  establishSearchCardConfig = () => {
-    return {
-      list: [
-        {
-          lg: 16,
-          type: searchCardConfig.contentItemType.input,
-          fieldData: fieldData.approveWorkflowNodeName,
-        },
-        {
-          lg: 8,
-          type: searchCardConfig.contentItemType.component,
-          component: this.buildSearchCardButtonCore(),
-        },
-      ],
-    };
+  checkHasRefreshCacheAuthority = () => {
+    return checkHasAuthority(
+      accessWayCollection.workflowDebugCaseProcessHistory.refreshCache
+        .permission,
+    );
   };
-
-  establishListItemDropdownConfig = (record) => {
-    return {
-      size: 'small',
-      text: '刷新缓存',
-      icon: iconBuilder.reload(),
-      disabled: !checkHasAuthority(
-        accessWayCollection.workflowDebugCaseProcessHistory.refreshCache
-          .permission,
-      ),
-      handleButtonClick: ({ handleData }) => {
-        this.refreshCache(handleData);
-      },
-      handleData: record,
-      confirm: true,
-      title: '即将刷新缓存，确定吗？',
-    };
-  };
-
-  getColumnWrapper = () => [
-    {
-      dataTarget: fieldData.approveWorkflowNodeName,
-      width: 140,
-      showRichFacade: true,
-      emptyValue: '--',
-    },
-    {
-      dataTarget: fieldData.approveWorkflowNodeTypeNote,
-      width: 140,
-      showRichFacade: true,
-      emptyValue: '--',
-    },
-    {
-      dataTarget: fieldData.approveAction,
-      width: 80,
-      showRichFacade: true,
-      emptyValue: '--',
-      facadeConfigBuilder: (value) => {
-        return {
-          color: buildRandomHexColor({
-            seed: value * 2 + 21,
-          }),
-        };
-      },
-      formatValue: (value) => {
-        return getFlowApproveActionName({
-          value: value,
-        });
-      },
-    },
-    {
-      dataTarget: fieldData.approveActionMode,
-      width: 140,
-      showRichFacade: true,
-      emptyValue: '--',
-      facadeConfigBuilder: (value) => {
-        return {
-          color: buildRandomHexColor({
-            seed: value * 2 + 15,
-          }),
-        };
-      },
-      formatValue: (value) => {
-        return getFlowApproveActionModeName({
-          value: value,
-        });
-      },
-    },
-    {
-      dataTarget: fieldData.channel,
-      width: 120,
-      showRichFacade: true,
-      emptyValue: '--',
-      facadeConfigBuilder: (value) => {
-        return {
-          color: buildRandomHexColor({
-            seed: toNumber(value) + 47,
-          }),
-        };
-      },
-      formatValue: (value) => {
-        return getChannelName({
-          value: value,
-        });
-      },
-    },
-    {
-      dataTarget: fieldData.status,
-      width: 120,
-      showRichFacade: true,
-      emptyValue: '--',
-      facadeMode: columnFacadeMode.badge,
-      facadeConfigBuilder: (value) => {
-        return {
-          status: getStatusBadge(value),
-          text: getFlowCaseProcessHistoryStatusName({
-            value: value,
-          }),
-        };
-      },
-    },
-    {
-      dataTarget: fieldData.workflowDebugCaseProcessHistoryId,
-      width: 120,
-      showRichFacade: true,
-      canCopy: true,
-    },
-    {
-      dataTarget: fieldData.flowCaseId,
-      width: 120,
-      showRichFacade: true,
-      canCopy: true,
-    },
-    {
-      dataTarget: fieldData.createTime,
-      width: 160,
-      showRichFacade: true,
-      facadeMode: columnFacadeMode.datetime,
-    },
-  ];
 }
 
 export { WorkflowDebugCaseProcessHistoryPageListDrawer };

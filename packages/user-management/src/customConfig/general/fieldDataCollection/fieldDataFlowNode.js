@@ -110,5 +110,10 @@ export const fieldDataFlowNode = {
     name: 'whetherCounterSignatureInSequence',
     helper: '',
   },
+  whetherOneSignatureAllowSkip: {
+    label: '或签是否允许跳过',
+    name: 'whetherOneSignatureAllowSkip',
+    helper: '',
+  },
   ...formExtraData,
 };

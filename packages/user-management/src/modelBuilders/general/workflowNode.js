@@ -20,6 +20,7 @@ import {
   removeData,
   singleListData,
   updateBasicInfoData,
+  updateDescriptiveInfoData,
   updateViewConfigData,
 } from '../../services/workflowNode';
 
@@ -32,6 +33,7 @@ export const workflowNodeTypeCollection = {
   addCarbonCopyPoint: 'workflowNode/addCarbonCopyPoint',
   addEndPoint: 'workflowNode/addEndPoint',
   updateBasicInfo: 'workflowNode/updateBasicInfo',
+  updateDescriptiveInfo: 'workflowNode/updateDescriptiveInfo',
   updateViewConfig: 'workflowNode/updateViewConfig',
   remove: 'workflowNode/remove',
   refreshCache: 'workflowNode/refreshCache',
@@ -239,6 +241,32 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(updateBasicInfoData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *updateDescriptiveInfo(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(updateDescriptiveInfoData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

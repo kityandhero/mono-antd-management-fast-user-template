@@ -1,14 +1,17 @@
 import {
   buildRandomHexColor,
+  convertCollection,
   getValueByKey,
   toNumber,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import {
   columnFacadeMode,
+  listViewConfig,
   searchCardConfig,
 } from 'antd-management-fast-common';
-import { iconBuilder } from 'antd-management-fast-component';
+import { ColorText, iconBuilder } from 'antd-management-fast-component';
 import { DataMultiPageView } from 'antd-management-fast-framework';
 
 import { fieldDataFlowCaseProcessHistory } from '../../../../customConfig';
@@ -30,9 +33,10 @@ class BaseFlowCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
 
     this.state = {
       ...this.state,
+      listViewMode: listViewConfig.viewMode.table,
       pageTitle: '',
       loadApiPath: '',
-      tableScrollX: 1300,
+      tableScrollX: 1400,
     };
   }
 
@@ -97,6 +101,10 @@ class BaseFlowCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
     };
   };
 
+  establishListViewItemLayout = () => {
+    return 'vertical';
+  };
+
   establishListItemDropdownConfig = (record) => {
     return {
       size: 'small',
@@ -109,6 +117,115 @@ class BaseFlowCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
       handleData: record,
       confirm: true,
       title: '即将刷新缓存，确定吗？',
+    };
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  establishPresetListViewItemInnerConfig = (item, index) => {
+    const approveAction = getValueByKey({
+      data: item,
+      key: fieldDataFlowCaseProcessHistory.approveAction.name,
+      convert: convertCollection.number,
+    });
+
+    const approveActionMode = getValueByKey({
+      data: item,
+      key: fieldDataFlowCaseProcessHistory.approveActionMode.name,
+      convert: convertCollection.number,
+    });
+
+    return {
+      title: {
+        label: fieldDataFlowCaseProcessHistory.approveWorkflowNodeName.label,
+        text: getValueByKey({
+          data: item,
+          key: fieldDataFlowCaseProcessHistory.approveWorkflowNodeName.name,
+        }),
+      },
+      descriptionList: [
+        {
+          label: fieldDataFlowCaseProcessHistory.approveUserName.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldDataFlowCaseProcessHistory.approveUserName.name,
+          }),
+          color: '#999999',
+          extra: (
+            <ColorText
+              textPrefix={fieldDataFlowCaseProcessHistory.approveAction.label}
+              text={getFlowApproveActionName({
+                value: approveAction,
+              })}
+              randomColor
+              randomSeed={approveAction}
+              separatorStyle={{
+                paddingRight: '4px',
+              }}
+              seedOffset={18}
+            />
+          ),
+        },
+        {
+          label:
+            fieldDataFlowCaseProcessHistory.approveWorkflowNodeTypeNote.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldDataFlowCaseProcessHistory.approveWorkflowNodeTypeNote
+              .name,
+          }),
+          color: '#999999',
+          extra: (
+            <ColorText
+              textPrefix={
+                fieldDataFlowCaseProcessHistory.approveActionModeNote.label
+              }
+              text={getFlowApproveActionModeName({
+                value: approveActionMode,
+              })}
+              randomColor
+              randomSeed={approveActionMode}
+              separatorStyle={{
+                paddingRight: '4px',
+              }}
+              seedOffset={18}
+            />
+          ),
+        },
+      ],
+      actionList: [
+        {
+          label: this.getFlowCaseProcessHistoryIdDataTarget().label,
+          text: this.getFlowCaseProcessHistoryId(item),
+          canCopy: true,
+          color: '#999999',
+        },
+        {
+          label: fieldDataFlowCaseProcessHistory.approveActionReuseNote.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldDataFlowCaseProcessHistory.approveActionReuseNote.name,
+          }),
+          color: '#999999',
+        },
+        {
+          label: fieldDataFlowCaseProcessHistory.channel.label,
+          text: getChannelName({
+            value: getValueByKey({
+              data: item,
+              key: fieldDataFlowCaseProcessHistory.channel.name,
+            }),
+          }),
+          color: '#999999',
+        },
+        {
+          label: fieldDataFlowCaseProcessHistory.createTime.label,
+          text: getValueByKey({
+            data: item,
+            key: fieldDataFlowCaseProcessHistory.createTime.name,
+          }),
+          color: '#999999',
+        },
+      ],
     };
   };
 
@@ -159,6 +276,41 @@ class BaseFlowCaseProcessHistoryPageListDrawer extends MultiPageDrawer {
         return getFlowApproveActionModeName({
           value: value,
         });
+      },
+    },
+    {
+      dataTarget: fieldDataFlowCaseProcessHistory.approveActionReuse,
+      width: 80,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: value * 2 + 15,
+          }),
+        };
+      },
+      formatValue: (value, record) => {
+        return getValueByKey({
+          data: record,
+          key: fieldDataFlowCaseProcessHistory.approveActionReuseNote.name,
+        });
+      },
+    },
+    {
+      dataTarget: fieldDataFlowCaseProcessHistory.whetherSkip,
+      width: 80,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: value * 3 + 22,
+          }),
+        };
+      },
+      formatValue: (value) => {
+        return value === whetherNumber.yes ? '是' : '否';
       },
     },
     {

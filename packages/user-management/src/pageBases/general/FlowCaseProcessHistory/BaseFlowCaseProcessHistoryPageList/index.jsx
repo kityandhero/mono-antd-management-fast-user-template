@@ -1,7 +1,9 @@
 import {
   buildRandomHexColor,
+  getValueByKey,
   showSimpleErrorMessage,
   toNumber,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import {
@@ -32,7 +34,7 @@ class BaseFlowCaseProcessHistoryPageList extends MultiPage {
       ...this.state,
       pageTitle: '',
       loadApiPath: '',
-      tableScrollX: 1300,
+      tableScrollX: 1900,
       currentRecord: null,
     };
   }
@@ -181,6 +183,41 @@ class BaseFlowCaseProcessHistoryPageList extends MultiPage {
         return getFlowApproveActionModeName({
           value: value,
         });
+      },
+    },
+    {
+      dataTarget: fieldDataFlowCaseProcessHistory.approveActionReuse,
+      width: 80,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: value * 3 + 22,
+          }),
+        };
+      },
+      formatValue: (value, record) => {
+        return getValueByKey({
+          data: record,
+          key: fieldDataFlowCaseProcessHistory.approveActionReuseNote.name,
+        });
+      },
+    },
+    {
+      dataTarget: fieldDataFlowCaseProcessHistory.whetherSkip,
+      width: 80,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: value * 3 + 22,
+          }),
+        };
+      },
+      formatValue: (value) => {
+        return value === whetherNumber.yes ? '是' : '否';
       },
     },
     {

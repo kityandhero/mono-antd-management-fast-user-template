@@ -2565,6 +2565,13 @@
           "type": "singleData"
         },
         {
+          "title": "更新描述性信息",
+          "api": "/workflowLine/updateDescriptiveInfo",
+          "effect": "updateDescriptiveInfo",
+          "service": "updateDescriptiveInfoData",
+          "type": "singleData"
+        },
+        {
           "title": "设置流程线条的分支进入条件, 仅应在多分支流程中使用",
           "api": "/workflowLine/setBranchConditionId",
           "effect": "setBranchConditionId",
@@ -2660,6 +2667,13 @@
           "api": "/workflowNode/updateBasicInfo",
           "effect": "updateBasicInfo",
           "service": "updateBasicInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "更新描述性信息",
+          "api": "/workflowNode/updateDescriptiveInfo",
+          "effect": "updateDescriptiveInfo",
+          "service": "updateDescriptiveInfoData",
           "type": "singleData"
         },
         {

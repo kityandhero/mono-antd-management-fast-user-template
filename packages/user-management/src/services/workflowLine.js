@@ -45,6 +45,16 @@ export async function updateLineData(parameters) {
   });
 }
 
+export const updateDescriptiveInfoDataApiAddress =
+  '/workflowLine/updateDescriptiveInfo';
+
+export async function updateDescriptiveInfoData(parameters) {
+  return request({
+    api: updateDescriptiveInfoDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const setBranchConditionIdDataApiAddress =
   '/workflowLine/setBranchConditionId';
 
