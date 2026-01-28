@@ -70,6 +70,16 @@ export const fieldDataFlowCaseLatestApprove = {
     name: 'workflowNodeName',
     helper: '',
   },
+  workflowNodeApproveMode: {
+    label: '审批模式',
+    name: 'workflowNodeApproveMode',
+    helper: '',
+  },
+  workflowNodeApproveModeNote: {
+    label: '审批模式',
+    name: 'workflowNodeApproveModeNote',
+    helper: '',
+  },
   approveAction: {
     label: '审批动作',
     name: 'approveAction',

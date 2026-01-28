@@ -1,6 +1,26 @@
 import { formNameCollection } from './fieldDataCommon';
 
-const formExtraData = {
+const fieldExtraData = {
+  whetherCurrentChannel: {
+    label: '是否当前通道',
+    name: 'whetherCurrentChannel',
+    helper: '',
+  },
+  typeNote: {
+    label: '类型',
+    name: 'typeNote',
+    helper: '',
+  },
+  approverModeNote: {
+    label: '审批人模式',
+    name: 'approverModeNote',
+    helper: '',
+  },
+  approveModeNote: {
+    label: '审批模式',
+    name: 'approveModeNote',
+    helper: '',
+  },
   outLineCount: {
     label: '发出线条数量',
     name: 'outLineCount',
@@ -75,29 +95,14 @@ export const fieldDataFlowNode = {
     name: 'type',
     helper: '',
   },
-  typeNote: {
-    label: '类型',
-    name: 'typeNote',
-    helper: '',
-  },
   approverMode: {
     label: '审批人模式',
     name: 'approverMode',
     helper: '',
   },
-  approverModeNote: {
-    label: '审批人模式',
-    name: 'approverModeNote',
-    helper: '',
-  },
   approveMode: {
     label: '审批模式',
     name: 'approveMode',
-    helper: '',
-  },
-  approveModeNote: {
-    label: '审批模式',
-    name: 'approveModeNote',
     helper: '',
   },
   whetherOneSignatureDesignateNextApprover: {
@@ -115,5 +120,5 @@ export const fieldDataFlowNode = {
     name: 'whetherOneSignatureAllowSkip',
     helper: '',
   },
-  ...formExtraData,
+  ...fieldExtraData,
 };

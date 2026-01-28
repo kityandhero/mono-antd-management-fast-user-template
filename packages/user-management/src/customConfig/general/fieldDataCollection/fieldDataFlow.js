@@ -1,6 +1,11 @@
 import { formNameCollection } from './fieldDataCommon';
 
 const formExtraData = {
+  whetherCurrentChannel: {
+    label: '是否当前通道',
+    name: 'whetherCurrentChannel',
+    helper: '',
+  },
   duplicateName: {
     label: '副本名称',
     name: 'duplicateName',
@@ -240,6 +245,5 @@ export const fieldDataFlow = {
     name: 'creatorUserNickname',
     helper: '',
   },
-
   ...formExtraData,
 };

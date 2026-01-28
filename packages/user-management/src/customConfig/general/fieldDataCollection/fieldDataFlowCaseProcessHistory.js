@@ -65,11 +65,6 @@ export const fieldDataFlowCaseProcessHistory = {
     name: 'approveWorkflowNodeType',
     helper: '',
   },
-  approveWorkflowNodeTypeNote: {
-    label: '审批流程节点类型',
-    name: 'approveWorkflowNodeTypeNote',
-    helper: '',
-  },
   note: {
     label: '审批意见',
     name: 'note',
@@ -88,11 +83,6 @@ export const fieldDataFlowCaseProcessHistory = {
   approveAction: {
     label: '审批动作',
     name: 'approveAction',
-    helper: '',
-  },
-  approveActionNote: {
-    label: '审批动作',
-    name: 'approveActionNote',
     helper: '',
   },
   approveActionMode: {

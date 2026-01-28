@@ -1,6 +1,37 @@
 import { formNameCollection } from './fieldDataCommon';
 
-const formExtraData = {};
+const fieldExtraData = {
+  whetherCurrentChannel: {
+    label: '是否当前通道',
+    name: 'whetherCurrentChannel',
+    helper: '',
+  },
+  fromPositionName: {
+    label: '起始节点线条位置点',
+    name: 'fromPositionName',
+    helper: '起始节点线条的位置',
+  },
+  fromPositionNote: {
+    label: '起始节点线条位置点',
+    name: 'fromPositionNote',
+    helper: '起始节点线条的位置',
+  },
+  toPositionName: {
+    label: '到达节点线条位置点',
+    name: 'toPositionName',
+    helper: '到达节点线条的位置',
+  },
+  toPositionNote: {
+    label: '到达节点线条位置点',
+    name: 'toPositionNote',
+    helper: '到达节点线条的位置',
+  },
+  typeNote: {
+    label: '类型',
+    name: 'typeNote',
+    helper: '',
+  },
+};
 
 export const fieldDataFlowLine = {
   ...formNameCollection,
@@ -39,16 +70,6 @@ export const fieldDataFlowLine = {
     name: 'fromPosition',
     helper: '起始节点线条的位置',
   },
-  fromPositionName: {
-    label: '起始节点线条位置点',
-    name: 'fromPositionName',
-    helper: '起始节点线条的位置',
-  },
-  fromPositionNote: {
-    label: '起始节点线条位置点',
-    name: 'fromPositionNote',
-    helper: '起始节点线条的位置',
-  },
   toId: {
     label: '到达节点',
     name: 'toId',
@@ -62,16 +83,6 @@ export const fieldDataFlowLine = {
   toPosition: {
     label: '到达节点线条位置点',
     name: 'toPosition',
-    helper: '到达节点线条的位置',
-  },
-  toPositionName: {
-    label: '到达节点线条位置点',
-    name: 'toPositionName',
-    helper: '到达节点线条的位置',
-  },
-  toPositionNote: {
-    label: '到达节点线条位置点',
-    name: 'toPositionNote',
     helper: '到达节点线条的位置',
   },
   workflowBranchConditionId: {
@@ -89,40 +100,5 @@ export const fieldDataFlowLine = {
     name: 'type',
     helper: '',
   },
-  typeNote: {
-    label: '类型',
-    name: 'typeNote',
-    helper: '',
-  },
-  status: {
-    label: '状态',
-    name: 'status',
-    helper: '',
-  },
-  statusNote: {
-    label: '状态',
-    name: 'statusNote',
-    helper: '',
-  },
-  createOperatorId: {
-    label: '创建人标识',
-    name: 'createOperatorId',
-    helper: '',
-  },
-  createTime: {
-    label: '创建时间',
-    name: 'createTime',
-    helper: '',
-  },
-  updateOperatorId: {
-    label: '更新人标识',
-    name: 'updateOperatorId',
-    helper: '',
-  },
-  updateTime: {
-    label: '更新时间',
-    name: 'updateTime',
-    helper: '',
-  },
-  ...formExtraData,
+  ...fieldExtraData,
 };

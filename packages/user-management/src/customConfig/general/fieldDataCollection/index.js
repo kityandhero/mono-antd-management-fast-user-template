@@ -1,6 +1,8 @@
 export * from './fieldDataBaseSubsidiaryMessage';
 export * from './fieldDataCommon';
 export * from './fieldDataFlow';
+export * from './fieldDataFlowBranchCondition';
+export * from './fieldDataFlowBranchConditionItem';
 export * from './fieldDataFlowCase';
 export * from './fieldDataFlowCaseCarbonCopyNotification';
 export * from './fieldDataFlowCaseFormAttachment';
@@ -13,3 +15,4 @@ export * from './fieldDataFlowCaseProcessHistory';
 export * from './fieldDataFlowFormDesign';
 export * from './fieldDataFlowLine';
 export * from './fieldDataFlowNode';
+export * from './fieldDataFlowNodeApprover';

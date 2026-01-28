@@ -1,6 +1,6 @@
 import { formNameCollection } from './fieldDataCommon';
 
-const formExtraData = {
+const fieldExtraData = {
   whetherCurrentChannel: {
     label: '是否当前通道',
     name: 'whetherCurrentChannel',
@@ -190,5 +190,5 @@ export const fieldDataFlowFormDesign = {
     name: 'updateTime',
     helper: '',
   },
-  ...formExtraData,
+  ...fieldExtraData,
 };
