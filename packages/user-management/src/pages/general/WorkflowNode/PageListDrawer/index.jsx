@@ -7,6 +7,7 @@ import {
   getValueByKey,
   showSimpleErrorMessage,
   toNumber,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import {
@@ -164,6 +165,12 @@ class PageListDrawer extends MultiPageDrawer {
       convert: convertCollection.number,
     });
 
+    const whetherCurrentChannel = getValueByKey({
+      data: record,
+      key: fieldData.whetherCurrentChannel.name,
+      convert: convertCollection.number,
+    });
+
     return {
       size: 'small',
       text: '刷新缓存',
@@ -188,13 +195,14 @@ class PageListDrawer extends MultiPageDrawer {
           hidden: !checkHasAuthority(
             accessWayCollection.workflowNode.updateDescriptiveInfo.permission,
           ),
-          disabled: !checkInCollection(
-            [
-              flowNodeTypeCollection.intermediateNode,
-              flowNodeTypeCollection.carbonCopyPoint,
-            ],
-            itemStatus,
-          ),
+          disabled:
+            !checkInCollection(
+              [
+                flowNodeTypeCollection.intermediateNode,
+                flowNodeTypeCollection.carbonCopyPoint,
+              ],
+              itemStatus,
+            ) || whetherCurrentChannel !== whetherNumber.yes,
         },
       ],
     };

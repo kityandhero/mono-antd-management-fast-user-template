@@ -39,6 +39,8 @@ const visibleFlag = 'ace14910532c46efb5cf5474f2f89dd3';
   schedulingControl,
 }))
 class PageListDrawer extends MultiPageDrawer {
+  columnOperateWidth = 146;
+
   reloadWhenShow = true;
 
   componentAuthority =
@@ -56,7 +58,7 @@ class PageListDrawer extends MultiPageDrawer {
       pageTitle: '流程节点条件项列表',
       loadApiPath:
         modelTypeCollection.workflowBranchConditionItemTypeCollection.pageList,
-      tableScrollX: 2420,
+      tableScrollX: 2720,
     };
   }
 
@@ -269,7 +271,7 @@ class PageListDrawer extends MultiPageDrawer {
     },
     {
       dataTarget: fieldData.workflowBranchConditionId,
-      width: 120,
+      width: 160,
       showRichFacade: true,
       canCopy: true,
     },

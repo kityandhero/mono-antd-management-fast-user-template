@@ -2,9 +2,11 @@ import { connect } from 'easy-soft-dva';
 import {
   buildRandomHexColor,
   checkHasAuthority,
+  convertCollection,
   getValueByKey,
   showSimpleErrorMessage,
   toNumber,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import {
@@ -54,7 +56,7 @@ class PageListDrawer extends MultiPageDrawer {
 
     this.state = {
       ...this.state,
-      tableScrollX: 1480,
+      tableScrollX: 1680,
       pageTitle: '流程线条列表',
       loadApiPath: modelTypeCollection.workflowLineTypeCollection.pageList,
       currentRecord: null,
@@ -152,10 +154,12 @@ class PageListDrawer extends MultiPageDrawer {
   };
 
   establishListItemDropdownConfig = (record) => {
-    // d[fieldData.workflowId.name] = getValueByKey({
-    //   data: record,
-    //   key: fieldData.whe.name,
-    // });
+    const whetherCurrentChannel = getValueByKey({
+      data: record,
+      key: fieldData.whetherCurrentChannel.name,
+      convert: convertCollection.number,
+    });
+
     return {
       size: 'small',
       text: '刷新缓存',
@@ -177,6 +181,7 @@ class PageListDrawer extends MultiPageDrawer {
           key: 'showUpdateDescriptiveInfoDrawer',
           icon: iconBuilder.edit(),
           text: '编辑描述性信息',
+          disabled: whetherCurrentChannel !== whetherNumber.yes,
           hidden: !checkHasAuthority(
             accessWayCollection.workflowLine.updateDescriptiveInfo.permission,
           ),

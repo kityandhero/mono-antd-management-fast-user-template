@@ -1076,16 +1076,19 @@ class Detail extends DataTabContainerSupplement {
         <WorkflowBranchConditionPageListDrawer
           maskClosable
           externalData={{ workflowId }}
+          width={1000}
         />
 
         <WorkflowBranchConditionItemPageListDrawer
           maskClosable
           externalData={{ workflowId }}
+          width={1000}
         />
 
         <WorkflowNodeApproverPageListDrawer
           maskClosable
           externalData={{ workflowId }}
+          width={1000}
         />
 
         <WorkflowCasePageListUnderwayDrawer
