@@ -11,7 +11,6 @@ import {
   getValueByKey,
   isArray,
   isEmptyArray,
-  logConsole,
   toString,
   whetherNumber,
   zeroString,
