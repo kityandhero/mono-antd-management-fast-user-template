@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Checkbox, Divider } from 'antd';
+import { Checkbox } from 'antd';
 
 import { connect } from 'easy-soft-dva';
 import {
