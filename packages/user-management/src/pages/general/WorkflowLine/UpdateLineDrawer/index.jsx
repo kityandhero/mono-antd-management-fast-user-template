@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { connect } from 'easy-soft-dva';
 import { convertCollection, getValueByKey } from 'easy-soft-utility';
 
@@ -9,6 +11,7 @@ import {
 } from 'antd-management-fast-framework';
 
 import {
+  buildNowTimeFieldItem,
   renderFormFlowLineFromPositionSelect,
   renderFormFlowLineToPositionSelect,
   renderFormFlowLineTypeSelect,
@@ -23,11 +26,15 @@ const { BaseUpdateDrawer } = DataDrawer;
 
 const visibleFlag = '114db37a1cfd4a059bf045cadfb4cb9a';
 
-@connect(({ workflowNode, schedulingControl }) => ({
-  workflowNode,
+@connect(({ workflowLine, schedulingControl }) => ({
+  workflowLine,
   schedulingControl,
 }))
 class UpdateLineDrawer extends BaseUpdateDrawer {
+  fromNodeSelectRef = React.createRef();
+
+  toNodeSelectRef = React.createRef();
+
   static open() {
     switchControlAssist.open(visibleFlag);
   }
@@ -46,6 +53,18 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
       toName: '',
     };
   }
+
+  executeAfterDoOtherWhenChangeVisibleToHide = () => {
+    this.fromNodeSelectRef.current.clearSelect();
+    this.toNodeSelectRef.current.clearSelect();
+
+    this.setState({
+      fromId: '',
+      fromName: '',
+      toId: '',
+      toName: '',
+    });
+  };
 
   supplementLoadRequestParams = (o) => {
     return {
@@ -222,6 +241,8 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
               type: cardConfig.contentItemType.component,
               component: (
                 <FromNodeSelectModalField
+                  required
+                  ref={this.fromNodeSelectRef}
                   externalData={externalData}
                   label={fieldData.fromName.label}
                   defaultValue={fromName || null}
@@ -246,6 +267,8 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
               type: cardConfig.contentItemType.component,
               component: (
                 <ToNodeSelectModalField
+                  required
+                  ref={this.toNodeSelectRef}
                   externalData={externalData}
                   label={fieldData.toName.label}
                   defaultValue={toName || null}
@@ -266,11 +289,21 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
               require: true,
             },
           ],
+          instruction: {
+            title: '说明',
+            showDivider: false,
+            showNumber: true,
+            list: [
+              {
+                text: '变更线条的出发节点后，线条绑定的分支条件将会清空, 如当前线条存在并行的同类型的多分支线条, 请重新设置分支绑定条件',
+              },
+            ],
+          },
         },
         {
           title: {
             icon: iconBuilder.contacts(),
-            text: '标题与描述',
+            text: '标题设置',
           },
           items: [
             {
@@ -279,6 +312,24 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
               fieldData: fieldData.title,
               require: false,
             },
+          ],
+          instruction: {
+            title: '说明',
+            showDivider: false,
+            showNumber: true,
+            list: [
+              {
+                text: '设置的标题将会替换流程图线条中的标签文本',
+              },
+            ],
+          },
+        },
+        {
+          title: {
+            icon: iconBuilder.contacts(),
+            text: '简介 - 描述 - 备注',
+          },
+          items: [
             {
               lg: 24,
               type: cardConfig.contentItemType.textarea,
@@ -287,17 +338,7 @@ class UpdateLineDrawer extends BaseUpdateDrawer {
             },
           ],
         },
-        {
-          title: {
-            icon: iconBuilder.contacts(),
-            text: '其他信息',
-          },
-          items: [
-            {
-              type: cardConfig.contentItemType.nowTime,
-            },
-          ],
-        },
+        buildNowTimeFieldItem({}),
       ],
     };
   };

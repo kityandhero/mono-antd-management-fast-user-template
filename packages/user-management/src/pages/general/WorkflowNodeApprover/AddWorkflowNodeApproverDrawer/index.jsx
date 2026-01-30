@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { connect } from 'easy-soft-dva';
 import { getValueByKey } from 'easy-soft-utility';
 
@@ -24,7 +26,7 @@ const visibleFlag = 'e4b322f1e27e49c3bea3822de4a14ccb';
   schedulingControl,
 }))
 class AddWorkflowNodeApproverDrawer extends BaseAddDrawer {
-  destroyOnClose = true;
+  userSelectRef = React.createRef();
 
   static open() {
     switchControlAssist.open(visibleFlag);
@@ -61,6 +63,14 @@ class AddWorkflowNodeApproverDrawer extends BaseAddDrawer {
     });
 
     return d;
+  };
+
+  executeAfterDoOtherWhenChangeVisibleToHide = () => {
+    this.userSelectRef.current.clearSelect();
+
+    this.setState({
+      userId: '',
+    });
   };
 
   clearCustomerSelect = () => {
@@ -132,6 +142,7 @@ class AddWorkflowNodeApproverDrawer extends BaseAddDrawer {
               type: cardConfig.contentItemType.component,
               component: (
                 <UserSelectModalField
+                  ref={this.userSelectRef}
                   label={fieldData.userRealName.label}
                   afterSelectSuccess={(d) => {
                     this.afterCustomerSelect(d);

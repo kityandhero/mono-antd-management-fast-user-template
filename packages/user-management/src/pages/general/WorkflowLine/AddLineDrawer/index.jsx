@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { connect } from 'easy-soft-dva';
 import {
   checkInCollection,
@@ -15,10 +17,12 @@ import {
 
 import { flowLinePositionCollection } from '../../../../customConfig';
 import {
+  buildNowTimeFieldItem,
   renderFormFlowLineFromPositionSelect,
   renderFormFlowLineToPositionSelect,
   renderFormFlowLineTypeSelect,
 } from '../../../../customSpecialComponents';
+import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData as fieldDataWorkflowNode } from '../../WorkflowNode/Common/data';
 import { FromNodeSelectModalField } from '../../WorkflowNode/FromNodeSelectModalField';
 import { ToNodeSelectModalField } from '../../WorkflowNode/ToNodeSelectModalField';
@@ -29,12 +33,17 @@ const { BaseAddDrawer } = DataDrawer;
 
 const visibleFlag = 'ab4bc7ae04d54b059121dce931c8bb62';
 
-@connect(({ workflowNode, schedulingControl }) => ({
-  workflowNode,
+@connect(({ workflowLine, schedulingControl }) => ({
+  workflowLine,
   schedulingControl,
 }))
 class AddLineDrawer extends BaseAddDrawer {
-  destroyOnClose = true;
+  // 在控制台显示组建内调用序列, 仅为进行开发辅助
+  // showCallProcess = true;
+
+  fromNodeSelectRef = React.createRef();
+
+  toNodeSelectRef = React.createRef();
 
   static open() {
     switchControlAssist.open(visibleFlag);
@@ -46,11 +55,9 @@ class AddLineDrawer extends BaseAddDrawer {
     this.state = {
       ...this.state,
       pageTitle: '新增流程线',
-      submitApiPath: 'workflowLine/createLine',
+      submitApiPath: modelTypeCollection.workflowLineTypeCollection.createLine,
       fromId: '',
-      fromName: '',
       toId: '',
-      toName: '',
     };
   }
 
@@ -70,27 +77,30 @@ class AddLineDrawer extends BaseAddDrawer {
     return d;
   };
 
+  executeAfterDoOtherWhenChangeVisibleToHide = () => {
+    this.fromNodeSelectRef.current.clearSelect();
+    this.toNodeSelectRef.current.clearSelect();
+
+    this.setState({
+      fromId: '',
+      toId: '',
+    });
+  };
+
   afterFromNodeSelect = (d) => {
     const fromId = getValueByKey({
       data: d,
       key: fieldDataWorkflowNode.workflowNodeId.name,
     });
 
-    const fromName = getValueByKey({
-      data: d,
-      key: fieldDataWorkflowNode.name.name,
-    });
-
     this.setState({
       fromId: fromId,
-      fromName: fromName,
     });
   };
 
   afterFromNodeClearSelect = () => {
     this.setState({
       fromId: '',
-      fromName: '',
     });
   };
 
@@ -100,21 +110,14 @@ class AddLineDrawer extends BaseAddDrawer {
       key: fieldDataWorkflowNode.workflowNodeId.name,
     });
 
-    const toName = getValueByKey({
-      data: d,
-      key: fieldDataWorkflowNode.name.name,
-    });
-
     this.setState({
       toId: toId,
-      toName: toName,
     });
   };
 
   afterToNodeClearSelect = () => {
     this.setState({
       toId: '',
-      toName: '',
     });
   };
 
@@ -141,7 +144,7 @@ class AddLineDrawer extends BaseAddDrawer {
   };
 
   establishCardCollectionConfig = () => {
-    const { externalData, fromName, toName } = this.state;
+    const { externalData } = this.state;
 
     const that = this;
 
@@ -159,9 +162,10 @@ class AddLineDrawer extends BaseAddDrawer {
               type: cardConfig.contentItemType.component,
               component: (
                 <FromNodeSelectModalField
+                  required
+                  ref={this.fromNodeSelectRef}
                   externalData={externalData}
                   label={fieldData.fromName.label}
-                  defaultValue={fromName || null}
                   helper={fieldData.fromName.helper}
                   afterSelectSuccess={(d) => {
                     this.afterFromNodeSelect(d);
@@ -185,9 +189,10 @@ class AddLineDrawer extends BaseAddDrawer {
               type: cardConfig.contentItemType.component,
               component: (
                 <ToNodeSelectModalField
+                  required
+                  ref={this.toNodeSelectRef}
                   externalData={externalData}
                   label={fieldData.toName.label}
-                  defaultValue={toName || null}
                   helper={fieldData.toName.helper}
                   afterSelectSuccess={(d) => {
                     this.afterToNodeSelect(d);
@@ -207,6 +212,16 @@ class AddLineDrawer extends BaseAddDrawer {
               require: true,
             },
           ],
+          instruction: {
+            title: '说明',
+            showDivider: false,
+            showNumber: true,
+            list: [
+              {
+                text: '如当前线条存在并行的同类型的多分支线条, 请继续设置分支绑定条件',
+              },
+            ],
+          },
         },
         {
           title: {
@@ -220,6 +235,24 @@ class AddLineDrawer extends BaseAddDrawer {
               fieldData: fieldData.title,
               require: false,
             },
+          ],
+          instruction: {
+            title: '说明',
+            showDivider: false,
+            showNumber: true,
+            list: [
+              {
+                text: '设置的标题将会替换流程图线条中的标签文本',
+              },
+            ],
+          },
+        },
+        {
+          title: {
+            icon: iconBuilder.contacts(),
+            text: '简介 - 描述 - 备注',
+          },
+          items: [
             {
               lg: 24,
               type: cardConfig.contentItemType.textarea,
@@ -228,17 +261,7 @@ class AddLineDrawer extends BaseAddDrawer {
             },
           ],
         },
-        {
-          title: {
-            icon: iconBuilder.contacts(),
-            text: '其他信息',
-          },
-          items: [
-            {
-              type: cardConfig.contentItemType.nowTime,
-            },
-          ],
-        },
+        buildNowTimeFieldItem({}),
       ],
     };
   };
