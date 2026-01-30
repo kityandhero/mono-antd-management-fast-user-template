@@ -9,6 +9,7 @@ import {
   getValueByKey,
   isArray,
   isEmptyArray,
+  logConsole,
   toString,
   whetherNumber,
   zeroString,
@@ -220,6 +221,17 @@ class SubmitApprovalModal extends BaseFlowCaseSubmitApprovalModal {
     }
 
     let list = [];
+
+    logConsole({
+      debugApproverMode,
+      flowDebugApproverMode: flowDebugApproverModeCollection.globalDebugUser,
+      v:
+        debugApproverMode === flowDebugApproverModeCollection.globalDebugUser ||
+        (debugApproverMode ===
+          flowDebugApproverModeCollection.flowConfiguration &&
+          nextNodeApproverUserList.length <= 1) ||
+        !this.checkHasSingleListNextNodeApproverAuthority(),
+    });
 
     if (
       firstApproveWorkflowNodeApproveMode ===
