@@ -135,7 +135,7 @@ class PageListDrawer extends MultiPageSelectDrawer {
             />
           }
           description={
-            <Space split={<Divider type="vertical" />}>
+            <Space separator={<Divider orientation="vertical" />}>
               <ColorText
                 textPrefix={fieldData.nickname.label}
                 separator=": "

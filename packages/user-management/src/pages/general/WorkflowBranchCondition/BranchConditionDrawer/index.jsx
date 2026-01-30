@@ -465,9 +465,9 @@ class BranchConditionDrawer extends BaseVerticalFlexDrawer {
         ),
         extra: (
           <Space
-            split={
+            separator={
               <Divider
-                type="vertical"
+                orientation="vertical"
                 style={{
                   marginLeft: '1px',
                   marginRight: '1px',
