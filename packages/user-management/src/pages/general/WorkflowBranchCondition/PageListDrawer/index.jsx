@@ -29,6 +29,7 @@ import { modelTypeCollection } from '../../../../modelBuilders';
 import { maintainChannelAction, refreshCacheAction } from '../Assist/action';
 import { getStatusBadge } from '../Assist/tools';
 import { fieldData } from '../Common/data';
+import { UpdateDescriptiveInfoDrawer } from '../UpdateDescriptiveInfoDrawer';
 
 const { MultiPageDrawer } = DataMultiPageView;
 
@@ -56,10 +57,11 @@ class PageListDrawer extends MultiPageDrawer {
 
     this.state = {
       ...this.state,
+      tableScrollX: 1460,
       pageTitle: '流程节点条件列表',
       loadApiPath:
         modelTypeCollection.workflowBranchConditionTypeCollection.pageList,
-      tableScrollX: 1460,
+      currentRecord: null,
     };
   }
 
@@ -150,6 +152,34 @@ class PageListDrawer extends MultiPageDrawer {
       target: this,
       handleData: r,
     });
+  };
+
+  showUpdateDescriptiveInfoDrawer = (r) => {
+    this.setState(
+      {
+        currentRecord: r,
+      },
+      () => {
+        UpdateDescriptiveInfoDrawer.open();
+      },
+    );
+  };
+
+  afterUpdateDescriptiveInfoDrawerOk = ({
+    // eslint-disable-next-line no-unused-vars
+    singleData,
+    // eslint-disable-next-line no-unused-vars
+    listData,
+    // eslint-disable-next-line no-unused-vars
+    extraData,
+    // eslint-disable-next-line no-unused-vars
+    responseOriginalData,
+    // eslint-disable-next-line no-unused-vars
+    submitData,
+    // eslint-disable-next-line no-unused-vars
+    subjoinData,
+  }) => {
+    this.refreshDataWithReloadAnimalPrompt({});
   };
 
   renderPresetTitleIcon = () => null;
@@ -303,6 +333,19 @@ class PageListDrawer extends MultiPageDrawer {
       facadeMode: columnFacadeMode.datetime,
     },
   ];
+
+  renderPresetOther = () => {
+    const { currentRecord } = this.state;
+
+    return (
+      <>
+        <UpdateDescriptiveInfoDrawer
+          externalData={currentRecord}
+          afterOK={this.afterUpdateDescriptiveInfoDrawerOk}
+        />
+      </>
+    );
+  };
 }
 
 export { PageListDrawer };
