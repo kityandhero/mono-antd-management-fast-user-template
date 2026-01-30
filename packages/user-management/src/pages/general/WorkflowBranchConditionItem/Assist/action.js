@@ -5,6 +5,28 @@ import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowBranchConditionItemTypeCollection
+      .maintainChannel,
+    params: {
+      workflowBranchConditionItemId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowBranchConditionItemId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function removeAction({
   target,
   handleData,

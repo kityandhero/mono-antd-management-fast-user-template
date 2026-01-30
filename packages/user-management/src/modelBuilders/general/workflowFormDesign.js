@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -12,6 +11,7 @@ import {
   addBasicInfoData,
   getByWorkflowData,
   getData,
+  maintainChannelData,
   pageListData,
   pageListOperateLogData,
   refreshCacheData,
@@ -21,16 +21,17 @@ import {
 } from '../../services/workflowFormDesign';
 
 export const workflowFormDesignTypeCollection = {
-  pageList: "workflowFormDesign/pageList",
-  get: "workflowFormDesign/get",
-  getByWorkflow: "workflowFormDesign/getByWorkflow",
-  addBasicInfo: "workflowFormDesign/addBasicInfo",
-  updateBasicInfo: "workflowFormDesign/updateBasicInfo",
-  updateDocumentSchema: "workflowFormDesign/updateDocumentSchema",
-  updateRemarkSchema: "workflowFormDesign/updateRemarkSchema",
-  refreshCache: "workflowFormDesign/refreshCache",
-  pageListOperateLog: "workflowFormDesign/pageListOperateLog",
-}
+  pageList: 'workflowFormDesign/pageList',
+  get: 'workflowFormDesign/get',
+  getByWorkflow: 'workflowFormDesign/getByWorkflow',
+  addBasicInfo: 'workflowFormDesign/addBasicInfo',
+  updateBasicInfo: 'workflowFormDesign/updateBasicInfo',
+  updateDocumentSchema: 'workflowFormDesign/updateDocumentSchema',
+  updateRemarkSchema: 'workflowFormDesign/updateRemarkSchema',
+  maintainChannel: 'workflowFormDesign/maintainChannel',
+  refreshCache: 'workflowFormDesign/refreshCache',
+  pageListOperateLog: 'workflowFormDesign/pageListOperateLog',
+};
 
 export function buildModel() {
   return {
@@ -207,6 +208,32 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(updateRemarkSchemaData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *maintainChannel(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(maintainChannelData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

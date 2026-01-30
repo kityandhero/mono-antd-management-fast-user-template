@@ -14,6 +14,7 @@ import {
   addIntermediatePointData,
   addStartPointData,
   getData,
+  maintainChannelData,
   pageListData,
   pageListOperateLogData,
   refreshCacheData,
@@ -35,6 +36,7 @@ export const workflowNodeTypeCollection = {
   updateBasicInfo: 'workflowNode/updateBasicInfo',
   updateDescriptiveInfo: 'workflowNode/updateDescriptiveInfo',
   updateViewConfig: 'workflowNode/updateViewConfig',
+  maintainChannel: 'workflowNode/maintainChannel',
   remove: 'workflowNode/remove',
   refreshCache: 'workflowNode/refreshCache',
   pageListOperateLog: 'workflowNode/pageListOperateLog',
@@ -293,6 +295,32 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(updateViewConfigData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *maintainChannel(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(maintainChannelData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

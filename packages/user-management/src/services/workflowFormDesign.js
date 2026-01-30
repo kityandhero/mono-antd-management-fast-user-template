@@ -66,6 +66,16 @@ export async function updateRemarkSchemaData(parameters) {
   });
 }
 
+export const maintainChannelDataApiAddress =
+  '/workflowFormDesign/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const refreshCacheDataApiAddress = '/workflowFormDesign/refreshCache';
 
 export async function refreshCacheData(parameters) {

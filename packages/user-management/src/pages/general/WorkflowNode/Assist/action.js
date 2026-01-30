@@ -63,6 +63,27 @@ export function addEndPointAction({
   });
 }
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowNodeTypeCollection.maintainChannel,
+    params: {
+      workflowNodeId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowNodeId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function removeAction({
   target,
   handleData,

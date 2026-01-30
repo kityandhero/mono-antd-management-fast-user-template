@@ -28,6 +28,28 @@ export async function singleListAction({
   });
 }
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage = null,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowBranchConditionTypeCollection
+      .maintainChannel,
+    params: {
+      workflowBranchConditionId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowBranchConditionId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function removeConfirmAction({
   target,
   handleData,

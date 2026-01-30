@@ -93,6 +93,15 @@ export async function updateViewConfigData(parameters) {
   });
 }
 
+export const maintainChannelDataApiAddress = '/workflowNode/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const removeDataApiAddress = '/workflowNode/remove';
 
 export async function removeData(parameters) {

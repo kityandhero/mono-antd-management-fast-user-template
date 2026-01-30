@@ -11,6 +11,7 @@ import {
 import {
   createLineData,
   getData,
+  maintainChannelData,
   pageListData,
   pageListOperateLogData,
   refreshCacheData,
@@ -30,6 +31,7 @@ export const workflowLineTypeCollection = {
   updateLine: 'workflowLine/updateLine',
   updateDescriptiveInfo: 'workflowLine/updateDescriptiveInfo',
   setBranchConditionId: 'workflowLine/setBranchConditionId',
+  maintainChannel: 'workflowLine/maintainChannel',
   remove: 'workflowLine/remove',
   removeAll: 'workflowLine/removeAll',
   refreshCache: 'workflowLine/refreshCache',
@@ -211,6 +213,32 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(setBranchConditionIdData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *maintainChannel(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(maintainChannelData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

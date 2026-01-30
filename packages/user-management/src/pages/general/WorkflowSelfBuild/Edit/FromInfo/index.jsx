@@ -9,6 +9,7 @@ import {
   getJsonFromLocalStorage,
   getValueByKey,
   saveJsonToLocalStorage,
+  showSimpleErrorMessage,
   showSimpleInfoMessage,
 } from 'easy-soft-utility';
 
@@ -243,6 +244,40 @@ class BasicInfo extends TabPageBase {
               },
               {
                 buildType: cardConfig.extraBuildType.refresh,
+              },
+              {
+                buildType: cardConfig.extraBuildType.dropdownEllipsis,
+                hidden: !checkHasAuthority(
+                  accessWayCollection.workflowFormDesign.maintainChannel
+                    .permission,
+                ),
+                handleMenuClick: ({ key, handleData }) => {
+                  switch (key) {
+                    case 'maintainChannel': {
+                      this.maintainChannel(handleData);
+                      break;
+                    }
+
+                    default: {
+                      showSimpleErrorMessage(
+                        `can not find matched key "${key}"`,
+                      );
+                      break;
+                    }
+                  }
+                },
+                handleData: metaData,
+                items: [
+                  {
+                    key: 'maintainChannel',
+                    icon: iconBuilder.edit(),
+                    text: '维护通道值',
+                    hidden: !checkHasAuthority(
+                      accessWayCollection.workflowFormDesign.maintainChannel
+                        .permission,
+                    ),
+                  },
+                ],
               },
             ],
           },

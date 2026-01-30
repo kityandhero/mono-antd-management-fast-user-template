@@ -68,6 +68,16 @@ export async function updateSortData(parameters) {
   });
 }
 
+export const maintainChannelDataApiAddress =
+  '/workflowNodeApprover/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const removeDataApiAddress = '/workflowNodeApprover/remove';
 
 export async function removeData(parameters) {

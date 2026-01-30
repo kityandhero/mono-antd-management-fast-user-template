@@ -62,6 +62,27 @@ export async function updateRemarkSchemaAction({
   });
 }
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowFormDesignTypeCollection.maintainChannel,
+    params: {
+      workflowFormDesignId: getValueByKey({
+        data: handleData,
+        key: fieldDataFlowFormDesign.workflowFormDesignId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function refreshCacheAction({
   target,
   handleData,

@@ -873,6 +873,16 @@ export const accessWayInfrastructureCollection = {
       paramsKey: 'facb9d37979750d6c2e947f366db3efb',
       permission: 'b611eaa5ca3c459190744207b7f1653e',
     },
+    updateDescriptiveInfo: {
+      title: '更新描述性信息',
+      paramsKey: '2bf390370d5c6522c906d0a9fe0ce814',
+      permission: '1f91f2ddda554e37a58ebb12fd036e37',
+    },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '6ea98998292bdcd277d0b5a886e5b4c0',
+      permission: '8371caec03b34523b9afd387c36de6cb',
+    },
     refreshCache: {
       title: '刷新缓存',
       paramsKey: '89e3c7966a3f9238572808b00d2cd44c',
@@ -915,6 +925,11 @@ export const accessWayInfrastructureCollection = {
       paramsKey: '3191af6365a9e8911613dcb393302fdf',
       permission: 'eee29d24a0114e9384a4ac802cd922d1',
     },
+    updateDescriptiveInfo: {
+      title: '更新描述性信息',
+      paramsKey: '61efcb950cd7c75c97e92f60d0d31261',
+      permission: '295eae37292e4647be484338f008b6d1',
+    },
     setRemoteCallUrl: {
       title: '设置对象比较模式',
       paramsKey: 'b62351953b4cefbc84074788ff0cc9c9',
@@ -924,6 +939,11 @@ export const accessWayInfrastructureCollection = {
       title: '设置对象比较模式',
       paramsKey: 'f83a4b9a7876522a33ace4153568efd6',
       permission: 'dab20593359447d2becf4f77f693cc2d',
+    },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '15e6391f8ac06f6549e955b2ad45d638',
+      permission: '7edfeee346b443958ba8e23358b49db9',
     },
     refreshCache: {
       title: '刷新缓存',
@@ -1560,6 +1580,11 @@ export const accessWayInfrastructureCollection = {
       paramsKey: '7f8b2892fcae74d5ebbd1f127b7fa6a9',
       permission: '9c7a342580094851a4735a879723bfd1',
     },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '8c97cb1b3a6d3007c78334fafb1c3ddc',
+      permission: '05ce6f44723e46c1bb02683e03f28b18',
+    },
     refreshCache: {
       title: '刷新缓存',
       paramsKey: '73db674a77050552bd52eca7f626c93b',
@@ -1606,6 +1631,11 @@ export const accessWayInfrastructureCollection = {
       title: '设置流程线条的分支进入条件, 仅应在多分支流程中使用',
       paramsKey: 'b627b837323bba9a3c072d8cc702f370',
       permission: '29cce69f819c421f83178cecd789b948',
+    },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '8b4fad16fa3e712113c4c1f59a0bb311',
+      permission: '3814605291f74b4283fb044d88480d9f',
     },
     remove: {
       title: '删除',
@@ -1679,6 +1709,11 @@ export const accessWayInfrastructureCollection = {
       paramsKey: '54ab7c81da1fd3c4a8b6318259611af1',
       permission: 'b850335baf1a429d9103d78354a16268',
     },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '8778420899d177b03cce10870c1b4e25',
+      permission: '825b9a2a98354f2bbbcd614839a50e20',
+    },
     remove: {
       title: '删除',
       paramsKey: '4f9b9b535048d679f6414b972d06cf50',
@@ -1730,6 +1765,11 @@ export const accessWayInfrastructureCollection = {
       title: '更新排序值',
       paramsKey: '4647c7de4702da46be0bdaf1e368d433',
       permission: '054035e115b946639ed18e1913268532',
+    },
+    maintainChannel: {
+      title: '通过流程维护通道值，仅用于特殊情况',
+      paramsKey: '6069bfc4a65b8ba2c03588a8d9b4ec84',
+      permission: '9725fd73708e41679ee36fd3b55d06e2',
     },
     remove: {
       title: '删除流程节点审批人',

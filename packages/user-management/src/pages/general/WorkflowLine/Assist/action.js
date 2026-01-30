@@ -5,6 +5,27 @@ import { actionCore, confirmActionCore } from 'antd-management-fast-common';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage = null,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowLineTypeCollection.maintainChannel,
+    params: {
+      workflowLineId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowLineId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function removeConfirmAction({
   target,
   handleData,

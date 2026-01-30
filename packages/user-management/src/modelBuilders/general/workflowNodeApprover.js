@@ -12,6 +12,7 @@ import {
   addApproverBasicInfoData,
   addPositionGradeBasicInfoData,
   getData,
+  maintainChannelData,
   pageListData,
   pageListOperateLogData,
   refreshCacheData,
@@ -30,6 +31,7 @@ export const workflowNodeApproverTypeCollection = {
   addApproverBasicInfo: 'workflowNodeApprover/addApproverBasicInfo',
   addPositionGradeBasicInfo: 'workflowNodeApprover/addPositionGradeBasicInfo',
   updateSort: 'workflowNodeApprover/updateSort',
+  maintainChannel: 'workflowNodeApprover/maintainChannel',
   remove: 'workflowNodeApprover/remove',
   refreshCache: 'workflowNodeApprover/refreshCache',
   pageListOperateLog: 'workflowNodeApprover/pageListOperateLog',
@@ -213,6 +215,32 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(updateSortData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *maintainChannel(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(maintainChannelData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

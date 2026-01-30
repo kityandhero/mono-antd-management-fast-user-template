@@ -1452,6 +1452,20 @@
           "type": "singleData"
         },
         {
+          "title": "更新描述性信息",
+          "api": "/workflowBranchCondition/updateDescriptiveInfo",
+          "effect": "updateDescriptiveInfo",
+          "service": "updateDescriptiveInfoData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowBranchCondition/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
+          "type": "singleData"
+        },
+        {
           "title": "刷新缓存",
           "api": "/workflowBranchCondition/refreshCache",
           "effect": "refreshCache",
@@ -1515,6 +1529,13 @@
           "type": "singleData"
         },
         {
+          "title": "更新描述性信息",
+          "api": "/workflowBranchConditionItem/updateDescriptiveInfo",
+          "effect": "updateDescriptiveInfo",
+          "service": "updateDescriptiveInfoData",
+          "type": "singleData"
+        },
+        {
           "title": "设置对象比较模式",
           "api": "/workflowBranchConditionItem/setRemoteCallUrl",
           "effect": "setRemoteCallUrl",
@@ -1526,6 +1547,13 @@
           "api": "/workflowBranchConditionItem/setRemoteCallParameters",
           "effect": "setRemoteCallParameters",
           "service": "setRemoteCallParametersData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowBranchConditionItem/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
           "type": "singleData"
         },
         {
@@ -2509,6 +2537,13 @@
           "type": "singleData"
         },
         {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowFormDesign/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
+          "type": "singleData"
+        },
+        {
           "title": "刷新缓存",
           "api": "/workflowFormDesign/refreshCache",
           "effect": "refreshCache",
@@ -2576,6 +2611,13 @@
           "api": "/workflowLine/setBranchConditionId",
           "effect": "setBranchConditionId",
           "service": "setBranchConditionIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowLine/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
           "type": "singleData"
         },
         {
@@ -2684,6 +2726,13 @@
           "type": "singleData"
         },
         {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowNode/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
+          "type": "singleData"
+        },
+        {
           "title": "删除",
           "api": "/workflowNode/remove",
           "effect": "remove",
@@ -2758,6 +2807,13 @@
           "api": "/workflowNodeApprover/updateSort",
           "effect": "updateSort",
           "service": "updateSortData",
+          "type": "singleData"
+        },
+        {
+          "title": "通过流程维护通道值，仅用于特殊情况",
+          "api": "/workflowNodeApprover/maintainChannel",
+          "effect": "maintainChannel",
+          "service": "maintainChannelData",
           "type": "singleData"
         },
         {

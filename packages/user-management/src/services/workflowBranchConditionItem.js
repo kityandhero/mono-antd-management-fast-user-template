@@ -48,6 +48,16 @@ export async function updateBasicInfoData(parameters) {
   });
 }
 
+export const updateDescriptiveInfoDataApiAddress =
+  '/workflowBranchConditionItem/updateDescriptiveInfo';
+
+export async function updateDescriptiveInfoData(parameters) {
+  return request({
+    api: updateDescriptiveInfoDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const setRemoteCallUrlDataApiAddress =
   '/workflowBranchConditionItem/setRemoteCallUrl';
 
@@ -64,6 +74,16 @@ export const setRemoteCallParametersDataApiAddress =
 export async function setRemoteCallParametersData(parameters) {
   return request({
     api: setRemoteCallParametersDataApiAddress,
+    params: parameters,
+  });
+}
+
+export const maintainChannelDataApiAddress =
+  '/workflowBranchConditionItem/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
     params: parameters,
   });
 }

@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -12,24 +11,28 @@ import {
 import {
   addBasicInfoData,
   getData,
+  maintainChannelData,
   pageListData,
   pageListOperateLogData,
   refreshCacheData,
   removeData,
   singleListData,
   updateBasicInfoData,
+  updateDescriptiveInfoData,
 } from '../../services/workflowBranchCondition';
 
 export const workflowBranchConditionTypeCollection = {
-  pageList: "workflowBranchCondition/pageList",
-  singleList: "workflowBranchCondition/singleList",
-  get: "workflowBranchCondition/get",
-  addBasicInfo: "workflowBranchCondition/addBasicInfo",
-  updateBasicInfo: "workflowBranchCondition/updateBasicInfo",
-  refreshCache: "workflowBranchCondition/refreshCache",
-  remove: "workflowBranchCondition/remove",
-  pageListOperateLog: "workflowBranchCondition/pageListOperateLog",
-}
+  pageList: 'workflowBranchCondition/pageList',
+  singleList: 'workflowBranchCondition/singleList',
+  get: 'workflowBranchCondition/get',
+  addBasicInfo: 'workflowBranchCondition/addBasicInfo',
+  updateBasicInfo: 'workflowBranchCondition/updateBasicInfo',
+  updateDescriptiveInfo: 'workflowBranchCondition/updateDescriptiveInfo',
+  maintainChannel: 'workflowBranchCondition/maintainChannel',
+  refreshCache: 'workflowBranchCondition/refreshCache',
+  remove: 'workflowBranchCondition/remove',
+  pageListOperateLog: 'workflowBranchCondition/pageListOperateLog',
+};
 
 export function buildModel() {
   return {
@@ -154,6 +157,58 @@ export function buildModel() {
         { call, put },
       ) {
         const response = yield call(updateBasicInfoData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *updateDescriptiveInfo(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(updateDescriptiveInfoData, payload);
+
+        const dataAdjust = pretreatmentRemoteSingleData({
+          source: response,
+          successCallback: pretreatmentSuccessCallback || null,
+          failCallback: pretreatmentFailCallback || null,
+        });
+
+        yield put({
+          type: reducerNameCollection.reducerRemoteData,
+          payload: dataAdjust,
+          alias,
+          ...reducerDefaultParameters,
+        });
+
+        return dataAdjust;
+      },
+      *maintainChannel(
+        {
+          payload,
+          alias,
+          pretreatmentSuccessCallback,
+          pretreatmentFailCallback,
+        },
+        { call, put },
+      ) {
+        const response = yield call(maintainChannelData, payload);
 
         const dataAdjust = pretreatmentRemoteSingleData({
           source: response,

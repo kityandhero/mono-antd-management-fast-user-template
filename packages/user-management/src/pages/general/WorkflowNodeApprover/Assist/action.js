@@ -47,6 +47,27 @@ export function addBasicInfoAction({
   });
 }
 
+export async function maintainChannelAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowNodeApproverTypeCollection.maintainChannel,
+    params: {
+      workflowNodeApproverId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowNodeApproverId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function removeAction({
   target,
   handleData,

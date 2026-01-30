@@ -47,6 +47,26 @@ export async function updateBasicInfoData(parameters) {
   });
 }
 
+export const updateDescriptiveInfoDataApiAddress =
+  '/workflowBranchCondition/updateDescriptiveInfo';
+
+export async function updateDescriptiveInfoData(parameters) {
+  return request({
+    api: updateDescriptiveInfoDataApiAddress,
+    params: parameters,
+  });
+}
+
+export const maintainChannelDataApiAddress =
+  '/workflowBranchCondition/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const refreshCacheDataApiAddress =
   '/workflowBranchCondition/refreshCache';
 

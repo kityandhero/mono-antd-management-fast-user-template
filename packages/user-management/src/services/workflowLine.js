@@ -65,6 +65,15 @@ export async function setBranchConditionIdData(parameters) {
   });
 }
 
+export const maintainChannelDataApiAddress = '/workflowLine/maintainChannel';
+
+export async function maintainChannelData(parameters) {
+  return request({
+    api: maintainChannelDataApiAddress,
+    params: parameters,
+  });
+}
+
 export const removeDataApiAddress = '/workflowLine/remove';
 
 export async function removeData(parameters) {
