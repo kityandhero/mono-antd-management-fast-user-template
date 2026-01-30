@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Checkbox } from 'antd';
+import { Checkbox, Divider } from 'antd';
 
 import { connect } from 'easy-soft-dva';
 import {
@@ -396,6 +396,11 @@ class PassModal extends BaseFlowCaseProcessHistoryPassModal {
     this.approveUserId = v;
   };
 
+  // eslint-disable-next-line no-unused-vars
+  onNextNextNodeApproverChange = (v, option) => {
+    this.nextNextWorkflowNodeApproverUserId = v;
+  };
+
   onSkipNextChange = ({ target }) => {
     const { checked } = target;
 
@@ -546,13 +551,30 @@ class PassModal extends BaseFlowCaseProcessHistoryPassModal {
             listData: nextNodeApproverUserList,
             dataConvert: dataFormFieldApproverConvert,
             onChange: this.onNextNodeApproverChange,
-            addonAfter: buildButton({
-              text: '',
-              icon: iconBuilder.reload(),
-              handleClick: () => {
-                this.reloadNextNodeApproverList();
-              },
-            }),
+            innerProps: {
+              disabled: nextNodeSkip === whetherNumber.yes,
+            },
+            addonAfter: (
+              <>
+                {buildButton({
+                  text: '',
+                  icon: iconBuilder.reload(),
+                  disabled: nextNodeSkip === whetherNumber.yes,
+                  handleClick: () => {
+                    this.reloadNextNodeApproverList();
+                  },
+                })}
+
+                <Divider orientation="vertical" />
+
+                <Checkbox
+                  defaultChecked={nextNodeSkip === whetherNumber.yes}
+                  onChange={this.onSkipNextChange}
+                >
+                  跳过审批
+                </Checkbox>
+              </>
+            ),
             hidden:
               debugApproverMode ===
                 flowDebugApproverModeCollection.globalDebugUser ||
@@ -650,7 +672,7 @@ class PassModal extends BaseFlowCaseProcessHistoryPassModal {
             },
             listData: nextNextNextNodeApproverUserList,
             dataConvert: dataFormFieldApproverConvert,
-            onChange: this.onNextNodeApproverChange,
+            onChange: this.onNextNextNodeApproverChange,
             addonAfter: buildButton({
               text: '',
               icon: iconBuilder.reload(),
