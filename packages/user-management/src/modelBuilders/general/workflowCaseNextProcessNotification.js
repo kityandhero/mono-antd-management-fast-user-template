@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -16,11 +15,11 @@ import {
 } from '../../services/workflowCaseNextProcessNotification';
 
 export const workflowCaseNextProcessNotificationTypeCollection = {
-  pageList: "workflowCaseNextProcessNotification/pageList",
-  singleList: "workflowCaseNextProcessNotification/singleList",
-  get: "workflowCaseNextProcessNotification/get",
-  refreshCache: "workflowCaseNextProcessNotification/refreshCache",
-}
+  pageList: 'workflowCaseNextProcessNotification/pageList',
+  singleList: 'workflowCaseNextProcessNotification/singleList',
+  get: 'workflowCaseNextProcessNotification/get',
+  refreshCache: 'workflowCaseNextProcessNotification/refreshCache',
+};
 
 export function buildModel() {
   return {

@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -20,14 +19,14 @@ import {
 } from '../../services/workflowDebugCaseFormStorage';
 
 export const workflowDebugCaseFormStorageTypeCollection = {
-  pageList: "workflowDebugCaseFormStorage/pageList",
-  singleList: "workflowDebugCaseFormStorage/singleList",
-  get: "workflowDebugCaseFormStorage/get",
-  set: "workflowDebugCaseFormStorage/set",
-  remove: "workflowDebugCaseFormStorage/remove",
-  refreshCache: "workflowDebugCaseFormStorage/refreshCache",
-  pageListOperateLog: "workflowDebugCaseFormStorage/pageListOperateLog",
-}
+  pageList: 'workflowDebugCaseFormStorage/pageList',
+  singleList: 'workflowDebugCaseFormStorage/singleList',
+  get: 'workflowDebugCaseFormStorage/get',
+  set: 'workflowDebugCaseFormStorage/set',
+  remove: 'workflowDebugCaseFormStorage/remove',
+  refreshCache: 'workflowDebugCaseFormStorage/refreshCache',
+  pageListOperateLog: 'workflowDebugCaseFormStorage/pageListOperateLog',
+};
 
 export function buildModel() {
   return {

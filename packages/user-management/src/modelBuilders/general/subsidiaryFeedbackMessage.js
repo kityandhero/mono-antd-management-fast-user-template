@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -19,14 +18,14 @@ import {
 } from '../../services/subsidiaryFeedbackMessage';
 
 export const subsidiaryFeedbackMessageTypeCollection = {
-  pageList: "subsidiaryFeedbackMessage/pageList",
-  get: "subsidiaryFeedbackMessage/get",
-  toggleConfirm: "subsidiaryFeedbackMessage/toggleConfirm",
-  repay: "subsidiaryFeedbackMessage/repay",
-  remove: "subsidiaryFeedbackMessage/remove",
-  refreshCache: "subsidiaryFeedbackMessage/refreshCache",
-  pageListOperateLog: "subsidiaryFeedbackMessage/pageListOperateLog",
-}
+  pageList: 'subsidiaryFeedbackMessage/pageList',
+  get: 'subsidiaryFeedbackMessage/get',
+  toggleConfirm: 'subsidiaryFeedbackMessage/toggleConfirm',
+  repay: 'subsidiaryFeedbackMessage/repay',
+  remove: 'subsidiaryFeedbackMessage/remove',
+  refreshCache: 'subsidiaryFeedbackMessage/refreshCache',
+  pageListOperateLog: 'subsidiaryFeedbackMessage/pageListOperateLog',
+};
 
 export function buildModel() {
   return {

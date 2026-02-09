@@ -1,4 +1,3 @@
-
 import { request } from 'easy-soft-utility';
 
 export const getDataApiAddress = '/currentAccount/get';
@@ -37,7 +36,8 @@ export async function changePasswordData(parameters) {
   });
 }
 
-export const refreshFrontEndApplicationConfigDataApiAddress = '/currentAccount/refreshFrontEndApplicationConfig';
+export const refreshFrontEndApplicationConfigDataApiAddress =
+  '/currentAccount/refreshFrontEndApplicationConfig';
 
 export async function refreshFrontEndApplicationConfigData(parameters) {
   return request({
@@ -54,4 +54,3 @@ export async function uploadImageData(parameters) {
     params: parameters,
   });
 }
-

@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -19,13 +18,13 @@ import {
 } from '../../services/noticeAttachment';
 
 export const noticeAttachmentTypeCollection = {
-  pageList: "noticeAttachment/pageList",
-  singleList: "noticeAttachment/singleList",
-  get: "noticeAttachment/get",
-  add: "noticeAttachment/add",
-  remove: "noticeAttachment/remove",
-  refreshCache: "noticeAttachment/refreshCache",
-}
+  pageList: 'noticeAttachment/pageList',
+  singleList: 'noticeAttachment/singleList',
+  get: 'noticeAttachment/get',
+  add: 'noticeAttachment/add',
+  remove: 'noticeAttachment/remove',
+  refreshCache: 'noticeAttachment/refreshCache',
+};
 
 export function buildModel() {
   return {

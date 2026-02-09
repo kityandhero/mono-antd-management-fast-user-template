@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -20,14 +19,14 @@ import {
 } from '../../services/noticeTagRelation';
 
 export const noticeTagRelationTypeCollection = {
-  pageList: "noticeTagRelation/pageList",
-  singleList: "noticeTagRelation/singleList",
-  get: "noticeTagRelation/get",
-  add: "noticeTagRelation/add",
-  addBatch: "noticeTagRelation/addBatch",
-  remove: "noticeTagRelation/remove",
-  refreshCache: "noticeTagRelation/refreshCache",
-}
+  pageList: 'noticeTagRelation/pageList',
+  singleList: 'noticeTagRelation/singleList',
+  get: 'noticeTagRelation/get',
+  add: 'noticeTagRelation/add',
+  addBatch: 'noticeTagRelation/addBatch',
+  remove: 'noticeTagRelation/remove',
+  refreshCache: 'noticeTagRelation/refreshCache',
+};
 
 export function buildModel() {
   return {

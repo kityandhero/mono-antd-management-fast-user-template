@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemotePageListData,
@@ -24,19 +23,19 @@ import {
 } from '../../services/notice';
 
 export const noticeTypeCollection = {
-  pageList: "notice/pageList",
-  get: "notice/get",
-  addBasicInfo: "notice/addBasicInfo",
-  updateBasicInfo: "notice/updateBasicInfo",
-  updateTitleColor: "notice/updateTitleColor",
-  updateContentInfo: "notice/updateContentInfo",
-  updateSort: "notice/updateSort",
-  setTargetMode: "notice/setTargetMode",
-  setOnline: "notice/setOnline",
-  setOffline: "notice/setOffline",
-  refreshCache: "notice/refreshCache",
-  pageListOperateLog: "notice/pageListOperateLog",
-}
+  pageList: 'notice/pageList',
+  get: 'notice/get',
+  addBasicInfo: 'notice/addBasicInfo',
+  updateBasicInfo: 'notice/updateBasicInfo',
+  updateTitleColor: 'notice/updateTitleColor',
+  updateContentInfo: 'notice/updateContentInfo',
+  updateSort: 'notice/updateSort',
+  setTargetMode: 'notice/setTargetMode',
+  setOnline: 'notice/setOnline',
+  setOffline: 'notice/setOffline',
+  refreshCache: 'notice/refreshCache',
+  pageListOperateLog: 'notice/pageListOperateLog',
+};
 
 export function buildModel() {
   return {

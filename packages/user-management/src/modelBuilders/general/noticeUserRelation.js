@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -20,14 +19,14 @@ import {
 } from '../../services/noticeUserRelation';
 
 export const noticeUserRelationTypeCollection = {
-  pageList: "noticeUserRelation/pageList",
-  singleList: "noticeUserRelation/singleList",
-  get: "noticeUserRelation/get",
-  add: "noticeUserRelation/add",
-  addBatch: "noticeUserRelation/addBatch",
-  remove: "noticeUserRelation/remove",
-  refreshCache: "noticeUserRelation/refreshCache",
-}
+  pageList: 'noticeUserRelation/pageList',
+  singleList: 'noticeUserRelation/singleList',
+  get: 'noticeUserRelation/get',
+  add: 'noticeUserRelation/add',
+  addBatch: 'noticeUserRelation/addBatch',
+  remove: 'noticeUserRelation/remove',
+  refreshCache: 'noticeUserRelation/refreshCache',
+};
 
 export function buildModel() {
   return {

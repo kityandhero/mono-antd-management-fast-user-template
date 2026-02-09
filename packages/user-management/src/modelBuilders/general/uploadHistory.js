@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteSingleData,
@@ -15,11 +14,11 @@ import {
 } from '../../services/uploadHistory';
 
 export const uploadHistoryTypeCollection = {
-  uploadImage: "uploadHistory/uploadImage",
-  uploadVideo: "uploadHistory/uploadVideo",
-  uploadAudio: "uploadHistory/uploadAudio",
-  uploadFile: "uploadHistory/uploadFile",
-}
+  uploadImage: 'uploadHistory/uploadImage',
+  uploadVideo: 'uploadHistory/uploadVideo',
+  uploadAudio: 'uploadHistory/uploadAudio',
+  uploadFile: 'uploadHistory/uploadFile',
+};
 
 export function buildModel() {
   return {

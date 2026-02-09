@@ -1,4 +1,3 @@
-
 import {
   getTacitlyState,
   pretreatmentRemoteListData,
@@ -17,11 +16,11 @@ import {
 } from '../../services/generalDiscourse';
 
 export const generalDiscourseTypeCollection = {
-  pageList: "generalDiscourse/pageList",
-  singleList: "generalDiscourse/singleList",
-  get: "generalDiscourse/get",
-  refreshCache: "generalDiscourse/refreshCache",
-}
+  pageList: 'generalDiscourse/pageList',
+  singleList: 'generalDiscourse/singleList',
+  get: 'generalDiscourse/get',
+  refreshCache: 'generalDiscourse/refreshCache',
+};
 
 export function buildModel() {
   return {
