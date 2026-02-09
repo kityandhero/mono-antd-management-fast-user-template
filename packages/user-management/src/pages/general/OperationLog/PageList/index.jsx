@@ -19,7 +19,6 @@ import {
 
 import { accessWayCollection } from '../../../../customConfig';
 import { getChannelName } from '../../../../customSpecialComponents';
-import { modelTypeCollection } from '../../../../modelBuilders';
 import { fieldData } from '../Common/data';
 
 const { MultiPage } = DataMultiPageView;
@@ -38,7 +37,7 @@ class PageList extends MultiPage {
       ...this.state,
       pageTitle: '操作日志列表',
       paramsKey: accessWayCollection.operationLog.pageList.paramsKey,
-      loadApiPath: modelTypeCollection.operationLogTypeCollection.pageList,
+      loadApiPath: 'operationLog/pageList',
       dateRangeFieldName: '创建时间',
     };
   }
@@ -106,6 +105,12 @@ class PageList extends MultiPage {
     },
     {
       dataTarget: fieldData.operatorName,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+    },
+    {
+      dataTarget: fieldData.operatorModeNote,
       width: 120,
       showRichFacade: true,
       emptyValue: '--',

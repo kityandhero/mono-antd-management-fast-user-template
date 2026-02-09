@@ -22,7 +22,7 @@
     "x:template:config:custom": "cd packages/user-management && npm run x:template:config:custom",
     "x:template:config:general": "cd packages/user-management && npm run x:template:config:general",
     "y:update-project-from-repository": "npx easy-soft-develop update-project-from-repository",
-    "posty:update-project-from-repository": "npx easy-soft-develop copy-content --source ./update.project.from.template.for.user.repository.config.json --target ./develop/config/develop.update.project.from.repository.json",
+    "posty:update-project-from-repository": "npx easy-soft-develop copy-content --source ./update.project.from.template.repository.config.json --target ./develop/config/develop.update.project.from.repository.json",
     "z:auto:adjust:file:all": "npm run z:auto:adjust:file:user-management",
     "z:auto:adjust:file:user-management": "cd packages/user-management && npm run z:auto:adjust:file",
     "z:bootstrap": "npm run z:clean && git pull && npm run z:install",

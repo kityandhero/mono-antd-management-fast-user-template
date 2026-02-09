@@ -24,9 +24,9 @@ class BasePageListDrawer extends MultiPageSelectDrawer {
 
     this.state = {
       ...this.state,
-      tableScrollX: 1280,
+      tableScrollX: 880,
       dateRangeFieldName: '操作时间',
-      pageTitle: '操作日志列表',
+      pageTitle: '日志列表',
       currentRecord: null,
     };
   }
@@ -86,6 +86,12 @@ class BasePageListDrawer extends MultiPageSelectDrawer {
     },
     {
       dataTarget: fieldData.operatorName,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+    },
+    {
+      dataTarget: fieldData.operatorModeNote,
       width: 120,
       showRichFacade: true,
       emptyValue: '--',

@@ -71,6 +71,12 @@ class BaseInnerPageList extends InnerMultiPage {
       emptyValue: '--',
     },
     {
+      dataTarget: fieldData.operatorModeNote,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+    },
+    {
       dataTarget: fieldData.primaryKeyValue,
       width: 120,
       showRichFacade: true,
