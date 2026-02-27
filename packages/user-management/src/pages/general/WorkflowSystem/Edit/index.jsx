@@ -55,6 +55,13 @@ class Detail extends DataTabContainerSupplement {
       hidden: !checkHasAuthority(accessWayCollection.workflow.get.permission),
       tab: '流程信息',
     },
+    {
+      key: 'tagInfo/pageList',
+      hidden: !checkHasAuthority(
+        accessWayCollection.workflowTagRelation.pageList.permission,
+      ),
+      tab: '标签设置',
+    },
   ];
 
   constructor(properties) {

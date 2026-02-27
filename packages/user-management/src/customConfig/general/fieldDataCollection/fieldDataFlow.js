@@ -1,6 +1,11 @@
 import { formNameCollection } from './fieldDataCommon';
 
 const formExtraData = {
+  workflowCategoryName: {
+    label: '类别',
+    name: 'workflowCategoryName',
+    helper: '',
+  },
   whetherCurrentChannel: {
     label: '是否当前通道',
     name: 'whetherCurrentChannel',
@@ -49,6 +54,21 @@ const formExtraData = {
   subsidiaryId: {
     label: '适用企业',
     name: 'subsidiaryId',
+    helper: '',
+  },
+  listTag: {
+    label: '标签列表',
+    name: 'listTag',
+    helper: '',
+  },
+  tagIdCollection: {
+    label: '标签',
+    name: 'tagIdCollection',
+    helper: '',
+  },
+  tagName: {
+    label: '标签',
+    name: 'tagName',
     helper: '',
   },
 };
@@ -223,6 +243,11 @@ export const fieldDataFlow = {
   availableOnMobileSwitchNote: {
     label: '移动端可用开关',
     name: 'availableOnMobileSwitchNote',
+    helper: '',
+  },
+  workflowCategoryId: {
+    label: '类别',
+    name: 'workflowCategoryId',
     helper: '',
   },
   sort: {

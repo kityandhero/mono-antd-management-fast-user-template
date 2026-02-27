@@ -349,6 +349,11 @@
       "functionSegment": "WorkflowCategoryStatus",
       "label": "状态",
       "name": "status"
+    },
+    {
+      "functionSegment": "WorkflowTagRelationStatus",
+      "label": "状态",
+      "name": "status"
     }
   ]
 }

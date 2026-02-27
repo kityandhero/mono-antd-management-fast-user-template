@@ -5,6 +5,7 @@ import {
   getValueByKey,
   showSimpleErrorMessage,
   whetherNumber,
+  zeroString,
 } from 'easy-soft-utility';
 
 import {
@@ -33,14 +34,17 @@ import { ChangeSortModal } from '../../Workflow/ChangeSortModal';
 import { FlowDisplayDrawer } from '../../Workflow/FlowDisplayDrawer';
 import { PageListDrawer as WorkflowBranchConditionPageListDrawer } from '../../WorkflowBranchCondition/PageListDrawer';
 import { PageListDrawer as WorkflowBranchConditionItemPageListDrawer } from '../../WorkflowBranchConditionItem/PageListDrawer';
+import { PageListWorkflowCategorySelectActionDrawer } from '../../WorkflowCategory/PageListSelectActionDrawer';
 import { WorkflowDebugCasePageListUnderwayDrawer } from '../../WorkflowDebugCase/PageListUnderwayDrawer';
 import { PageListDrawer as WorkflowLinePageListDrawer } from '../../WorkflowLine/PageListDrawer';
 import { PageListDrawer as WorkflowNodePageListDrawer } from '../../WorkflowNode/PageListDrawer';
 import { PageListDrawer as WorkflowNodeApproverPageListDrawer } from '../../WorkflowNodeApprover/PageListDrawer';
 import {
+  clearWorkflowCategoryIdAction,
   refreshCacheAction,
   setDisableAction,
   setEnableAction,
+  setWorkflowCategoryIdAction,
   toggleApplicantSignSwitchAction,
   toggleAttentionSignSwitchAction,
   toggleAvailableOnMobileSwitchAction,
@@ -88,6 +92,13 @@ class Detail extends DataTabContainerSupplement {
         accessWayCollection.workflowDebugCase.getByWorkflow.permission,
       ),
       tab: '流程测试',
+    },
+    {
+      key: 'tagInfo/pageList',
+      hidden: !checkHasAuthority(
+        accessWayCollection.workflowTagRelation.pageList.permission,
+      ),
+      tab: '标签设置',
     },
     {
       key: 'operateLog/pageList',
@@ -228,6 +239,39 @@ class Detail extends DataTabContainerSupplement {
         });
 
         target.setState({ metaData });
+      },
+    });
+  };
+
+  setWorkflowCategoryId = (o) => {
+    const { metaData } = this.state;
+
+    setWorkflowCategoryIdAction({
+      target: this,
+      handleData: {
+        workflowId: getValueByKey({
+          data: metaData,
+          key: fieldData.workflowId.name,
+          convert: convertCollection.string,
+        }),
+        workflowCategoryId: getValueByKey({
+          data: o,
+          key: fieldData.workflowCategoryId.name,
+          convert: convertCollection.string,
+        }),
+      },
+      successCallback: ({ target }) => {
+        target.refreshDataWithReloadAnimalPrompt({});
+      },
+    });
+  };
+
+  clearWorkflowCategoryId = (r) => {
+    clearWorkflowCategoryIdAction({
+      target: this,
+      handleData: r,
+      successCallback: ({ target }) => {
+        target.refreshDataWithReloadAnimalPrompt({});
       },
     });
   };
@@ -388,6 +432,10 @@ class Detail extends DataTabContainerSupplement {
     CreateDuplicateModal.open();
   };
 
+  showPageListWorkflowCategorySelectActionDrawer = () => {
+    PageListWorkflowCategorySelectActionDrawer.open();
+  };
+
   afterCreateDuplicateModalOk = ({
     // eslint-disable-next-line no-unused-vars
     singleData = null,
@@ -441,6 +489,16 @@ class Detail extends DataTabContainerSupplement {
       convert: convertCollection.number,
     });
 
+    const status = getValueByKey({
+      data: metaData,
+      key: fieldData.status.name,
+      convert: convertCollection.number,
+    });
+
+    const statusNote = getFlowStatusName({
+      value: status,
+    });
+
     return [
       {
         color: 'blue',
@@ -456,6 +514,16 @@ class Detail extends DataTabContainerSupplement {
         color: 'orange',
         text: '移动端',
         hidden: availableOnMobileSwitch !== whetherNumber.yes,
+      },
+      {
+        color: 'red',
+        text: statusNote,
+        hidden: status !== flowStatusCollection.disable,
+      },
+      {
+        color: 'green',
+        text: statusNote,
+        hidden: status !== flowStatusCollection.enable,
       },
     ];
   };
@@ -648,6 +716,12 @@ class Detail extends DataTabContainerSupplement {
       convert: convertCollection.number,
     });
 
+    const workflowCategoryId = getValueByKey({
+      data: metaData,
+      key: fieldData.workflowCategoryId.name,
+      convert: convertCollection.string,
+    });
+
     return {
       disabled: this.checkInProgress(),
       handleMenuClick: ({ key, handleData }) => {
@@ -704,6 +778,16 @@ class Detail extends DataTabContainerSupplement {
 
           case 'showChangeSortModal': {
             that.showChangeSortModal(handleData);
+            break;
+          }
+
+          case 'showPageListWorkflowCategorySelectActionDrawer': {
+            this.showPageListWorkflowCategorySelectActionDrawer(handleData);
+            break;
+          }
+
+          case 'clearWorkflowCategoryId': {
+            this.clearWorkflowCategoryId(handleData);
             break;
           }
 
@@ -861,8 +945,30 @@ class Detail extends DataTabContainerSupplement {
           icon: iconBuilder.edit(),
           text: '设置排序值',
           hidden: !checkHasAuthority(
-            accessWayCollection.workflow.updateSort.permission,
+            accessWayCollection.workflow.setSort.permission,
           ),
+        },
+        {
+          key: 'showPageListWorkflowCategorySelectActionDrawer',
+          icon: iconBuilder.edit(),
+          text: `设置类别`,
+          hidden: !checkHasAuthority(
+            accessWayCollection.workflow.setWorkflowCategoryId.permission,
+          ),
+        },
+        {
+          key: 'clearWorkflowCategoryId',
+          icon: iconBuilder.clear(),
+          text: '清除类别',
+          confirm: true,
+          title: '将要设清除类别，确定吗？',
+          disabled: workflowCategoryId === zeroString,
+          hidden: !checkHasAuthority(
+            accessWayCollection.workflow.clearWorkflowCategoryId.permission,
+          ),
+        },
+        {
+          type: dropdownExpandItemType.divider,
         },
         {
           type: dropdownExpandItemType.divider,
@@ -997,6 +1103,24 @@ class Detail extends DataTabContainerSupplement {
           key: fieldData.sort.name,
         }),
       },
+      {
+        label: fieldData.workflowCategoryName.label,
+        value: getValueByKey({
+          data: metaData,
+          key: fieldData.workflowCategoryName.name,
+          convert: convertCollection.string,
+          defaultValue: '未设置',
+        }),
+      },
+      {
+        label: fieldData.tagName.label,
+        value: getValueByKey({
+          data: metaData,
+          key: fieldData.tagName.name,
+          convert: convertCollection.string,
+          defaultValue: '未设置',
+        }),
+      },
     ];
   };
 
@@ -1106,6 +1230,13 @@ class Detail extends DataTabContainerSupplement {
           hidden={!firstLoadSuccess}
           afterOK={(o) => {
             this.afterCreateDuplicateModalOk(o);
+          }}
+        />
+
+        <PageListWorkflowCategorySelectActionDrawer
+          width={1000}
+          afterSelect={(selectData) => {
+            this.setWorkflowCategoryId(selectData);
           }}
         />
       </>

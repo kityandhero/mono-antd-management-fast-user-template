@@ -219,6 +219,22 @@ export const flow = {
               path: '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/debugCaseInfo',
             },
             {
+              path: '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/tagInfo',
+              name: 'tagInfo',
+              routes: [
+                {
+                  path: '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/tagInfo',
+                  redirect:
+                    '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/tagInfo/pageList',
+                },
+                {
+                  path: '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/tagInfo/pageList',
+                  component:
+                    './general/WorkflowSelfBuild/Edit/TagInfo/PageList',
+                },
+              ],
+            },
+            {
               name: 'operateLog',
               path: '/flow/workflowSelfBuild/edit/:op/:id/:pageKey/operateLog',
               routes: [
@@ -271,9 +287,9 @@ export const flow = {
           path: '/flow/workflowSystem/edit/:op/:id/:pageKey',
           routes: [
             {
-              component: './general/WorkflowSystem/Edit/BasicInfo',
-              name: 'basicInfo',
               path: '/flow/workflowSystem/edit/:op/:id/:pageKey/basicInfo',
+              name: 'basicInfo',
+              component: './general/WorkflowSystem/Edit/BasicInfo',
             },
             {
               component: './general/WorkflowSystem/Edit/FromInfo',
@@ -281,9 +297,24 @@ export const flow = {
               path: '/flow/workflowSystem/edit/:op/:id/:pageKey/fromInfo',
             },
             {
-              component: './general/WorkflowSystem/Edit/FlowInfo',
-              name: 'flowInfo',
               path: '/flow/workflowSystem/edit/:op/:id/:pageKey/flowInfo',
+              name: 'flowInfo',
+              component: './general/WorkflowSystem/Edit/FlowInfo',
+            },
+            {
+              path: '/flow/workflowSystem/edit/:op/:id/:pageKey/tagInfo',
+              name: 'tagInfo',
+              routes: [
+                {
+                  path: '/flow/workflowSystem/edit/:op/:id/:pageKey/tagInfo',
+                  redirect:
+                    '/flow/workflowSystem/edit/:op/:id/:pageKey/tagInfo/pageList',
+                },
+                {
+                  path: '/flow/workflowSystem/edit/:op/:id/:pageKey/tagInfo/pageList',
+                  component: './general/WorkflowSystem/Edit/TagInfo/PageList',
+                },
+              ],
             },
           ],
         },

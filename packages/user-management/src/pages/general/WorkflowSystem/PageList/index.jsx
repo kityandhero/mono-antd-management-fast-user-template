@@ -4,20 +4,19 @@ import {
   checkHasAuthority,
   getValueByKey,
   toNumber,
+  whetherNumber,
 } from 'easy-soft-utility';
 
 import {
   columnFacadeMode,
   dropdownExpandItemType,
   searchCardConfig,
+  unlimitedWithStringFlag,
 } from 'antd-management-fast-common';
-import { iconBuilder } from 'antd-management-fast-component';
+import { buildButton, iconBuilder } from 'antd-management-fast-component';
 import { DataMultiPageView } from 'antd-management-fast-framework';
 
-import {
-  accessWayCollection,
-  flowStatusCollection,
-} from '../../../../customConfig';
+import { accessWayCollection } from '../../../../customConfig';
 import {
   getBusinessModeName,
   getChannelName,
@@ -26,11 +25,12 @@ import {
   getFlowStatusName,
   renderSearchBusinessModeSelect,
   renderSearchFlowScopeSelect,
-  renderSearchFlowStatusSelect,
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { getFlowStatusBadge } from '../../../../utils';
+import { singleTreeListWithWorkflowAction } from '../../Tag/Assist/action';
 import { ChangeSortModal } from '../../Workflow/ChangeSortModal';
+import { singleTreeListAction } from '../../WorkflowCategory/Assist/action';
 import { FlowCaseFormExampleDocumentDisplayDrawer } from '../../WorkflowFormDesign/FlowCaseFormExampleDocumentDisplayDrawer';
 import { refreshCacheAction } from '../Assist/action';
 import { fieldData } from '../Common/data';
@@ -55,6 +55,12 @@ class PageList extends MultiPage {
       loadApiPath: modelTypeCollection.workflowTypeCollection.pageListSystem,
       dateRangeFieldName: '创建时间',
       currentRecord: null,
+      workflowCategoryId: '',
+      workflowCategoryName: '',
+      workflowCategoryTreeData: [],
+      tagIdCollection: [],
+      tagName: '',
+      tagTreeData: [],
     };
   }
 
@@ -67,9 +73,53 @@ class PageList extends MultiPage {
   supplementRequestParams = (o) => {
     const d = { ...o };
 
-    d[fieldData.status.name] = flowStatusCollection.enable;
-
     return d;
+  };
+
+  doOtherRemoteRequest = () => {
+    this.loadWorkflowCategoryTreeList({ refresh: whetherNumber.no });
+    this.loadTagTreeList();
+  };
+
+  loadWorkflowCategoryTreeList = ({ refresh = whetherNumber.no }) => {
+    singleTreeListAction({
+      target: this,
+      handleData: { refresh },
+      successCallback: ({ target, remoteListData }) => {
+        target.setState({
+          workflowCategoryTreeData: remoteListData,
+        });
+      },
+    });
+  };
+
+  reloadWorkflowCategoryTreeList = () => {
+    this.loadWorkflowCategoryTreeList({ refresh: whetherNumber.yes });
+  };
+
+  loadTagTreeList = () => {
+    singleTreeListWithWorkflowAction({
+      target: this,
+      handleData: {},
+      successCallback: ({ target, remoteListData }) => {
+        target.setState({
+          tagTreeData: remoteListData,
+        });
+      },
+    });
+  };
+
+  reloadTagTreeList = () => {
+    this.loadTagTreeList();
+  };
+
+  handleSearchResetState = () => {
+    return {
+      tagIdCollection: [],
+      tagName: '',
+      workflowCategoryId: '',
+      workflowCategoryName: '',
+    };
   };
 
   handleMenuClick = ({ key, handleData }) => {
@@ -146,13 +196,93 @@ class PageList extends MultiPage {
     this.goToPath(`/flow/workflowSystem/edit/load/${workflowId}/key/basicInfo`);
   };
 
+  fillSearchCardInitialValues = () => {
+    const values = {};
+
+    values[fieldData.scope.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.businessMode.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.availableOnMobileSwitch.name] =
+      unlimitedWithStringFlag.flag;
+    values[fieldData.effectiveRange.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.status.name] = unlimitedWithStringFlag.flag;
+
+    return values;
+  };
+
   establishSearchCardConfig = () => {
+    const {
+      tagTreeData,
+      tagIdCollection,
+      workflowCategoryTreeData,
+      workflowCategoryId,
+    } = this.state;
+
     return {
       list: [
         {
-          lg: 5,
+          lg: 10,
           type: searchCardConfig.contentItemType.input,
           fieldData: fieldData.name,
+        },
+        {
+          lg: 8,
+          type: searchCardConfig.contentItemType.treeSelect,
+          fieldData: fieldData.workflowCategoryId,
+          value: workflowCategoryId,
+          require: false,
+          listData: workflowCategoryTreeData,
+          addonAfter: buildButton({
+            text: '',
+            icon: iconBuilder.reload(),
+            handleClick: () => {
+              this.reloadWorkflowCategoryTreeList();
+            },
+          }),
+          dataConvert: (o) => {
+            const { name: title, code: value } = o;
+
+            return {
+              title,
+              value,
+            };
+          },
+          onChange: ({ value }) => {
+            this.setState({
+              workflowCategoryId: value,
+            });
+          },
+        },
+        {
+          lg: 6,
+          type: searchCardConfig.contentItemType.treeSelect,
+          fieldData: fieldData.tagIdCollection,
+          value: tagIdCollection,
+          require: true,
+          innerProps: {
+            treeCheckable: true,
+          },
+          listData: tagTreeData,
+          addonAfter: buildButton({
+            title: '点击刷新标签列表',
+            text: '',
+            icon: iconBuilder.reload(),
+            handleClick: () => {
+              this.reloadTagTreeList();
+            },
+          }),
+          dataConvert: (o) => {
+            const { name: title, code: value } = o;
+
+            return {
+              title,
+              value,
+            };
+          },
+          onChange: ({ value }) => {
+            this.setState({
+              tagIdCollection: value,
+            });
+          },
         },
         {
           lg: 5,
@@ -165,9 +295,9 @@ class PageList extends MultiPage {
           component: renderSearchBusinessModeSelect({}),
         },
         {
-          lg: 5,
-          type: searchCardConfig.contentItemType.customSelect,
-          component: renderSearchFlowStatusSelect({}),
+          lg: 4,
+          type: searchCardConfig.contentItemType.whetherSelect,
+          fieldData: fieldData.availableOnMobileSwitch,
         },
         {
           lg: 4,
@@ -317,6 +447,25 @@ class PageList extends MultiPage {
             value: value,
           }),
         };
+      },
+    },
+    {
+      dataTarget: fieldData.availableOnMobileSwitch,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: toNumber(value) + 38,
+          }),
+        };
+      },
+      formatValue: (value, record) => {
+        return getValueByKey({
+          data: record,
+          key: fieldData.availableOnMobileSwitchNote.name,
+        });
       },
     },
     {

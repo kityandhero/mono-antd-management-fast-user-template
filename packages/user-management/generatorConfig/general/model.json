@@ -885,10 +885,94 @@
           "type": "pageList"
         },
         {
+          "title": "用于问题的标签分页列表",
+          "api": "/tag/pageListWithQuestion",
+          "effect": "pageListWithQuestion",
+          "service": "pageListWithQuestionData",
+          "type": "pageList"
+        },
+        {
+          "title": "用于通知的标签分页列表",
+          "api": "/tag/pageListWithNotice",
+          "effect": "pageListWithNotice",
+          "service": "pageListWithNoticeData",
+          "type": "pageList"
+        },
+        {
+          "title": "用于流程的标签分页列表",
+          "api": "/tag/pageListWithWorkflow",
+          "effect": "pageListWithWorkflow",
+          "service": "pageListWithWorkflowData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/tag/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "用于问题的标签单页列表",
+          "api": "/tag/singleListWithQuestion",
+          "effect": "singleListWithQuestion",
+          "service": "singleListWithQuestionData",
+          "type": "singleList"
+        },
+        {
+          "title": "用于通知的标签单页列表",
+          "api": "/tag/singleListWithNotice",
+          "effect": "singleListWithNotice",
+          "service": "singleListWithNoticeData",
+          "type": "singleList"
+        },
+        {
+          "title": "用于工作流的标签单页列表",
+          "api": "/tag/singleListWithWorkflow",
+          "effect": "singleListWithWorkflow",
+          "service": "singleListWithWorkflowData",
+          "type": "singleList"
+        },
+        {
+          "title": "单页树型列表",
+          "api": "/tag/singleTreeList",
+          "effect": "singleTreeList",
+          "service": "singleTreeListData",
+          "type": "singleList"
+        },
+        {
+          "title": "问题相关标签单页树型列表",
+          "api": "/tag/singleTreeListWithQuestion",
+          "effect": "singleTreeListWithQuestion",
+          "service": "singleTreeListWithQuestionData",
+          "type": "singleList"
+        },
+        {
+          "title": "通知相关标签单页树型列表",
+          "api": "/tag/singleTreeListWithNotice",
+          "effect": "singleTreeListWithNotice",
+          "service": "singleTreeListWithNoticeData",
+          "type": "singleList"
+        },
+        {
+          "title": "流程相关标签单页树型列表",
+          "api": "/tag/singleTreeListWithWorkflow",
+          "effect": "singleTreeListWithWorkflow",
+          "service": "singleTreeListWithWorkflowData",
+          "type": "singleList"
+        },
+        {
           "title": "获取详情",
           "api": "/tag/get",
           "effect": "get",
           "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/tag/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
           "type": "singleData"
         }
       ],
@@ -1270,10 +1354,24 @@
           "type": "singleData"
         },
         {
+          "title": "设置类别",
+          "api": "/workflow/setWorkflowCategoryId",
+          "effect": "setWorkflowCategoryId",
+          "service": "setWorkflowCategoryIdData",
+          "type": "singleData"
+        },
+        {
+          "title": "清除类别",
+          "api": "/workflow/clearWorkflowCategoryId",
+          "effect": "clearWorkflowCategoryId",
+          "service": "clearWorkflowCategoryIdData",
+          "type": "singleData"
+        },
+        {
           "title": "更新排序值",
-          "api": "/workflow/updateSort",
-          "effect": "updateSort",
-          "service": "updateSortData",
+          "api": "/workflow/setSort",
+          "effect": "setSort",
+          "service": "setSortData",
           "type": "singleData"
         },
         {
@@ -1973,6 +2071,55 @@
       "cover": true,
       "title": "流程审批历史",
       "name": "workflowCaseProcessHistory"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowCategory/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "单页列表",
+          "api": "/workflowCategory/singleList",
+          "effect": "singleList",
+          "service": "singleListData",
+          "type": "singleList"
+        },
+        {
+          "title": "单页树型列表",
+          "api": "/workflowCategory/singleTreeList",
+          "effect": "singleTreeList",
+          "service": "singleTreeListData",
+          "type": "singleList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowCategory/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowCategory/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowCategory/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程类别管理",
+      "name": "workflowCategory"
     },
     {
       "apis": [
@@ -2876,6 +3023,62 @@
       "cover": true,
       "title": "审批统计",
       "name": "workflowStatistic"
+    },
+    {
+      "apis": [
+        {
+          "title": "分页列表",
+          "api": "/workflowTagRelation/pageList",
+          "effect": "pageList",
+          "service": "pageListData",
+          "type": "pageList"
+        },
+        {
+          "title": "获取详情",
+          "api": "/workflowTagRelation/get",
+          "effect": "get",
+          "service": "getData",
+          "type": "singleData"
+        },
+        {
+          "title": "新增",
+          "api": "/workflowTagRelation/add",
+          "effect": "add",
+          "service": "addData",
+          "type": "singleData"
+        },
+        {
+          "title": "批量新增",
+          "api": "/workflowTagRelation/addBatch",
+          "effect": "addBatch",
+          "service": "addBatchData",
+          "type": "singleData"
+        },
+        {
+          "title": "移除",
+          "api": "/workflowTagRelation/remove",
+          "effect": "remove",
+          "service": "removeData",
+          "type": "singleData"
+        },
+        {
+          "title": "刷新缓存",
+          "api": "/workflowTagRelation/refreshCache",
+          "effect": "refreshCache",
+          "service": "refreshCacheData",
+          "type": "singleData"
+        },
+        {
+          "title": "操作日志列表",
+          "api": "/workflowTagRelation/pageListOperateLog",
+          "effect": "pageListOperateLog",
+          "service": "pageListOperateLogData",
+          "type": "pageList"
+        }
+      ],
+      "cover": true,
+      "title": "流程标签管理",
+      "name": "workflowTagRelation"
     }
   ]
 }

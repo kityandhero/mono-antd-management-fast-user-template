@@ -516,10 +516,50 @@ export const accessWayInfrastructureCollection = {
       paramsKey: '21bb8a7acff61cd3c5e53c393fccca4f',
       permission: '23f40ef7af31418fbf0ff858041c5d0f',
     },
+    pageListWithQuestion: {
+      title: '用于问题的标签分页列表',
+      paramsKey: 'f6ea2c49e6cf25b48fba2a4ff2656e49',
+      permission: '2bf136d414ac4dcb9c0e51757de10736',
+    },
+    pageListWithNotice: {
+      title: '用于通知的标签分页列表',
+      paramsKey: '0fb1bdd911311f8143c0c45e42016686',
+      permission: '6a73d138ade947699121ec1bbd39cc89',
+    },
+    pageListWithWorkflow: {
+      title: '用于流程的标签分页列表',
+      paramsKey: '3c27b0d97072ff830061a9c5b2a2563e',
+      permission: '7db633ceaafd4f8cb854142a080c8da4',
+    },
+    singleList: {
+      title: '单页列表',
+      paramsKey: 'ee5ad1c56b5594c6969fccc8e6578845',
+      permission: 'eb5870e63d4048dc95f942862994d16b',
+    },
+    singleListWithQuestion: {
+      title: '用于问题的标签单页列表',
+      paramsKey: 'afe6d9a83a680061c5a3278f14479ca0',
+      permission: '68a8597b0f9a4e1f8c5d981716ef0c5c',
+    },
+    singleListWithNotice: {
+      title: '用于通知的标签单页列表',
+      paramsKey: 'e42647cadc93b8b97f57236f84f9abed',
+      permission: '46b9c87c3ea549b2814a99c442ec0682',
+    },
+    singleListWithWorkflow: {
+      title: '用于工作流的标签单页列表',
+      paramsKey: '1416cb44e244023fe273687c4fdf5865',
+      permission: '12dadf23cd084f1188f3fdcc76ac540f',
+    },
     get: {
       title: '获取详情',
       paramsKey: 'c0093c24cefeab43cb5c00117d034f68',
       permission: 'a2d2bde1bfeb4ea2a8fc1ed929f15199',
+    },
+    refreshCache: {
+      title: '刷新缓存',
+      paramsKey: '1c5bc3dc93f2d1541515d658814fd37f',
+      permission: '3ce30f9567fd4be086989bca76c276ee',
     },
   },
   user: {
@@ -746,7 +786,17 @@ export const accessWayInfrastructureCollection = {
       paramsKey: 'cccc0695b836dda581d4d81429d2617c',
       permission: '432b812247754cc5bd94369742260db7',
     },
-    updateSort: {
+    setWorkflowCategoryId: {
+      title: '设置类别',
+      paramsKey: '3037578aab1184bcec326d8e01d340b7',
+      permission: '6fa2c4a94cb74ff1b55cb807dfd8fd75',
+    },
+    clearWorkflowCategoryId: {
+      title: '清除类别',
+      paramsKey: '5d54228bfa712b2b8a1f761cb69b85e3',
+      permission: 'f165d7f0539d414fba676ad23d9cbb7d',
+    },
+    setSort: {
       title: '更新排序值',
       paramsKey: 'af0e2851756e1d43ae74435493b06d8f',
       permission: '0b26756116db4380bcffb9c1d3fb3327',
@@ -1208,6 +1258,28 @@ export const accessWayInfrastructureCollection = {
       title: '操作日志列表',
       paramsKey: '83d396a93e2f4ede8363df5f886c25be',
       permission: 'a1af83e60cd84aa7bc57022e9ab37f9f',
+    },
+  },
+  workflowCategory: {
+    pageList: {
+      title: '分页列表',
+      paramsKey: '8323dcf57691bde59745686d4f09aa50',
+      permission: '2fa69a53cc01401c97404aa90fbd15a7',
+    },
+    get: {
+      title: '获取详情',
+      paramsKey: '1a74cb3daa743e88f256a716ce5a517d',
+      permission: '61560b0c42674270b20ac2871da8d9c7',
+    },
+    refreshCache: {
+      title: '刷新缓存',
+      paramsKey: '2f14d75e668ca7f04db8df5316092569',
+      permission: '58d9917571914c988b7c41df360223ff',
+    },
+    pageListOperateLog: {
+      title: '操作日志列表',
+      paramsKey: '56254b725295a266eb5193d921a2478d',
+      permission: '33b0d6f95fc343c3a382a7af9c2fbb9f',
     },
   },
   workflowDebugCase: {
@@ -1807,6 +1879,43 @@ export const accessWayInfrastructureCollection = {
       title: '统计审批实例通知未读总数',
       paramsKey: '3eb51c4df0daf327176927dc993874ed',
       permission: '7415e4857c85412cb9fb26bff9f4c7d4',
+    },
+  },
+  workflowTagRelation: {
+    pageList: {
+      title: '分页列表',
+      paramsKey: '0ceccdecf8999c8723ce7792ba43e3d3',
+      permission: '15986fe159714735b1dc66f769be9810',
+    },
+    get: {
+      title: '获取详情',
+      paramsKey: '66032d5895a8fde98e92a208a2d10e70',
+      permission: '2a5492d4733a41529629244a399f475b',
+    },
+    add: {
+      title: '新增',
+      paramsKey: 'c822276513339f8d2a9b04623ffc35d2',
+      permission: 'de5f0e4aa517407287fef40f80b88173',
+    },
+    addBatch: {
+      title: '批量新增',
+      paramsKey: 'f2ed1e40fa9b2aa4030b4e127fb8d2bf',
+      permission: '74fcc04412a5429f88ea723e42641965',
+    },
+    remove: {
+      title: '移除',
+      paramsKey: 'c94893059360fdf498b748e8a720ce2f',
+      permission: '92ed50bfda0143e29dd7682184b31ed6',
+    },
+    refreshCache: {
+      title: '刷新缓存',
+      paramsKey: '3f75a5a7424c44bd7d49f50cbb97a1f6',
+      permission: '4de5a74eddb14fcd8313e83389b093e1',
+    },
+    pageListOperateLog: {
+      title: '操作日志列表',
+      paramsKey: '07ed3360d2e728ba87dd1572665331f3',
+      permission: '2b3ae504f6c84afbae4a32d03765bdc8',
     },
   },
 };

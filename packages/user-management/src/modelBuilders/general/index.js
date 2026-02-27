@@ -115,6 +115,10 @@ import {
   workflowCaseProcessHistoryTypeCollection,
 } from './workflowCaseProcessHistory';
 import {
+  buildModel as buildWorkflowCategoryModel,
+  workflowCategoryTypeCollection,
+} from './workflowCategory';
+import {
   buildModel as buildWorkflowDebugCaseModel,
   workflowDebugCaseTypeCollection,
 } from './workflowDebugCase';
@@ -162,6 +166,10 @@ import {
   buildModel as buildWorkflowStatisticModel,
   workflowStatisticTypeCollection,
 } from './workflowStatistic';
+import {
+  buildModel as buildWorkflowTagRelationModel,
+  workflowTagRelationTypeCollection,
+} from './workflowTagRelation';
 
 export const modelTypeCollection = {
   accessWayTypeCollection,
@@ -196,6 +204,7 @@ export const modelTypeCollection = {
   workflowCaseNextProcessNotificationTypeCollection,
   workflowCaseNextProcessProgressTypeCollection,
   workflowCaseProcessHistoryTypeCollection,
+  workflowCategoryTypeCollection,
   workflowDebugCaseTypeCollection,
   workflowDebugCaseFormAttachmentTypeCollection,
   workflowDebugCaseFormStorageTypeCollection,
@@ -208,6 +217,7 @@ export const modelTypeCollection = {
   workflowNodeTypeCollection,
   workflowNodeApproverTypeCollection,
   workflowStatisticTypeCollection,
+  workflowTagRelationTypeCollection,
 };
 
 export function listModelBuilder() {
@@ -246,6 +256,7 @@ export function listModelBuilder() {
     buildWorkflowCaseNextProcessNotificationModel,
     buildWorkflowCaseNextProcessProgressModel,
     buildWorkflowCaseProcessHistoryModel,
+    buildWorkflowCategoryModel,
     buildWorkflowDebugCaseModel,
     buildWorkflowDebugCaseFormAttachmentModel,
     buildWorkflowDebugCaseFormStorageModel,
@@ -258,6 +269,7 @@ export function listModelBuilder() {
     buildWorkflowNodeModel,
     buildWorkflowNodeApproverModel,
     buildWorkflowStatisticModel,
+    buildWorkflowTagRelationModel,
   );
 
   return list;

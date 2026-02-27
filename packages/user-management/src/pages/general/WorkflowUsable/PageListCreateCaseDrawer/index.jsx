@@ -6,10 +6,11 @@ import {
 } from 'easy-soft-utility';
 
 import {
+  cardConfig,
   columnFacadeMode,
   searchCardConfig,
 } from 'antd-management-fast-common';
-import { iconBuilder } from 'antd-management-fast-component';
+import { buildColorText, iconBuilder } from 'antd-management-fast-component';
 import {
   DataMultiPageView,
   switchControlAssist,
@@ -38,6 +39,9 @@ const visibleFlag = '6086f3110927498e898169937659f382';
   schedulingControl,
 }))
 class PageListCreateCaseDrawer extends MultiPageDrawer {
+  // 在控制台显示组建内调用序列, 仅为进行开发辅助
+  showCallProcess = true;
+
   reloadWhenShow = true;
 
   componentAuthority = accessWayCollection.workflow.pageListUsable.permission;
@@ -133,6 +137,122 @@ class PageListCreateCaseDrawer extends MultiPageDrawer {
   };
 
   renderPresetTitleIcon = () => null;
+
+  establishPageContentLayoutSiderConfig = () => {
+    return {
+      position: 'left',
+    };
+  };
+
+  establishSiderTopAreaConfig = () => {
+    return {
+      list: [
+        {
+          title: {
+            text: '基本信息',
+            subText: buildColorText({
+              textPrefix: '文本前缀',
+              text: '附属文本',
+              color: '#8909ef',
+              wrapperBuilder: (c) => {
+                return <>【{c}】</>;
+              },
+            }),
+          },
+          extra: {
+            list: [
+              {
+                buildType: cardConfig.extraBuildType.refresh,
+                size: 'small',
+              },
+            ],
+          },
+          items: [
+            {
+              lg: 24,
+              type: cardConfig.contentItemType.tree,
+              showLine: true,
+              switcherIcon: iconBuilder.down(),
+              defaultExpandedKeys: ['0-0-0'],
+              listData: [
+                {
+                  title: 'parent 1',
+                  key: '0-0',
+                  children: [
+                    {
+                      title: 'parent 1-0',
+                      key: '0-0-0',
+                      children: [
+                        {
+                          title: 'leaf',
+                          key: '0-0-0-0',
+                        },
+                        {
+                          title: 'leaf',
+                          key: '0-0-0-1',
+                        },
+                        {
+                          title: 'leaf',
+                          key: '0-0-0-2',
+                        },
+                      ],
+                    },
+                    {
+                      title: 'parent 1-1',
+                      key: '0-0-1',
+                      children: [
+                        {
+                          title: 'leaf',
+                          key: '0-0-1-0',
+                        },
+                      ],
+                    },
+                    {
+                      title: 'parent 1-2',
+                      key: '0-0-2',
+                      children: [
+                        {
+                          title: 'leaf',
+                          key: '0-0-2-0',
+                        },
+                        {
+                          title: 'leaf',
+                          key: '0-0-2-1',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+              innerProps: {
+                defaultExpandAll: true,
+              },
+              onSelect: (
+                selectedKeys,
+                o,
+                { selectedNodes, node, treeData },
+              ) => {
+                console.log({ selectedNodes, node, treeData });
+              },
+            },
+          ],
+          instruction: {
+            title: '局部操作说明',
+            showDivider: false,
+            showNumber: true,
+            list: [
+              {
+                text: '这是一些操作说明1',
+              },
+              {
+                text: '这是一些操作说明2',
+              },
+            ],
+          },
+        },
+      ],
+    };
+  };
 
   establishSearchCardConfig = () => {
     return {

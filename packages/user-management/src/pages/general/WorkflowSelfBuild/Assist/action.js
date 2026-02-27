@@ -69,6 +69,52 @@ export async function toggleAvailableOnMobileSwitchAction({
   });
 }
 
+export async function setWorkflowCategoryIdAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowTypeCollection.setWorkflowCategoryId,
+    params: {
+      workflowId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowId.name,
+      }),
+      workflowCategoryId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowCategoryId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
+export async function clearWorkflowCategoryIdAction({
+  target,
+  handleData,
+  successCallback,
+  successMessage,
+}) {
+  actionCore({
+    api: modelTypeCollection.workflowTypeCollection.clearWorkflowCategoryId,
+    params: {
+      workflowId: getValueByKey({
+        data: handleData,
+        key: fieldData.workflowId.name,
+      }),
+    },
+    target,
+    handleData,
+    successCallback,
+    successMessage,
+  });
+}
+
 export async function setEnableAction({
   target,
   handleData,

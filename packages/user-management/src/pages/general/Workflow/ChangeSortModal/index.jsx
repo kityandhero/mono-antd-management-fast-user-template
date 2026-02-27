@@ -28,7 +28,7 @@ class ChangeSortModal extends BaseUpdateModal {
       ...this.state,
       pageTitle: '排序值设置',
       loadApiPath: modelTypeCollection.workflowTypeCollection.get,
-      submitApiPath: modelTypeCollection.workflowTypeCollection.updateSort,
+      submitApiPath: modelTypeCollection.workflowTypeCollection.setSort,
     };
   }
 

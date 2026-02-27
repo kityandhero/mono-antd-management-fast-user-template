@@ -67,3 +67,5 @@ export * from './UserStatus';
 export * from './UserSubsidiaryInfoStatus';
 export * from './UserType';
 export * from './WebChannel';
+export * from './WorkflowCategoryStatus';
+export * from './WorkflowTagRelationStatus';

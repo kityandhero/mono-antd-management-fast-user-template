@@ -55,11 +55,31 @@ export async function updateBasicInfoData(parameters) {
   });
 }
 
-export const updateSortDataApiAddress = '/workflow/updateSort';
+export const setWorkflowCategoryIdDataApiAddress =
+  '/workflow/setWorkflowCategoryId';
 
-export async function updateSortData(parameters) {
+export async function setWorkflowCategoryIdData(parameters) {
   return request({
-    api: updateSortDataApiAddress,
+    api: setWorkflowCategoryIdDataApiAddress,
+    params: parameters,
+  });
+}
+
+export const clearWorkflowCategoryIdDataApiAddress =
+  '/workflow/clearWorkflowCategoryId';
+
+export async function clearWorkflowCategoryIdData(parameters) {
+  return request({
+    api: clearWorkflowCategoryIdDataApiAddress,
+    params: parameters,
+  });
+}
+
+export const setSortDataApiAddress = '/workflow/setSort';
+
+export async function setSortData(parameters) {
+  return request({
+    api: setSortDataApiAddress,
     params: parameters,
   });
 }

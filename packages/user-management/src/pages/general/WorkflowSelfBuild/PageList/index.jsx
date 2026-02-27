@@ -8,6 +8,8 @@ import {
   getValueByKey,
   handleItem,
   toNumber,
+  whetherNumber,
+  zeroString,
 } from 'easy-soft-utility';
 
 import {
@@ -15,8 +17,9 @@ import {
   dropdownExpandItemType,
   listViewConfig,
   searchCardConfig,
+  unlimitedWithStringFlag,
 } from 'antd-management-fast-common';
-import { iconBuilder } from 'antd-management-fast-component';
+import { buildButton, iconBuilder } from 'antd-management-fast-component';
 import { DataMultiPageView } from 'antd-management-fast-framework';
 
 import {
@@ -34,16 +37,22 @@ import {
 } from '../../../../customSpecialComponents';
 import { modelTypeCollection } from '../../../../modelBuilders';
 import { getFlowStatusBadge } from '../../../../utils';
+import { singleTreeListWithWorkflowAction } from '../../Tag/Assist/action';
 import { ChangeSortModal } from '../../Workflow/ChangeSortModal';
+import { singleTreeListAction } from '../../WorkflowCategory/Assist/action';
+import { PageListWorkflowCategorySelectActionDrawer } from '../../WorkflowCategory/PageListSelectActionDrawer';
 import { FlowCaseFormExampleDocumentDisplayDrawer } from '../../WorkflowFormDesign/FlowCaseFormExampleDocumentDisplayDrawer';
 import { AddOfficeAutomationProcessApprovalDrawer } from '../AddOfficeAutomationProcessApprovalDrawer';
 import {
+  clearWorkflowCategoryIdAction,
   refreshCacheAction,
   removeAction,
   setDisableAction,
   setEnableAction,
+  setWorkflowCategoryIdAction,
 } from '../Assist/action';
 import { fieldData } from '../Common/data';
+import { OperateLogDrawer } from '../OperateLogDrawer';
 
 const { MultiPage } = DataMultiPageView;
 
@@ -66,8 +75,70 @@ class PageList extends MultiPage {
       loadApiPath: modelTypeCollection.workflowTypeCollection.pageListSelfBuild,
       dateRangeFieldName: '创建时间',
       currentRecord: null,
+      workflowCategoryId: '',
+      workflowCategoryName: '',
+      workflowCategoryTreeData: [],
+      tagIdCollection: [],
+      tagName: '',
+      tagTreeData: [],
     };
   }
+
+  supplementLoadRequestParams = (o) => {
+    const d = { ...o };
+    const { workflowCategoryId, tagIdCollection } = this.state;
+
+    d[fieldData.workflowCategoryId.name] = workflowCategoryId;
+    d[fieldData.tagIdCollection.name] = tagIdCollection.join(',');
+
+    return d;
+  };
+
+  doOtherRemoteRequest = () => {
+    this.loadWorkflowCategoryTreeList({ refresh: whetherNumber.no });
+    this.loadTagTreeList();
+  };
+
+  loadWorkflowCategoryTreeList = ({ refresh = whetherNumber.no }) => {
+    singleTreeListAction({
+      target: this,
+      handleData: { refresh },
+      successCallback: ({ target, remoteListData }) => {
+        target.setState({
+          workflowCategoryTreeData: remoteListData,
+        });
+      },
+    });
+  };
+
+  reloadWorkflowCategoryTreeList = () => {
+    this.loadWorkflowCategoryTreeList({ refresh: whetherNumber.yes });
+  };
+
+  loadTagTreeList = () => {
+    singleTreeListWithWorkflowAction({
+      target: this,
+      handleData: {},
+      successCallback: ({ target, remoteListData }) => {
+        target.setState({
+          tagTreeData: remoteListData,
+        });
+      },
+    });
+  };
+
+  reloadTagTreeList = () => {
+    this.loadTagTreeList();
+  };
+
+  handleSearchResetState = () => {
+    return {
+      tagIdCollection: [],
+      tagName: '',
+      workflowCategoryId: '',
+      workflowCategoryName: '',
+    };
+  };
 
   handleItemStatus = ({ target, handleData, remoteData }) => {
     const workflowId = getValueByKey({
@@ -103,8 +174,18 @@ class PageList extends MultiPage {
         break;
       }
 
-      case 'updateSort': {
+      case 'setSort': {
         this.showChangeSortModal(handleData);
+        break;
+      }
+
+      case 'showPageListWorkflowCategorySelectActionDrawer': {
+        this.showPageListWorkflowCategorySelectActionDrawer(handleData);
+        break;
+      }
+
+      case 'clearWorkflowCategoryId': {
+        this.clearWorkflowCategoryId(handleData);
         break;
       }
 
@@ -128,6 +209,70 @@ class PageList extends MultiPage {
         break;
       }
     }
+  };
+
+  setWorkflowCategoryId = (o) => {
+    const { currentRecord } = this.state;
+
+    setWorkflowCategoryIdAction({
+      target: this,
+      handleData: {
+        workflowId: getValueByKey({
+          data: currentRecord,
+          key: fieldData.workflowId.name,
+          convert: convertCollection.string,
+        }),
+        workflowCategoryId: getValueByKey({
+          data: o,
+          key: fieldData.workflowCategoryId.name,
+          convert: convertCollection.string,
+        }),
+      },
+      successCallback: ({ target }) => {
+        target.refreshDataWithReloadAnimalPrompt({});
+      },
+    });
+  };
+
+  clearWorkflowCategoryId = (r) => {
+    clearWorkflowCategoryIdAction({
+      target: this,
+      handleData: r,
+      successCallback: ({ target, remoteData }) => {
+        const id = getValueByKey({
+          data: remoteData,
+          key: fieldData.workflowId.name,
+        });
+
+        handleItem({
+          target,
+          value: id,
+          compareValueHandler: (o) => {
+            const v = getValueByKey({
+              data: o,
+              key: fieldData.workflowId.name,
+            });
+
+            return v;
+          },
+          handler: (d) => {
+            const o = d;
+
+            o[fieldData.workflowCategoryId.name] = getValueByKey({
+              data: remoteData,
+              key: fieldData.workflowCategoryId.name,
+            });
+
+            o[fieldData.workflowCategoryName.name] = getValueByKey({
+              data: remoteData,
+              key: fieldData.workflowCategoryName.name,
+            });
+
+            return d;
+          },
+        });
+      },
+    });
   };
 
   setEnable = (r) => {
@@ -181,6 +326,28 @@ class PageList extends MultiPage {
     });
   };
 
+  showPageListWorkflowCategorySelectActionDrawer = (r) => {
+    this.setState(
+      {
+        currentRecord: r,
+      },
+      () => {
+        PageListWorkflowCategorySelectActionDrawer.open();
+      },
+    );
+  };
+
+  showOperateLogDrawer = (item) => {
+    this.setState(
+      {
+        currentRecord: item,
+      },
+      () => {
+        OperateLogDrawer.open();
+      },
+    );
+  };
+
   afterChangeSortModalOk = ({
     // eslint-disable-next-line no-unused-vars
     singleData,
@@ -220,13 +387,93 @@ class PageList extends MultiPage {
     );
   };
 
+  fillSearchCardInitialValues = () => {
+    const values = {};
+
+    values[fieldData.scope.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.businessMode.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.availableOnMobileSwitch.name] =
+      unlimitedWithStringFlag.flag;
+    values[fieldData.effectiveRange.name] = unlimitedWithStringFlag.flag;
+    values[fieldData.status.name] = unlimitedWithStringFlag.flag;
+
+    return values;
+  };
+
   establishSearchCardConfig = () => {
+    const {
+      tagTreeData,
+      tagIdCollection,
+      workflowCategoryTreeData,
+      workflowCategoryId,
+    } = this.state;
+
     return {
       list: [
         {
-          lg: 5,
+          lg: 10,
           type: searchCardConfig.contentItemType.input,
           fieldData: fieldData.name,
+        },
+        {
+          lg: 8,
+          type: searchCardConfig.contentItemType.treeSelect,
+          fieldData: fieldData.workflowCategoryId,
+          value: workflowCategoryId,
+          require: false,
+          listData: workflowCategoryTreeData,
+          addonAfter: buildButton({
+            text: '',
+            icon: iconBuilder.reload(),
+            handleClick: () => {
+              this.reloadWorkflowCategoryTreeList();
+            },
+          }),
+          dataConvert: (o) => {
+            const { name: title, code: value } = o;
+
+            return {
+              title,
+              value,
+            };
+          },
+          onChange: ({ value }) => {
+            this.setState({
+              workflowCategoryId: value,
+            });
+          },
+        },
+        {
+          lg: 6,
+          type: searchCardConfig.contentItemType.treeSelect,
+          fieldData: fieldData.tagIdCollection,
+          value: tagIdCollection,
+          require: true,
+          innerProps: {
+            treeCheckable: true,
+          },
+          listData: tagTreeData,
+          addonAfter: buildButton({
+            title: '点击刷新标签列表',
+            text: '',
+            icon: iconBuilder.reload(),
+            handleClick: () => {
+              this.reloadTagTreeList();
+            },
+          }),
+          dataConvert: (o) => {
+            const { name: title, code: value } = o;
+
+            return {
+              title,
+              value,
+            };
+          },
+          onChange: ({ value }) => {
+            this.setState({
+              tagIdCollection: value,
+            });
+          },
         },
         {
           lg: 5,
@@ -239,12 +486,17 @@ class PageList extends MultiPage {
           component: renderSearchBusinessModeSelect({}),
         },
         {
-          lg: 5,
+          lg: 4,
+          type: searchCardConfig.contentItemType.whetherSelect,
+          fieldData: fieldData.availableOnMobileSwitch,
+        },
+        {
+          lg: 4,
           type: searchCardConfig.contentItemType.customSelect,
           component: renderSearchFlowStatusSelect({}),
         },
         {
-          lg: 4,
+          lg: 6,
           type: searchCardConfig.contentItemType.component,
           component: this.buildSearchCardButtonCore(),
         },
@@ -265,9 +517,15 @@ class PageList extends MultiPage {
     ];
   };
 
-  establishListItemDropdownConfig = (record) => {
+  establishListItemDropdownConfig = (item) => {
+    const workflowCategoryId = getValueByKey({
+      data: item,
+      key: fieldData.workflowCategoryId.name,
+      convert: convertCollection.string,
+    });
+
     const status = getValueByKey({
-      data: record,
+      data: item,
       key: fieldData.status.name,
       convert: convertCollection.number,
     });
@@ -280,15 +538,40 @@ class PageList extends MultiPage {
       handleButtonClick: ({ handleData }) => {
         this.goToEdit(handleData);
       },
-      handleData: record,
+      handleData: item,
       handleMenuClick: ({ key, handleData }) => {
         this.handleMenuClick({ key, handleData });
       },
       items: [
         {
-          key: 'updateSort',
+          key: 'setSort',
           icon: iconBuilder.edit(),
           text: '设置排序值',
+          hidden: !checkHasAuthority(
+            accessWayCollection.workflow.setSort.permission,
+          ),
+        },
+        {
+          type: dropdownExpandItemType.divider,
+        },
+        {
+          key: 'showPageListWorkflowCategorySelectActionDrawer',
+          icon: iconBuilder.edit(),
+          text: `设置类别`,
+          hidden: !checkHasAuthority(
+            accessWayCollection.workflow.setWorkflowCategoryId.permission,
+          ),
+        },
+        {
+          key: 'clearWorkflowCategoryId',
+          icon: iconBuilder.clear(),
+          text: '清除类别',
+          confirm: true,
+          title: '将要设清除类别，确定吗？',
+          disabled: workflowCategoryId === zeroString,
+          hidden: !checkHasAuthority(
+            accessWayCollection.workflow.clearWorkflowCategoryId.permission,
+          ),
         },
         {
           type: dropdownExpandItemType.divider,
@@ -346,6 +629,12 @@ class PageList extends MultiPage {
     {
       dataTarget: fieldData.name,
       align: 'left',
+      showRichFacade: true,
+      emptyValue: '--',
+    },
+    {
+      dataTarget: fieldData.workflowCategoryName,
+      width: 140,
       showRichFacade: true,
       emptyValue: '--',
     },
@@ -440,6 +729,25 @@ class PageList extends MultiPage {
             value: value,
           }),
         };
+      },
+    },
+    {
+      dataTarget: fieldData.availableOnMobileSwitch,
+      width: 120,
+      showRichFacade: true,
+      emptyValue: '--',
+      facadeConfigBuilder: (value) => {
+        return {
+          color: buildRandomHexColor({
+            seed: toNumber(value) + 38,
+          }),
+        };
+      },
+      formatValue: (value, record) => {
+        return getValueByKey({
+          data: record,
+          key: fieldData.availableOnMobileSwitchNote.name,
+        });
       },
     },
     {
