@@ -65,7 +65,8 @@ class RefuseModal extends BaseUpdateModal {
       ...this.state,
       pageTitle: '拒绝审批',
       loadApiPath: modelTypeCollection.workflowCaseTypeCollection.get,
-      submitApiPath: modelTypeCollection.workflowCaseTypeCollection.refuse,
+      submitApiPath:
+        modelTypeCollection.workflowCaseProcessHistoryTypeCollection.refuse,
       generalDiscourseList: [],
     };
   }
