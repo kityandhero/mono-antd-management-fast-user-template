@@ -22,3 +22,30 @@ export function getStatusBadge(status) {
 
   return result;
 }
+
+export function handleItemStatus({ target, handleData, remoteData }) {
+  const id = getValueByKey({
+    data: handleData,
+    key: fieldData.<%= o.key %>.name,
+  });
+
+  handleItem({
+    target,
+    value: id,
+    compareValueHandler: (o) => {
+      const { id: v } = o;
+
+      return v;
+    },
+    handler: (d) => {
+      const o = d;
+
+      o[fieldData.status.name] = getValueByKey({
+        data: remoteData,
+        key: fieldData.status.name,
+      });
+
+      return d;
+    },
+  });
+}

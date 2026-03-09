@@ -147,7 +147,7 @@ class ChangeImageModal extends BaseUpdateModal {
                   emptyImage: '',
                 },
               },
-              action: `/<%= o.model %>/uploadImage`,
+              action: `/{modelTypeCollection.<%= o.model %>TypeCollection.uploadImage}`,
               afterUploadSuccess: (imageData) => {
                 this.afterImageUploadSuccess(imageData);
               },
