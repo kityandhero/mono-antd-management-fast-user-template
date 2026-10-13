@@ -83,6 +83,10 @@ class BasePreviewDrawer extends BaseVerticalFlexDrawer {
   renderPresetContentContainorInnerTop = () => {
     const { metaData } = this.state;
 
+    if (metaData == null) {
+      return null;
+    }
+
     const fileType = getValueByKey({
       data: metaData,
       key: fieldDataFlowCaseFormAttachment.fileType.name,
